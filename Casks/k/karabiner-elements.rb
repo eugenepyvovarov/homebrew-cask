@@ -26,8 +26,8 @@ cask "karabiner-elements" do
     end
   end
   on_ventura :or_newer do
-    version "15.9.0"
-    sha256 "c495f131165a4deefbe32e4a8ff5b3ffb000fcd5507140344899b8fee31574ee"
+    version "16.1.0"
+    sha256 "bc8b5ee0c06472e1c687340cb2ec5d654b461e24c507808997e5fbafff093a79"
 
     livecheck do
       url "https://appcast.pqrs.org/karabiner-elements-appcast.xml"
@@ -71,6 +71,7 @@ cask "karabiner-elements" do
   homepage "https://karabiner-elements.pqrs.org/"
 
   auto_updates true
+  depends_on :macos
 
   binary "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
 

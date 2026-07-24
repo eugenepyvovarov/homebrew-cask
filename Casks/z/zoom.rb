@@ -2,9 +2,9 @@ cask "zoom" do
   arch arm: "arm64/"
   livecheck_folder = on_arch_conditional arm: "?archType=arm64"
 
-  version "6.7.2.72191"
-  sha256 arm:   "bf899a5de8541342929993b6388fdddaa5727939c6be4696690cee97fc9d7bcd",
-         intel: "ea10c3cf1cd9322b0f3f2ac843a5c8862a556e27786bf5f681a5780d821fcf7c"
+  version "7.1.5.84650"
+  sha256 arm:   "49cf70af674176f3708b9d3b519f585424c442ccf744fd9659327967971c8279",
+         intel: "62f6b0a647084b4da6faec3a685dfcee12b9024c6a9b51b25c5133338a97a902"
 
   url "https://cdn.zoom.us/prod/#{version}/#{arch}zoomusInstallerFull.pkg"
   name "Zoom"
@@ -18,6 +18,7 @@ cask "zoom" do
 
   auto_updates true
   conflicts_with cask: "zoom-for-it-admins"
+  depends_on :macos
 
   pkg "zoomusInstallerFull.pkg"
 

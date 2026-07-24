@@ -1,19 +1,22 @@
 cask "filefillet" do
-  version "2.8.0"
-  sha256 "5f75d37d89e52d5e4db9329664df85f362f112edb1b9ff9be1a426a18233d103"
+  version "2.11.1"
+  sha256 "2d844ba41bdd99863d409a860b631f0ab63112127523e3ecd55991578a3bad97"
 
-  url "https://release.filefillet.com/FileFillet_v#{version}.zip"
+  url "https://filefillet-releases.s3.eu-central-1.amazonaws.com/FileFillet_v#{version}.zip",
+      verified: "filefillet-releases.s3.eu-central-1.amazonaws.com/"
   name "FileFillet"
   desc "Efficient file organizer"
   homepage "https://www.filefillet.com/"
 
   livecheck do
-    url "https://release.filefillet.com/appcast.xml"
-    strategy :sparkle, &:short_version
+    url "https://filefillet-releases.s3.eu-central-1.amazonaws.com/appcast.xml"
+    strategy :sparkle do |items|
+      items.find { |item| item.channel.nil? }&.short_version
+    end
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "FileFillet.app"
 

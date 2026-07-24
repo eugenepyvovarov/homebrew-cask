@@ -1,5 +1,5 @@
 cask "ultdata" do
-  version "10.3.2.9"
+  version "10.4.3.1"
   sha256 :no_check
 
   url "https://download.tenorshare.com/downloads/ultdata-ios-mac.dmg"
@@ -13,6 +13,7 @@ cask "ultdata" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "UltData.app"
 

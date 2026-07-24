@@ -1,6 +1,6 @@
 cask "eset-cyber-security" do
-  version "9.0.5300.0"
-  sha256 "cfa2285791d887dd10c36e14d7859dd59b56c70f71c9248758dbef75d73203a5"
+  version "9.0.6700.0"
+  sha256 "c172dcc981bac5b20038b667ff0e775a716b9deb5c09e5222c5f9f5dc900b9c0"
 
   url "https://download.eset.com/com/eset/apps/home/eav/mac/v#{version.major}/#{version}/eset_cybersecurity.dmg"
   name "ESET Cyber Security"
@@ -14,7 +14,7 @@ cask "eset-cyber-security" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   pkg "Resources/Installer.pkg"
 

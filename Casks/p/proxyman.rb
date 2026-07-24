@@ -1,6 +1,6 @@
 cask "proxyman" do
-  version "6.4.0,60400"
-  sha256 "2b290cbf1b0b9f1aae1bb9530a8ca95dbd3bce788c3211d3636439313596db01"
+  version "6.12.0,61200"
+  sha256 "9e79bbdde99bcee53d43545e333440f5283ee2bfedfa359a8665500a9f910c22"
 
   url "https://download.proxyman.com/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
@@ -13,21 +13,13 @@ cask "proxyman" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Proxyman.app"
   binary "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli"
 
-  uninstall_postflight do
-    stdout, * = system_command "/usr/bin/security",
-                               args: ["find-certificate", "-a", "-c", "Proxyman", "-Z"],
-                               sudo: true
-    hashes = stdout.lines.grep(/^SHA-256 hash:/) { |l| l.split(":").second.strip }
-    hashes.each do |h|
-      system_command "/usr/bin/security",
-                     args: ["delete-certificate", "-Z", h],
-                     sudo: true
-    end
+  uninstall_postflight_steps do
+    delete_keychain_certificate "Proxyman"
   end
 
   uninstall launchctl: "com.proxyman.NSProxy.HelperTool",

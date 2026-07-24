@@ -1,6 +1,6 @@
 cask "warzone-2100" do
-  version "4.6.2"
-  sha256 "baa88d657f5d3983b8c36bc70123d964f6082785fe5551bd1db7a8a071ade864"
+  version "4.7.0"
+  sha256 "a7d8152bdcc3c1d26c6ced2debe93e7995bf6c2125142093d9ab2834ebdd8507"
 
   url "https://github.com/Warzone2100/warzone2100/releases/download/#{version}/warzone2100_macOS_universal.zip",
       verified: "github.com/Warzone2100/warzone2100/"
@@ -14,6 +14,8 @@ cask "warzone-2100" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "Warzone 2100.app"
 

@@ -9,6 +9,9 @@ cask "bonitastudiocommunity" do
   homepage "https://www.bonitasoft.com/downloads"
 
   deprecate! date: "2025-04-03", because: :discontinued
+  disable! date: "2026-04-03", because: :discontinued
+
+  depends_on :macos
 
   installer script: {
     executable: "#{staged_path}/BonitaStudioCommunity-#{version}.app/Contents/MacOS/installbuilder.sh",

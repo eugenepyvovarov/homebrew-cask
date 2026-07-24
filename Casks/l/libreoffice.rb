@@ -2,9 +2,9 @@ cask "libreoffice" do
   arch arm: "aarch64", intel: "x86-64"
   folder = on_arch_conditional arm: "aarch64", intel: "x86_64"
 
-  version "25.8.4"
-  sha256 arm:   "972bb495bd5e249257c53d4030c013f2a5706a6203d3669b8c410ceafe3d0426",
-         intel: "12ff8890c425758a4634a57572b361c8270098da6a25c7318459ab380b83e6bf"
+  version "26.2.5"
+  sha256 arm:   "c99fb4fe574437fc4cb820a4ca15271bca325920861f7139858b36d7f9df78ad",
+         intel: "e26180298685274b54aa7fe6e1101c65465a372f457a6748ebd642720811db36"
 
   url "https://download.documentfoundation.org/libreoffice/stable/#{version}/mac/#{folder}/LibreOffice_#{version}_MacOS_#{arch}.dmg",
       verified: "download.documentfoundation.org/libreoffice/stable/"
@@ -25,12 +25,12 @@ cask "libreoffice" do
   # NOTE: This needs to check a page that provides the latest versions for both
   # Fresh and Still, as this check is also used by the `libreoffice-still` cask.
   livecheck do
-    url "https://www.libreoffice.org/download/download-libreoffice/?type=mac-#{folder}"
-    regex(/href=.*?LibreOffice[._-]v?(\d+(?:\.\d+)+)(?:[._-]MacOS)?[._-]#{arch}\.dmg/i)
+    url "https://www.libreoffice.org/download/"
+    regex(%r{href=["']?[^"' >]*/stable/[^"' >]*LibreOffice[._-]v?(\d+(?:\.\d+)+)(?:[._-]MacOS)?[._-]#{arch}\.dmg}i)
   end
 
   conflicts_with cask: "libreoffice-still"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "LibreOffice.app"
   binary "#{appdir}/LibreOffice.app/Contents/MacOS/gengal"

@@ -1,6 +1,6 @@
 cask "swift-shift" do
-  version "0.27.1"
-  sha256 "67678a07ea39783850e858bc0bc2c2c0a9a05b1ac665ba23b7e8ce46cdb0cfed"
+  version "1.3.2"
+  sha256 "b4e3d8b2e922111e142210c07aff6501fe4e03fe74b44f516eb2abfc917b8b80"
 
   url "https://github.com/pablopunk/SwiftShift/releases/download/#{version}/SwiftShift.zip",
       verified: "github.com/pablopunk/SwiftShift/"
@@ -14,7 +14,7 @@ cask "swift-shift" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Swift Shift.app"
 

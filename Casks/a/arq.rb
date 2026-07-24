@@ -1,6 +1,6 @@
 cask "arq" do
-  version "7.37"
-  sha256 "4f75b5dd0d7a90c7d425609888a2bd316938fec329bf0f56186e26a9bb409b30"
+  version "7.46.1"
+  sha256 "8729f2ab7a5761d779c59c4fcbbd66ed85dfe281aae16373c6ee3240c0b47a6a"
 
   url "https://www.arqbackup.com/download/arqbackup/Arq#{version}.pkg"
   name "Arq"
@@ -13,6 +13,7 @@ cask "arq" do
   end
 
   auto_updates true
+  depends_on :macos
 
   pkg "Arq#{version}.pkg"
   binary "#{appdir}/Arq.app/Contents/Resources/arqc"

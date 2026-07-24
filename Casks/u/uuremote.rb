@@ -1,6 +1,6 @@
 cask "uuremote" do
-  version "4.13.0"
-  sha256 "dc0615329c604fd99ef18d4d3cc891def0ffc7ee085d921ac7764727af8d6be6"
+  version "4.33.0"
+  sha256 "492ab1c360fb30f471dca71d2468be93d6a76a72b7d256d911f2095f72acefdd"
 
   url "https://a56.gdl.netease.com/uuyc_#{version}.pkg",
       verified: "a56.gdl.netease.com/"
@@ -14,6 +14,8 @@ cask "uuremote" do
     regex(/uuyc[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
     strategy :header_match
   end
+
+  depends_on :macos
 
   pkg "uuyc_#{version}.pkg"
 

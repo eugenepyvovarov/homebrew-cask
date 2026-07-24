@@ -1,11 +1,11 @@
 cask "keet" do
-  arch arm: "Apple-Silicon", intel: "Intel"
+  arch intel: "-Intel"
 
-  version "2.5.2"
-  sha256 arm:   "db417e3639b5b647b9d6991301b1cb6b6ee3706b0aeac03fcb6bca471a6c66d2",
-         intel: "6c2b868d93d6c9176a3912aaa391c1fd3d49d3652ab762ccaf82b1931e4309fc"
+  version "4.19.1"
+  sha256 arm:   "d9f294c66eaa157569350264829797d354606544fadfb321fccc2f7a5eacc9ab",
+         intel: "a20f8e07f6daf28368692f2868ec154d36ee8d8aa66ba238648a2241bafdd1a7"
 
-  url "https://static.keet.io/downloads/#{version}/Keet-#{arch}.dmg"
+  url "https://static.keet.io/downloads/#{version}/Keet#{arch}.dmg"
   name "keet"
   desc "Peer-to-peer video and text chat"
   homepage "https://keet.io/"
@@ -16,12 +16,18 @@ cask "keet" do
   end
 
   auto_updates true
+  depends_on macos: :monterey
 
   app "Keet.app"
 
+  uninstall quit: "io.keet.app"
+
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/io.keet.app.sfl*",
+    "~/Library/Application Support/Keet",
     "~/Library/Application Support/pear",
     "~/Library/Application Support/pear-runtime",
+    "~/Library/Preferences/io.keet.app.plist",
     "~/Library/Saved Application State/io.keet.app.savedState",
   ]
 end

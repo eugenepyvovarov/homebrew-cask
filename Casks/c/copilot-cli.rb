@@ -2,11 +2,15 @@ cask "copilot-cli" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "0.0.387"
-  sha256 arm:          "e04cdc413c88044b195b5d6629ab2e686c2cc4189eb6a385a60c4e57e9658bb5",
-         intel:        "12225d3bffb70caa1de56620e1cd2a41067473f1516b3b04fab976d3729eb1c3",
-         arm64_linux:  "6bd82a5c597148f9a9a7c658b900a17ab7d8a2c1d95504c6673b107465f4cfe9",
-         x86_64_linux: "208dad6d843501933c73b5eb9951496bf9f23dfcd8fc46a33a3b0a04e929138d"
+  on_macos do
+    depends_on macos: :ventura
+  end
+
+  version "1.0.74"
+  sha256 arm:          "df589022d5524426a65d27d45fdd445627f5a8ae1e97a8e158fa2d95a84cb554",
+         intel:        "f9eeecfd10c5bb12b8eb22e0120479f9a9c8d6a3aa21310cd74db41cd68f2800",
+         arm64_linux:  "9a21e89dcb44f5d295f1acb6d821ffc95c88a42efa7f2dd3ffd060be6e8a6797",
+         x86_64_linux: "4a708b0a1cbaef4c2ca5c546a622f887a3b70e8a0432bc3cee0d386704816650"
 
   url "https://github.com/github/copilot-cli/releases/download/v#{version}/copilot-#{os}-#{arch}.tar.gz"
   name "GitHub Copilot CLI"
@@ -18,10 +22,12 @@ cask "copilot-cli" do
     strategy :github_latest
   end
 
+  auto_updates true
   conflicts_with cask: "copilot-cli@prerelease"
-  depends_on macos: ">= :ventura"
 
   binary "copilot"
+
+  generate_completions_from_executable "copilot", "completion"
 
   zap trash: "~/.copilot"
 end

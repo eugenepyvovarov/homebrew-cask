@@ -1,6 +1,6 @@
 cask "nomachine" do
-  version "9.3.7_1"
-  sha256 "2c6db13ab80300231a946c30d5c9dd57f14f38d1679b5eb802bb948d332d73b5"
+  version "9.8.2_1"
+  sha256 "08d67260ec02f4bd68b2c4c8868187ebe94d0da7109d55dbdcb68bd92cd978f6"
 
   url "https://download.nomachine.com/download/#{version.major_minor}/MacOSX/nomachine_#{version}.dmg"
   name "NoMachine"
@@ -14,6 +14,7 @@ cask "nomachine" do
   end
 
   auto_updates true
+  depends_on :macos
 
   pkg "NoMachine.pkg"
 

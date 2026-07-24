@@ -1,6 +1,6 @@
 cask "djuced" do
-  version "6.4.1"
-  sha256 "c844da96e2fb5c027771dac74741acbba2cf66c038043dbf92b2cb6a32b3f9d8"
+  version "6.6.3"
+  sha256 "9172877baf13efbd9a7cbd242985abf639c060f652126920417d48b255fff717"
 
   url "https://ts.hercules.com/download/djuced/#{version.major_minor}/DJUCED_#{version}.dmg",
       verified: "hercules.com/download/djuced/"
@@ -13,7 +13,7 @@ cask "djuced" do
     regex(/Version\s+v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   pkg "djuced_#{version}.pkg"
 

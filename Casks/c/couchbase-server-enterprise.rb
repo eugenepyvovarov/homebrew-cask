@@ -1,9 +1,9 @@
 cask "couchbase-server-enterprise" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "8.0.0"
-  sha256 arm:   "a79613f10fc085899ff8ea31dccb85866098bd6ae812baca498582c641366ced",
-         intel: "2aee2d8d762331376022d0c50042c43847fed08dbc7bdcfac7f9dde8221ed70c"
+  version "8.0.2"
+  sha256 arm:   "a5f48fcb1236955f932e891b1c1eca5fd3ca87f10af20564bdc3027bf4fe56c7",
+         intel: "1e83d27f3e5933c5f92573f31a9558b9a4632a0f86df467bc9211453a464e607"
 
   url "https://packages.couchbase.com/releases/#{version}/couchbase-server-enterprise_#{version}-macos_#{arch}.dmg"
   name "Couchbase Server"
@@ -17,6 +17,7 @@ cask "couchbase-server-enterprise" do
   end
 
   conflicts_with cask: "couchbase-server-community"
+  depends_on :macos
 
   app "Couchbase Server.app"
 

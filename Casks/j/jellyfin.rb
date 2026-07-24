@@ -1,9 +1,9 @@
 cask "jellyfin" do
   arch arm: "arm64", intel: "amd64"
 
-  version "10.11.6"
-  sha256 arm:   "548038ac08070fc653e432c1a5c1d99e37c17087962f5b3df1ef4d699560adb6",
-         intel: "c27546ac2d50da2dec7fc8cd6e119ad90925413e7b3ef7e3281e823768914748"
+  version "10.11.11"
+  sha256 arm:   "f345914f10b988f56fd453b07128faa23dfcd561405216ffd04e32a47e9f6c9c",
+         intel: "ee8a5b843254f733ee4b315f2c038ea1a37e5ac1ce4c56fdfe66faa545229e3b"
 
   url "https://repo.jellyfin.org/files/server/macos/stable/v#{version}/#{arch}/jellyfin_#{version}-#{arch}.dmg"
   name "Jellyfin"
@@ -15,7 +15,7 @@ cask "jellyfin" do
     regex(/href=.*?jellyfin[._-]v?(\d+(?:[.-]\d+)+)-#{arch}\.dmg/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Jellyfin.app"
 

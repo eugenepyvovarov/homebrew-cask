@@ -16,7 +16,7 @@ cask "propresenter" do
   end
   on_monterey do
     version "19.0.1,318767361"
-    sha256 "b9a72d0443382e2c645b2af2d1b59a28ffe5884b32d7fdc0e527c86a60b10f14"
+    sha256 "a428409c5a59c0e1f0ced0d8788d521c75672fadd50ec15e20992a1fffbd4b9d"
 
     livecheck do
       url "https://api.renewedvision.com/v1/pro/upgrade?platform=macos&osVersion=12.0&appVersion=0&buildNumber=0&includeNotes=0"
@@ -30,8 +30,8 @@ cask "propresenter" do
     end
   end
   on_ventura :or_newer do
-    version "21.1,352387082"
-    sha256 "b9a72d0443382e2c645b2af2d1b59a28ffe5884b32d7fdc0e527c86a60b10f14"
+    version "21.4,352583705"
+    sha256 "a428409c5a59c0e1f0ced0d8788d521c75672fadd50ec15e20992a1fffbd4b9d"
 
     livecheck do
       url "https://api.renewedvision.com/v1/pro/upgrade?platform=macos&osVersion=99&appVersion=0&buildNumber=0&includeNotes=0"
@@ -52,7 +52,7 @@ cask "propresenter" do
 
   auto_updates true
   conflicts_with cask: "propresenter@beta"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "ProPresenter.app"
 

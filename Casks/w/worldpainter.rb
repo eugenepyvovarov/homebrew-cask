@@ -1,6 +1,6 @@
 cask "worldpainter" do
-  version "2.26.1"
-  sha256 "889443673a92c124c3b1e67e67b1c9d8f29ea34f1d70337eddd69485c36fee37"
+  version "2.27.0"
+  sha256 "e9c9566f83ebb0604088988b152d2c3d87abef7150524dce17859116795d8432"
 
   url "https://www.worldpainter.net/files/worldpainter_#{version}.tgz"
   name "WorldPainter"
@@ -13,6 +13,8 @@ cask "worldpainter" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "WorldPainter.app"
 

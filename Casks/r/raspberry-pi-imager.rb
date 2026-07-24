@@ -1,6 +1,6 @@
 cask "raspberry-pi-imager" do
-  version "2.0.4"
-  sha256 "45065bc9f981444cba07914ac6b55a0cf21a8e9e9c815a55d847f1e84cca7e4e"
+  version "2.0.10"
+  sha256 "5bd3e10b5c18d0714076c473ef58f8f6cf9c08af77e06aab7102c81df33f216e"
 
   url "https://github.com/raspberrypi/rpi-imager/releases/download/v#{version}/rpi-imager-v#{version}.dmg",
       verified: "github.com/raspberrypi/rpi-imager/"
@@ -13,7 +13,7 @@ cask "raspberry-pi-imager" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :ventura
 
   app "Raspberry Pi Imager.app"
 

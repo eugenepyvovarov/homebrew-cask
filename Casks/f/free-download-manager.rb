@@ -1,5 +1,5 @@
 cask "free-download-manager" do
-  version "6.32"
+  version "6.34.3"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://files2.freedownloadmanager.org/#{version.major}/latest/fdm.dmg"
@@ -8,11 +8,12 @@ cask "free-download-manager" do
   homepage "https://www.freedownloadmanager.org/"
 
   livecheck do
-    url "https://www.freedownloadmanager.org/download-fdm-for-mac.htm"
-    regex(/>\s*FDM\s*v?(\d+(?:\.\d+)+)/i)
+    url "https://www.freedownloadmanager.org/download.htm"
+    regex(/>\s*FDM\s+v?(\d+(?:\.\d+)+)\s+for\s+Mac\s*</i)
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Free Download Manager.app"
 

@@ -1,6 +1,6 @@
 cask "clip-studio-paint" do
-  version "4.2.5"
-  sha256 "f25f6baf734e4f1416e28d62fea37acdc568c6ddccc4ffaf10452b0ee8d250bc"
+  version "5.0.4"
+  sha256 "5d44a9cd19ba5b4361392046c7363108443d0c4f3a51f92707fb6e2552b544ac"
 
   url "https://vd.clipstudio.net/clipcontent/paint/app/#{version.no_dots}/CSP_#{version.no_dots}m_app.pkg"
   name "Clip Studio Paint"
@@ -12,7 +12,7 @@ cask "clip-studio-paint" do
     regex(/Version\s+v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   installer manual: "CSP_#{version.no_dots}m_app.pkg"
 

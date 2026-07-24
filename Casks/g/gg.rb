@@ -1,6 +1,6 @@
 cask "gg" do
-  version "0.37.2"
-  sha256 "7b688dd1ce210b5e0f4389c6d185696a8d236ac1bde646b9fd942393f715040c"
+  version "0.39.1"
+  sha256 "98b88d598cf614cbf722df9abbd9e2a2b218cf5e8b6b8ea9b94890cc666c879f"
 
   url "https://github.com/gulbanana/gg/releases/download/v#{version}/gg_#{version}_universal.dmg"
   name "GG"
@@ -11,6 +11,8 @@ cask "gg" do
     url :url
     strategy :github_latest
   end
+
+  depends_on :macos
 
   app "gg.app"
   binary "#{appdir}/gg.app/Contents/MacOS/gg"

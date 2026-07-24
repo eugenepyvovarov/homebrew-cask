@@ -1,6 +1,6 @@
 cask "marsedit" do
-  version "5.3.12"
-  sha256 "84fe6cece04320cec9fccfece4219842ef8656a3ccb472a916841b604a9bcbf9"
+  version "5.4.4"
+  sha256 "8b15ce1e0648e8b2ebdd3de33129597c572deb04bbba1d0598a51fba22e41540"
 
   url "https://redsweater.com/marsedit/MarsEdit#{version}.zip"
   name "MarsEdit"
@@ -13,6 +13,7 @@ cask "marsedit" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "MarsEdit.app"
 

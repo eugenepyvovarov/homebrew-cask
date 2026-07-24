@@ -2,11 +2,11 @@ cask "awesun" do
   arch arm: "arm64", intel: "x86_64"
   livecheck_id = on_arch_conditional arm: "_ARM"
 
-  version "16.2.0.27059"
-  sha256 arm:   "eb7e8e36338dcd8109056f2547d3d3f32d42fde169ead276d8c74c456942fd9e",
-         intel: "30627f95c8cf16446f873ebf168f3ade4d3f90a703590bf4c644e17f71635f74"
+  version "16.5.0.30905"
+  sha256 arm:   "1265c59faa0e66d66b4504495b38506d7a9628be63ec577f50ea3332cfd9748e",
+         intel: "14ef421eb76593f4034bb5c50a2ce35c29b69c10a55f34641de47f1d195d5661"
 
-  url "https://dw.oray.com/sl/mac/AweSun_#{version}_#{arch}.dmg"
+  url "https://dw.oray.com/sl/mac/AweSun_v#{version}_#{arch}.dmg"
   name "Sunlogin Client"
   name "向日葵个人版"
   desc "Remote desktop control and monitoring tool"
@@ -18,6 +18,8 @@ cask "awesun" do
       json["versionno"]
     end
   end
+
+  depends_on :macos
 
   pkg "AweSun.pkg"
 
@@ -39,6 +41,7 @@ cask "awesun" do
             ],
             quit:      "com.oray.sunlogin.macclient",
             pkgutil:   [
+              "com.oray.awesun.macclient",
               "com.oray.sunlogin.macclient",
               "com.oray.sunlogin.MacVirtualAudioDevice",
             ],

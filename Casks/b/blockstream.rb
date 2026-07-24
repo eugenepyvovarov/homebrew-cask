@@ -1,9 +1,9 @@
 cask "blockstream" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3.0.0"
-  sha256 arm:   "3e830023986d93de83239c02fb351077cbdd4443cc52ce773586e89f871ed893",
-         intel: "42b647be0063718053d4e68c5eff9bc6578ef08f47d538b9224aa5ef803a5914"
+  version "3.4.1"
+  sha256 arm:   "6922f5f617d466c37a3a16a354f7a5b052495255fee48f0283e3c31a23a7de8a",
+         intel: "8a0d41abf0995efdf3478413f34d8317040e7659dd2843eb170e3fbb7c958b8e"
 
   url "https://github.com/Blockstream/green_qt/releases/download/release_#{version}/Blockstream-#{arch}.dmg",
       verified: "github.com/Blockstream/green_qt/"
@@ -16,7 +16,7 @@ cask "blockstream" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :ventura
 
   app "Blockstream.app"
 

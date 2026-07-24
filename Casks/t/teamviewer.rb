@@ -42,8 +42,8 @@ cask "teamviewer" do
     pkg "TeamViewer.pkg"
   end
   on_ventura :or_newer do
-    version "15.73.5"
-    sha256 "a1d03ecf7abe1d96bbcc3876c376da7517823687e6d595acc321fdbdc3907759"
+    version "15.79.4"
+    sha256 "beff41a4941da37479bc8c7b6fed0e8a4fee08eb7773f1c868f7af9e063f16ab"
 
     livecheck do
       url "https://download.teamviewer.com/download/update/macupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=13.7&type=1&channel=1"
@@ -60,6 +60,7 @@ cask "teamviewer" do
 
   auto_updates true
   conflicts_with cask: "teamviewer-host"
+  depends_on :macos
 
   postflight do
     # postinstall launches the app

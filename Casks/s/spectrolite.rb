@@ -1,9 +1,9 @@
 cask "spectrolite" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.5"
-  sha256 arm:   "bfffc0c80294bd48026ff4cba62ae2dede0915796878c3ea0a6d54cf1c1ffaab",
-         intel: "ac0132b686ac58d0f2ed4b08b56c6d441bda766c3ad34f260bfcc00721bd6458"
+  version "1.4.5"
+  sha256 arm:   "45b35a72b9f78430aed1c973cd4327fd86fe9ea83410d3dd77bf7417b9d71f6b",
+         intel: "5a6eacdeb47eee28031c66ed78452e8d03c6dead8efe293931fc022ca8340847"
 
   url "https://spectrolite.app/downloads/Spectrolite-#{version}-#{arch}.zip"
   name "Spectrolite"
@@ -16,6 +16,7 @@ cask "spectrolite" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Spectrolite.app"
 

@@ -1,19 +1,20 @@
 cask "excalidrawz" do
-  version "1.7.1"
-  sha256 "f8b3e018547a1446befca1f506debbf3df155d82c93f756d1261c88d06d6a980"
+  version "2.2.3"
+  sha256 "5946084b223546e0d2cb8f32723cc626ea8ebcac3c5d484dc27dbc8485d50191"
 
-  url "https://github.com/chocoford/ExcalidrawZ/releases/download/v#{version}/ExcalidrawZ.#{version}.dmg",
+  url "https://github.com/chocoford/ExcalidrawZ/releases/download/v#{version.csv.first}/ExcalidrawZ.#{version}.dmg",
       verified: "github.com/chocoford/ExcalidrawZ/releases/download/"
   name "ExcalidrawZ"
   desc "Excalidraw client"
   homepage "https://excalidrawz.chocoford.com/"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://excalidrawz.chocoford.com/downloads/appcast.xml"
+    strategy :sparkle, &:short_version
   end
 
-  depends_on macos: ">= :monterey"
+  auto_updates true
+  depends_on macos: :ventura
 
   app "ExcalidrawZ.app"
 

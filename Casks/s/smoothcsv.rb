@@ -1,6 +1,6 @@
 cask "smoothcsv" do
-  version "3.12.1"
-  sha256 "6da1553eca6c1b067cfb2bf13ba2717973b93a81a69ab58250f3d3d76576014f"
+  version "3.23.1"
+  sha256 "a03551d9de8209bfb262fa7a213a576647daec78e1947d8d930e8edbe0880e19"
 
   url "https://github.com/kohii/smoothcsv3/releases/download/v#{version}/SmoothCSV_#{version}_universal.dmg",
       verified: "github.com/kohii/smoothcsv3/"
@@ -8,7 +8,10 @@ cask "smoothcsv" do
   desc "CSV editor"
   homepage "https://smoothcsv.com/"
 
+  depends_on :macos
+
   app "SmoothCSV.app"
+  binary "#{appdir}/SmoothCSV.app/Contents/MacOS/smoothcsv-cli", target: "smoothcsv"
 
   uninstall quit: "com.smoothcsv.desktop"
 

@@ -1,6 +1,6 @@
 cask "xaos" do
-  version "4.3.4"
-  sha256 "016e34f6b8dc42498acaa90bf92ce3dce5fc9ae2963e01c8ce459f57f6b1bb94"
+  version "4.3.6"
+  sha256 "99acf00490cd9c9bedb5fbee8aaae96cc6eb04e45fa9abc9b670ee9991a9e2c2"
 
   url "https://github.com/xaos-project/XaoS/releases/download/release-#{version}/XaoS-#{version}.dmg",
       verified: "github.com/xaos-project/XaoS/"
@@ -15,7 +15,7 @@ cask "xaos" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :ventura
 
   app "XaoS.app"
 

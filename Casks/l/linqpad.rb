@@ -1,9 +1,8 @@
 cask "linqpad" do
-  version "9.5.10.8598375"
-  sha256 "8dc6f7fc425949b0f79ec74a9d56bd965d6c07952a1a2f7b0198c8580965cf63"
+  version "9.9.10.5610943"
+  sha256 "236aa24ba6860e16e39cdd15fe1dcf7af777a0be560ff5273149a89ff5bca6f8"
 
-  url "https://linqpad.azureedge.net/public/LINQPad#{version.major}.dmg?cache=#{version}",
-      verified: "linqpad.azureedge.net/"
+  url "https://cdn.linqpad.net/public/LINQPad#{version.major}.dmg?cache=#{version}"
   name "LINQPad"
   desc ".NET LINQ database query tool and code scratchpad"
   homepage "https://www.linqpad.net/"
@@ -28,7 +27,7 @@ cask "linqpad" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "LINQPad #{version.major}.app"
 

@@ -1,5 +1,5 @@
 cask "vuescan" do
-  version "9.8.50"
+  version "9.8.56"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://www.hamrick.com/files/vuea64#{version.major_minor.no_dots}.dmg"
@@ -12,7 +12,7 @@ cask "vuescan" do
     regex(%r{href=.*?vuescan-versions/(\d+(?:\.\d+)+)\.html}i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "VueScan.app"
 

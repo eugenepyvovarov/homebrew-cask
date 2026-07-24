@@ -1,6 +1,6 @@
 cask "readdle-spark" do
-  version "3.27.6.127468"
-  sha256 "7365232d06139488225f8e4e1e07f668ae744a70d9effa7b360f1658c0cd711b"
+  version "3.30.3.140096"
+  sha256 "8d53dd712abb7d81686f987bc232acf27c6432f07e1d3c46671581a992bc82db"
 
   url "https://downloads.sparkmailapp.com/Spark#{version.major}/mac/dist/#{version}/Spark.zip"
   name "Spark"
@@ -15,7 +15,7 @@ cask "readdle-spark" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Spark Desktop.app"
 

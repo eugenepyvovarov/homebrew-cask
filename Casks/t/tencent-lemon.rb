@@ -1,6 +1,6 @@
 cask "tencent-lemon" do
-  version "5.3.0,49930F7D5D2246ECF0BAEE20B056DD4A"
-  sha256 "4247c8971b28f78c00ad600c463da94a7c39b02db3a5ba99fb1e70c4c939c675"
+  version "5.3.4,63031A20CAFA1CEC51B5BE1020CF4D16"
+  sha256 "2b17f6887632462527d0b35a3f05726402e34d20aaf60bcef924b2faa5a778f8"
 
   url "https://pm.myapp.com/invc/xfspeed/qqpcmgr/module_update/#{version.csv.second}/Lemon#{version.csv.first}.dmg",
       verified: "pm.myapp.com/invc/xfspeed/qqpcmgr/"
@@ -20,6 +20,7 @@ cask "tencent-lemon" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Tencent Lemon.app"
 

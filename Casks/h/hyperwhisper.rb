@@ -1,6 +1,6 @@
 cask "hyperwhisper" do
-  version "2.18.3"
-  sha256 "654baa538fd8d2c9aca1cd687da2751974ed25ca43178a766a287c9b870a57ba"
+  version "2.41.0"
+  sha256 "198fe90c838881a8f97ad0bfb4e3bf937c6e3a2972836b5e9ff6d0497a8ab36a"
 
   url "https://builds.hyperwhisper.com/hyperwhisper-#{version}.dmg"
   name "HyperWhisper"
@@ -19,7 +19,7 @@ cask "hyperwhisper" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "HyperWhisper.app"
 

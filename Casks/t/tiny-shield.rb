@@ -1,6 +1,6 @@
 cask "tiny-shield" do
-  version "1.7.0,10700"
-  sha256 "f0993398b93451e6afacba02db8a8786001c47c38eccc55cd9c7f2f89abd4301"
+  version "1.11.0,11100"
+  sha256 "efd38be72978420526a2d27ee1a7ba015e359827d9f82794c5af9134f2d7a000"
 
   url "https://download.proxyman.io/tinyshield/#{version.csv.second}/Tiny_Shield_#{version.csv.first}.dmg",
       verified: "download.proxyman.io/tinyshield/"
@@ -14,7 +14,7 @@ cask "tiny-shield" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Tiny Shield.app"
 

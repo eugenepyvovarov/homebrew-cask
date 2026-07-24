@@ -1,6 +1,6 @@
 cask "macwhisper" do
-  version "13.11.1,1371"
-  sha256 "9065813e93d1e5c756a8ab1456ab64df1f3b79a882bb2d1e5152cd1b344d4616"
+  version "14.4.1,1467"
+  sha256 "5fc8980119742802b59a148577e1d20da8c7983d8dd632fdc2e75498d24a6383"
 
   url "https://cdn.macwhisper.com/macwhisper/MacWhisper-#{version.csv.second}#{"_#{version.csv.third}" if version.csv.third}.zip",
       verified: "cdn.macwhisper.com/"
@@ -24,7 +24,7 @@ cask "macwhisper" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "MacWhisper.app"
 

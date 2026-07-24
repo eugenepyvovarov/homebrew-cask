@@ -1,40 +1,24 @@
 cask "sfm" do
-  version "1.12.12"
-  sha256 "32ebc14def5125e70723559d313cf71f22c51874639456012ae598a4e5936fcb"
+  version "1.13.14"
+  sha256 "0f9d8fd83a1281b866918d6e9880851a9391aa799952819bd3b7815301034f11"
 
-  url "https://github.com/SagerNet/sing-box/releases/download/v#{version}/SFM-#{version}-universal.dmg",
+  url "https://github.com/SagerNet/sing-box/releases/download/v#{version}/SFM-#{version}-Universal.pkg",
       verified: "github.com/SagerNet/sing-box/"
   name "SFM"
   desc "Standalone client for sing-box, the universal proxy platform"
   homepage "https://sing-box.sagernet.org/"
 
-  # Upstream is unable to publish the standalone version of the macOS client, so
-  # we have to temporarily check all releases to find the newest version with an
-  # SFM dmg. TODO: Remove this `livecheck` block or switch to `GithubLatest`
-  # once this is resolved.
-  livecheck do
-    url :url
-    regex(/SFM[._-]v?(\d+(?:\.\d+)+)(?:[._-]universal)?\.dmg/i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next if release["draft"] || release["prerelease"]
+  depends_on macos: :ventura
 
-        release["assets"]&.map do |asset|
-          match = asset["browser_download_url"]&.match(regex)
-          next if match.blank?
+  pkg "SFM-#{version}-Universal.pkg"
 
-          match[1]
-        end
-      end.flatten
-    end
-  end
+  uninstall quit:       "io.nekohasekai.sfavt.standalone",
+            login_item: "SFM",
+            pkgutil:    "io.nekohasekai.sfavt.standalone"
 
-  depends_on macos: ">= :ventura"
-
-  app "SFM.app"
-
-  uninstall quit:       "io.nekohasekai.sfa.independent",
-            login_item: "SFM"
-
-  zap trash: "~/Library/Group Containers/group.io.nekohasekai.sfa"
+  zap trash: [
+    "~/Library/Application Scripts/287TTNZF8L.io.nekohasekai.sfavt",
+    "~/Library/Group Containers/287TTNZF8L.io.nekohasekai.sfavt",
+    "~/Library/Preferences/io.nekohasekai.sfavt.standalone.plist",
+  ]
 end

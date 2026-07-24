@@ -2,7 +2,7 @@ cask "bitrix24" do
   # NOTE: "24" is not a version number, but an intrinsic part of the product name
   arch arm: "desktop_arm", intel: "desktop"
 
-  version "20.0.28.90"
+  version "23.0.32.91"
   sha256 :no_check
 
   url "https://dl.bitrix24.com/b24/bitrix24_#{arch}.dmg"
@@ -16,7 +16,7 @@ cask "bitrix24" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Bitrix24.app"
 

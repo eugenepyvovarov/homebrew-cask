@@ -1,6 +1,6 @@
 cask "treesheets" do
-  version "2952"
-  sha256 "a51155282be22ba54180f063a9ddaadd9721d985c86a49cb43e8bda50aef04dd"
+  version "3273"
+  sha256 "4061272b13efde181be3bd9b7ef91888fdcf1e72b9a6f0584eeaebb4d320f3c1"
 
   url "https://github.com/aardappel/treesheets/releases/download/#{version.csv.second || version.csv.first}/TreeSheets-#{version.csv.first}-Darwin.dmg",
       verified: "github.com/aardappel/treesheets/"
@@ -22,6 +22,8 @@ cask "treesheets" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "TreeSheets.app"
 

@@ -1,6 +1,6 @@
 cask "cloudpouch" do
-  version "1.43.0"
-  sha256 "547a3fd36412a4d323e2daa9c92c22dbcac0e792ea2ecf0c7937d5966b5a17de"
+  version "1.49.0"
+  sha256 "407cbb258fedcc170c98175e6e83e23f9674855c9dbf59eebb6378140b713948"
 
   url "https://github.com/CloudPouch/CloudPouch.dev/releases/download/v#{version}/CloudPouch-#{version}-universal-mac.zip",
       verified: "github.com/CloudPouch/CloudPouch.dev/"
@@ -14,6 +14,7 @@ cask "cloudpouch" do
   end
 
   auto_updates true
+  depends_on macos: :monterey
 
   app "CloudPouch.app"
 

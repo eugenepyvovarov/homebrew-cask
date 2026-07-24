@@ -1,15 +1,17 @@
 cask "avogadro" do
   arch arm: "-arm64"
 
-  version "1.102.1"
-  sha256 arm:   "7dc926f4dd31f58bbd1de07e8e64ac4e93b9e63e5427a65fc6137bca21e3c381",
-         intel: "aaa2855cdc824a8ae5412d2a52cb6e8d02bc5a08013bbd6c6ae70877c4aabae9"
+  version "2.0.0"
+  sha256 arm:   "6605ec8934ff3206b60bde53f9a3624faf1bda73aa140ba6fbaa0593378b3a42",
+         intel: "68730783f6d141faaa23bb9972e87fd83d35f6a0173ea7295d675c54a0e5d160"
 
   url "https://github.com/OpenChemistry/avogadrolibs/releases/download/#{version}/Avogadro2-#{version}-Darwin#{arch}.dmg",
       verified: "github.com/OpenChemistry/avogadrolibs/"
   name "Avogadro"
   desc "Molecule editor and visualiser"
   homepage "https://avogadro.cc/"
+
+  depends_on :macos
 
   app "Avogadro2.app"
 

@@ -1,5 +1,5 @@
 cask "boom-3d" do
-  version "2.2"
+  version "2.3.0"
   sha256 :no_check
 
   url "https://dfvk972795zr9.cloudfront.net/Boom3Dmac/webstore/Boom3D.dmg",
@@ -14,6 +14,8 @@ cask "boom-3d" do
       json.dig("data", 0, "attributes", "versions")&.map { |version| version["version"] }
     end
   end
+
+  depends_on macos: :big_sur
 
   app "Boom 3D.app"
 

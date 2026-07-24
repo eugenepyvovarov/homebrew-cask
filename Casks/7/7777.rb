@@ -1,6 +1,6 @@
 cask "7777" do
-  version "1.1.29"
-  sha256 "d48c20cbe0f9336cc27ba531970edb51c5ccb6750c5e3cb722e49e6f4e672430"
+  version "1.2.1"
+  sha256 "1aec08c7148f88b0ba3dac5451414f804d397de8f0c216e41d91d2034271eac9"
 
   url "https://releases.port7777.com/#{version}/macos/7777"
   name "7777"
@@ -13,6 +13,8 @@ cask "7777" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   binary "7777"
 

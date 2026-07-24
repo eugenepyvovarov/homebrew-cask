@@ -1,6 +1,6 @@
 cask "insomnia" do
-  version "12.3.0"
-  sha256 "9d923e46ab4bf5b0155efe273a0f2bc4271d5ab596a8bc0653ce0bba09b83b21"
+  version "13.1.0"
+  sha256 "227a2e5b056c33933b2cd01bc5ca206c950474768433d5ee36968be7dc0cc017"
 
   url "https://github.com/Kong/insomnia/releases/download/core%40#{version}/Insomnia.Core-#{version}.dmg",
       verified: "github.com/Kong/insomnia/"
@@ -22,7 +22,7 @@ cask "insomnia" do
 
   auto_updates true
   conflicts_with cask: "insomnia@alpha"
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Insomnia.app"
 

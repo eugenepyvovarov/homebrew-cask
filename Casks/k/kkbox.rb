@@ -1,19 +1,19 @@
 cask "kkbox" do
-  version "25.12.5"
-  sha256 "b4b19c9da0fb7cab251735ddbbbee4d44649a6583bca0251bc3de1967e6003de"
+  version "26.7.6"
+  sha256 "5bba99423379eadb2666124cf3b3211147d4a0e031e66ece4e763c9b1a777e7c"
 
   url "https://dl-universal-v2.kfs.io/KKBOX-#{version}-universal.dmg",
       verified: "dl-universal-v2.kfs.io/"
   name "KKBOX"
   desc "Music streaming service"
-  homepage "https://www.kkbox.com/"
+  homepage "https://play.kkbox.com/"
 
   livecheck do
     url "https://play.kkbox.com/download/macos"
     strategy :header_match
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "KKBOX.app"
 

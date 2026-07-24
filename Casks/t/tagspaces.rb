@@ -1,11 +1,21 @@
 cask "tagspaces" do
-  arch arm: "arm64", intel: "x64"
+  os macos: "mac", linux: "linux"
 
-  version "6.8.1"
-  sha256 arm:   "91f2b5e6ad2cc964d55bc2dc1771d2b380a7c7d36c98e265df34736ba0ce5dde",
-         intel: "fc357137c63a4d670e9955b61fbc9b78fc0eae5033c8eb13e59aea53da8353d3"
+  on_macos do
+    arch arm: "arm64", intel: "x64"
+  end
+  on_linux do
+    arch arm: "arm64", intel: "x86_64"
+  end
 
-  url "https://github.com/tagspaces/tagspaces/releases/download/v#{version}/tagspaces-mac-#{arch}-#{version}.dmg",
+  version "6.13.12"
+  sha256 arm:          "7e092dd98027c637afbabf0ef709d1e130e401c5b848072e210322688fb0d73e",
+         intel:        "9eebf40eda3fc2e8d042d7a12c09820639ac980587a222738c24bff289b46996",
+         arm64_linux:  "13d163fac83f391280f0970a8e28c2a095dbc7ef70b5aba7f8d6095ac64844aa",
+         x86_64_linux: "f956564c9f5c341321e95d7aa75dd880bbe4d262b3a87e146fcf5869511b8c81"
+
+  url_end = on_system_conditional linux: ".AppImage", macos: ".dmg"
+  url "https://github.com/tagspaces/tagspaces/releases/download/v#{version}/tagspaces-#{os}-#{arch}-#{version}#{url_end}",
       verified: "github.com/tagspaces/tagspaces/"
   name "TagSpaces"
   desc "Offline, open-source, document manager with tagging support"
@@ -16,13 +26,19 @@ cask "tagspaces" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  on_macos do
+    depends_on macos: :monterey
 
-  app "TagSpaces.app"
+    app "TagSpaces.app"
 
-  zap trash: [
-    "~/Library/Application Support/TagSpaces",
-    "~/Library/Preferences/org.tagspaces.desktopapp.plist",
-    "~/Library/Saved Application State/org.tagspaces.desktopapp.savedState",
-  ]
+    zap trash: [
+      "~/Library/Application Support/TagSpaces",
+      "~/Library/Preferences/org.tagspaces.desktopapp.plist",
+      "~/Library/Saved Application State/org.tagspaces.desktopapp.savedState",
+    ]
+  end
+
+  on_linux do
+    app_image "tagspaces-linux-#{arch}-#{version}.AppImage", target: "TagSpaces.AppImage"
+  end
 end

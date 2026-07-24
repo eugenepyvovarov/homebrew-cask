@@ -1,6 +1,6 @@
 cask "xnconvert" do
-  version "1.106.0"
-  sha256 "594a43a3dc1741b4aa5074db9058687903541af1cee5543518e6ae73d003701e"
+  version "1.112.0"
+  sha256 "65162b95a9e8a85c1aa63cea5dd0d4cd2cc94524fc2503ab8855d49cc1ec11e3"
 
   url "https://download.xnview.com/old_versions/XnConvert/XnConvert-#{version}-mac.dmg"
   name "XnSoft XnConvert"
@@ -11,6 +11,8 @@ cask "xnconvert" do
     url "https://download.xnview.com/old_versions/XnConvert/"
     regex(/href=.*XnConvert[._-]v?(\d+(?:\.\d+)+)[._-]mac\.dmg/i)
   end
+
+  depends_on :macos
 
   app "XnConvert.app"
 

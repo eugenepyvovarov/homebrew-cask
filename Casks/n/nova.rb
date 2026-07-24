@@ -1,6 +1,6 @@
 cask "nova" do
-  version "13.3"
-  sha256 "13f154ed44f15a55013de18072196c16c6673fbb38cd14a143c7dab55af575af"
+  version "14"
+  sha256 "9b327a9e16101ba06b46291e4905718b6062df73642ad753cbbe9f213a468104"
 
   url "https://panic.com/download/nova/Nova%20#{version}.zip",
       verified:   "panic.com/download/nova/",
@@ -15,9 +15,12 @@ cask "nova" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :sequoia
 
   app "Nova.app"
+  binary "#{appdir}/Nova.app/Contents/SharedSupport/nova"
+  zsh_completion "#{appdir}/Nova.app/Contents/Resources/nova_completions.txt",
+                 target: "_nova"
 
   uninstall delete: [
     "/Library/LaunchDaemons/com.panic.NovaPrivilegedHelper.plist",

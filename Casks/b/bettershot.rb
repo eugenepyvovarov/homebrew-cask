@@ -1,11 +1,11 @@
 cask "bettershot" do
-  arch arm: "aarch64", intel: "x64"
+  arch arm: "arm64", intel: "x86_64"
 
-  version "0.2.4"
-  sha256 arm:   "c224c544f29d1dcf3d84f5ac930c54597c085102d5ce6ccbe13977eeff18d0eb",
-         intel: "c0c9f324e2df9f40999d810555a448bf1cc01ea99efaea63591ee65710f9b1e1"
+  version "0.3.7"
+  sha256 arm:   "ab68bf51f154e244c1178c8cd4ff38a48a6a9f60156242551374726b6a627ecf",
+         intel: "1ee2aef235c260a55e4f5ccdc738f144e81dcf34da7701dcc2d9eaf85dd3dac5"
 
-  url "https://github.com/KartikLabhshetwar/better-shot/releases/download/v#{version}/bettershot_#{version}_#{arch}.dmg",
+  url "https://github.com/KartikLabhshetwar/better-shot/releases/download/v#{version}/BetterShot-#{version}_#{arch}.dmg",
       verified: "github.com/KartikLabhshetwar/better-shot/"
   name "Better Shot"
   desc "Screen capturing and editing tool"
@@ -17,6 +17,7 @@ cask "bettershot" do
   end
 
   auto_updates true
+  depends_on macos: :sonoma
 
   app "bettershot.app"
 

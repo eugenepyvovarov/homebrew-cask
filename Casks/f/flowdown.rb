@@ -1,6 +1,6 @@
 cask "flowdown" do
-  version "4.5.3"
-  sha256 "a139eafbac57725fa1e594baad8c6da869868fa267b9d1097268e5a8aecd1520"
+  version "4.9.5"
+  sha256 "1fadbf3b8c6a7539283d27c34e18a6e6349d137fa2eedb792cdbe41b71166cd3"
 
   url "https://github.com/Lakr233/FlowDown/releases/download/#{version}/FlowDown-#{version}.zip",
       verified: "github.com/Lakr233/FlowDown/"
@@ -14,7 +14,7 @@ cask "flowdown" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "FlowDown.app"
 

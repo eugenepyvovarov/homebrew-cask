@@ -1,7 +1,7 @@
 cask "termius" do
   arch arm: "-arm64"
 
-  version "9.36.2"
+  version "9.41.1"
   sha256 :no_check
 
   url "https://autoupdate.termius.com/mac#{arch}/Termius.dmg"
@@ -15,6 +15,7 @@ cask "termius" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Termius.app"
 

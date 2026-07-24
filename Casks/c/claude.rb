@@ -1,6 +1,6 @@
 cask "claude" do
-  version "1.1.381,c2a39e9c82f5a4d51f511f53f532afd276312731"
-  sha256 "8305d9096c62c1171f29494e3f1b884aa4f058064523e20ceb6493b80cf08bee"
+  version "1.24012.1,0adcaed55041a881be363f2c4a4729f67a8b27d7"
+  sha256 "de2833b60daabdbf0e9237d9f8f3b8102ef19418e354117b19b321d0a3a12e6f"
 
   url "https://downloads.claude.ai/releases/darwin/universal/#{version.csv.first}/Claude-#{version.csv.second}.zip",
       verified: "downloads.claude.ai/releases/darwin/universal/"
@@ -22,9 +22,14 @@ cask "claude" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Claude.app"
+
+  uninstall quit: [
+    "com.anthropic.claudefordesktop",
+    "com.anthropic.claudefordesktop.helper",
+  ]
 
   zap trash: [
     "~/Library/Application Support/Claude",

@@ -1,9 +1,9 @@
 cask "reqable" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3.0.36"
-  sha256 arm:   "8a515004766a06bb3a25b748840d9739c30cdc25d9141f8495b62c35ce5920ea",
-         intel: "ac3bf404fa31a08153fc4b60b5883cc8f6a89ab671a90ee1bc508d3b61a2fd04"
+  version "3.2.13"
+  sha256 arm:   "69d8e38a283e2efc15175d16773640a20351e193abfcaa2588bbd946367e76ec",
+         intel: "d3638530bdc511b1d3f5207226275d353604f3af870959a7faab9f17f8142703"
 
   url "https://github.com/reqable/reqable-app/releases/download/#{version}/reqable-app-macos-#{arch}.dmg",
       verified: "github.com/reqable/reqable-app/"
@@ -12,19 +12,12 @@ cask "reqable" do
   homepage "https://reqable.com/"
 
   auto_updates true
+  depends_on macos: :big_sur
 
   app "Reqable.app"
 
-  uninstall_postflight do
-    stdout, * = system_command "/usr/bin/security",
-                               args: ["find-certificate", "-a", "-c", "Reqable Proxy", "-Z"],
-                               sudo: true
-    hashes = stdout.lines.grep(/^SHA-256 hash:/) { |l| l.split(":").second.strip }
-    hashes.each do |h|
-      system_command "/usr/bin/security",
-                     args: ["delete-certificate", "-Z", h],
-                     sudo: true
-    end
+  uninstall_postflight_steps do
+    delete_keychain_certificate "Reqable Proxy"
   end
 
   zap trash: [

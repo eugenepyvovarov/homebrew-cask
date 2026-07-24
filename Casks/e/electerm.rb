@@ -1,25 +1,24 @@
 cask "electerm" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.3.198"
-  sha256 arm:   "e8d4012d7f88f4a5e662228edc984a8025573c12237ab36c075b6ca23ac69b46",
-         intel: "6d321d39b1f0173e43d578577e6baa5dc1f0c732982339c0d336381ba4f0fdfa"
+  version "3.15.159"
+  sha256 arm:   "d9c5fac3f4d5899330d74fd7f12f53e0bf5924f0d73c8336d3d4cfb9b7d0d597",
+         intel: "42eaff03a9934765c1177161f4b157e7c4c97838db5cbdff8464dbe38723d342"
 
-  url "https://github.com/electerm/electerm/releases/download/v#{version}/electerm-#{version}-mac-#{arch}.dmg",
-      verified: "github.com/electerm/electerm/"
+  url "https://mirror.electerm.org/https://github.com/electerm/electerm/releases/download/v#{version}/electerm-#{version}-mac-#{arch}.dmg"
   name "electerm"
-  desc "Terminal/ssh/sftp client"
-  homepage "https://electerm.html5beta.com/"
+  desc "Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client"
+  homepage "https://electerm.org/"
 
   livecheck do
-    url "https://electerm.html5beta.com/data/electerm-github-release.json"
+    url "https://electerm.org/data/electerm-github-release.json"
     strategy :json do |json|
       json.dig("release", "tag_name")&.sub("v", "")
     end
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "electerm.app"
   binary "#{appdir}/electerm.app/Contents/MacOS/electerm"

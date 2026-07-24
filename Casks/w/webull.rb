@@ -1,6 +1,6 @@
 cask "webull" do
-  version "9.4.0,9000300027"
-  sha256 "844066b9e0e6fd92381680bed3bd6697dc10e3b36212145546d3abdb595b3347"
+  version "9.13.1,9000300088"
+  sha256 "dd51fdaf21545f57a9a25685d5efa35b9f02a13621f578976d1e0037eeb78e14"
 
   url "https://u1sweb.webullfintech.com/us/Webull%20Desktop_#{version.csv.first}_#{version.csv.second}_global_universalsigned.dmg",
       verified: "u1sweb.webullfintech.com/us/"
@@ -15,6 +15,8 @@ cask "webull" do
       json["upgradeUrl"]&.scan(regex)&.map { |match| match[0].tr("_", ",") }
     end
   end
+
+  depends_on :macos
 
   app "Webull Desktop.app"
 

@@ -1,25 +1,24 @@
 cask "chatwise" do
-  arch arm: "aarch64", intel: "x64"
+  arch arm: "arm64", intel: "x64"
 
-  version "0.9.76"
-  sha256 arm:   "b0a84e0ea08022b526cde008025dc3e64571a7f0c2c0abbf00e14f5a10f53593",
-         intel: "2269acf6d5b9cb299c016c12f9f261dae3f557d7c06d66de5cb366452011c72b"
+  version "26.7.3"
+  sha256 arm:   "285ecdf7225ad044a2d3801c70016d2521e1046134bc576c7c0befd896c8cd86",
+         intel: "c4d39d32aac2f7cee3275436ec6f7242f206ab5c5e11fac583c7eeed3566a1eb"
 
-  url "https://github.com/egoist/chatwise-releases/releases/download/v#{version}/ChatWise_#{version}_#{arch}.dmg",
-      verified: "github.com/egoist/chatwise-releases/"
+  url "https://releases.chatwise.app/#{version}/ChatWise-#{version}-#{arch}.dmg"
   name "ChatWise"
   desc "AI chatbot for many LLMs"
   homepage "https://chatwise.app/"
 
   livecheck do
-    url "https://chatwise.app/api/trpc/getReleases"
+    url "https://releases.chatwise.app/releases"
     strategy :json do |json|
-      json.dig("result", "data")&.map { |item| item["tag"]&.tr("v", "") }
+      json.map { |v| v["version"] }
     end
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :monterey
 
   app "ChatWise.app"
 

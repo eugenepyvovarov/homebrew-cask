@@ -1,6 +1,6 @@
 cask "radio-silence" do
-  version "3.3"
-  sha256 "2dda80432b4d1678124fa2109f99c82fc1ce17177086cc42561b256f6b7d2b86"
+  version "3.4"
+  sha256 "5c21f1da03100e6b024f244fe453f7f6a844ab1137acbc755577ed39e707352c"
 
   url "https://radiosilenceapp.com/downloads/Radio_Silence_#{version}.pkg"
   name "Radio Silence"
@@ -11,6 +11,8 @@ cask "radio-silence" do
     url "https://radiosilenceapp.com/update"
     regex(%r{href=.*?/Radio_Silence_(\d+(?:\.\d+)*)\.pkg}i)
   end
+
+  depends_on :macos
 
   pkg "Radio_Silence_#{version}.pkg"
 

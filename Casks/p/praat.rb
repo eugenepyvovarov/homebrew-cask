@@ -1,6 +1,6 @@
 cask "praat" do
-  version "6.4.55,6455"
-  sha256 "216da6d9b0d9ab14c5a273b7f1c70c89509821632059b2fb4f57ae7e135fa7e7"
+  version "6.6.30,6630"
+  sha256 "79add2420e0ea5e3c482d977f2541c70c9b8a912394217c7bd7c5d7ae02e444d"
 
   url "https://github.com/praat/praat.github.io/releases/download/v#{version.csv.first}/praat#{version.csv.second}_mac.dmg",
       verified: "github.com/praat/praat.github.io/"
@@ -20,6 +20,8 @@ cask "praat" do
       end
     end
   end
+
+  depends_on :macos
 
   app "Praat.app"
   binary "#{appdir}/Praat.app/Contents/MacOS/Praat", target: "praat"

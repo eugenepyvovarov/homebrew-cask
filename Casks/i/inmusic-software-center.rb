@@ -1,6 +1,6 @@
 cask "inmusic-software-center" do
-  version "1.35.0"
-  sha256 "bd6a26741dfbc5430ca0800c18c052ba551f58d41b7a3a9d5f633a282edec508"
+  version "1.39.0"
+  sha256 "5cc6c3333fed27893383df0edba3eb437cb414890cfac1bd0efd66420396c4a3"
 
   url "https://cdn.inmusicbrands.com/Software/SI04/inMusic%20Software%20Center-darwin-universal-#{version}.zip",
       verified: "cdn.inmusicbrands.com/Software/SI04/"
@@ -14,7 +14,7 @@ cask "inmusic-software-center" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "inMusic Software Center.app"
 

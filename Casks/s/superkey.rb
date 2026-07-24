@@ -1,6 +1,6 @@
 cask "superkey" do
-  version "1.59"
-  sha256 "59c85541912acb3cce29a4fec221f7e2b7fa668112a48fa45df6c69dce4b94aa"
+  version "1.66"
+  sha256 "cf2e19a2ed79cf2230efa5a6b1baf19da4278e5e3b834c62043fec65790cc918"
 
   url "https://superkey.app/downloads/Superkey#{version}.dmg"
   name "Superkey"
@@ -13,7 +13,7 @@ cask "superkey" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Superkey.app"
 

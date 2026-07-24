@@ -1,5 +1,5 @@
 cask "white-rabbit" do
-  version "1.2"
+  version "1.5"
   sha256 :no_check
 
   url "https://delivery.kadomaru.app/white-rabbit/White%20Rabbit.dmg"
@@ -13,7 +13,7 @@ cask "white-rabbit" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "White Rabbit.app"
 

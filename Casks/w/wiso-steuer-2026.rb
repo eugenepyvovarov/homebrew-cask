@@ -1,7 +1,7 @@
 cask "wiso-steuer-2026" do
   # NOTE: "2026" is not a version number, but an intrinsic part of the product name
-  version "33.02.2760-RC1,33.02.2760"
-  sha256 "56148ef9c3f29edd6076352fef7c2e4354c9718da32c01308ce4f59e4f2958e9"
+  version "33.09.3580-HF1,33.09.3580"
+  sha256 "130218c9ec44105c9c64280c9bc04a7040aa3c2b43f538351820323da829eaf3"
 
   url "https://update.buhl-data.com/Updates/Steuer/2026/Mac/Files/#{version.csv.first}/SteuerMac2026-#{version.csv.second || version.csv.first.split("-").first}.dmg",
       verified: "update.buhl-data.com/Updates/Steuer/"
@@ -19,6 +19,9 @@ cask "wiso-steuer-2026" do
       (match[1] == match[2]) ? match[1] : "#{match[1]},#{match[2]}"
     end
   end
+
+  auto_updates true
+  depends_on macos: :big_sur
 
   app "SteuerMac 2026.app", target: "WISO Steuer 2026.app"
 

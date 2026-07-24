@@ -1,5 +1,5 @@
 cask "maru-jan" do
-  version "22.13.0,7770"
+  version "22.15.0,7854"
   sha256 :no_check
 
   url "https://www.maru-jan.com/download/Inst_MaruJan_Mac.pkg"
@@ -11,6 +11,8 @@ cask "maru-jan" do
     url :url
     strategy :extract_plist
   end
+
+  depends_on :macos
 
   pkg "Inst_MaruJan_Mac.pkg"
 

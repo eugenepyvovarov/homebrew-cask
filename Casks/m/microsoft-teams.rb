@@ -1,6 +1,6 @@
 cask "microsoft-teams" do
-  version "25290.302.4044.3989"
-  sha256 "0d7f4ed037e0ed8832e1892f0587e0e336abbc0e6376059bfcb58f278ffcab48"
+  version "26183.1901.4874.5228"
+  sha256 "bbbd24cce58e508e879cabe13694dd06d1177e2a4de865ac0a152e17ba253f88"
 
   url "https://statics.teams.cdn.office.net/production-osx/#{version}/MicrosoftTeams.pkg",
       verified: "statics.teams.cdn.office.net/production-osx/"
@@ -21,13 +21,13 @@ cask "microsoft-teams" do
   livecheck do
     url "https://config.teams.microsoft.com/config/v1/MicrosoftTeams/#{version}?environment=prod&audienceGroup=general&teamsRing=general&agent=TeamsBuilds"
     strategy :json do |json|
-      json.dig("BuildSettings", "WebView2", "macOS", "latestVersion")
+      json.dig("BuildSettings", "WebView2Canary", "macOS", "latestVersion")
     end
   end
 
   auto_updates true
   conflicts_with cask: "microsoft-office-businesspro"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :sonoma
 
   pkg "MicrosoftTeams.pkg",
       choices: [

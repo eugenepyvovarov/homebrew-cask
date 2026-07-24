@@ -1,6 +1,6 @@
 cask "elecom-mouse-util" do
-  version "6.1.5"
-  sha256 "0082853137027bc901088a4e0ca02debeea70d758520ff15944ba888826e12df"
+  version "6.3.0"
+  sha256 "331f9d5038aa37896fecfe9396b90879bf5206f119a68976706367eafdb49284"
 
   url "https://dl.elecom.co.jp/support/download/peripheral/mouse/assistant/mac/ELECOM_MA_Setup_#{version}.zip"
   name "ELECOM Mouse Assistant"
@@ -12,7 +12,7 @@ cask "elecom-mouse-util" do
     regex(/ELECOM[._-]MA[._-]Setup[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   pkg "ELECOM_MA_Setup_#{version}.pkg"
 

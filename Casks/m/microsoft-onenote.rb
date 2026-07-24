@@ -1,8 +1,9 @@
 cask "microsoft-onenote" do
-  version "16.105.26011018"
-  sha256 "e258c121f779f22e7c4585ed056ac75282b4fd89d17e1d8004de7e3733d6f366"
+  version "16.111.26071913"
+  sha256 "44a94cdc49279c5c56ac56867ad8d4ede088a21113fe6978ad9a4bdbf8b3ee34"
 
-  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_OneNote_#{version}_Updater.pkg"
+  url "https://res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_OneNote_#{version}_Updater.pkg",
+      verified: "res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/"
   name "Microsoft OneNote"
   desc "Digital note taking app"
   homepage "https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app"
@@ -16,7 +17,7 @@ cask "microsoft-onenote" do
     "microsoft-office",
     "microsoft-office-businesspro",
   ]
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   pkg "Microsoft_OneNote_#{version}_Updater.pkg"
 

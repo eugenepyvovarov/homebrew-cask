@@ -1,9 +1,9 @@
 cask "foks" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.1.5"
-  sha256 arm:   "8ac2071b9380fe5381d9006fbdb6900ea238c65f014b575f46a3b1bf32351107",
-         intel: "054920f2cc5b1a3493f1415cac8e2a4cc185120ab7aba82fd0b086d006274087"
+  version "0.1.8"
+  sha256 arm:   "2286869a3b5e7fde8d6de2beb9b34d7c32d4c87f2cfe3e00687718210aadb54c",
+         intel: "b04d0c025bf317d90f563a391f93b03f0f13be4b1ff98cf228e9a3ea2cf88b14"
 
   url "https://pkgs.foks.pub/stable/darwin/foks-v#{version}-darwin-brew-#{arch}.zip"
   name "FOKS"
@@ -17,11 +17,13 @@ cask "foks" do
     end
   end
 
+  depends_on :macos
+
   binary "foks"
   binary "foks", target: "git-remote-foks"
 
-  postflight do
-    set_permissions "#{staged_path}/foks", "0755"
+  postflight_steps do
+    set_permissions "foks", "0755"
   end
 
   zap trash: [

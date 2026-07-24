@@ -1,6 +1,6 @@
 cask "softube-central" do
-  version "2.1.7"
-  sha256 "c32d058aaae564a5e6ca18b63b12fb3c0d70179b0fb79d455dc5c3ed02b88c3c"
+  version "2.2.0"
+  sha256 "9aa7713784878c62d58c5a90b72e29a8af64f3d148532a960f91466e0ef59b17"
 
   url "https://softubestorage.b-cdn.net/softubecentraldata/softubecentral/Softube%20Central-#{version}-universal.pkg",
       verified: "softubestorage.b-cdn.net/"
@@ -15,6 +15,7 @@ cask "softube-central" do
 
   auto_updates true
   depends_on cask: "ilok-license-manager"
+  depends_on macos: :monterey
 
   pkg "Softube Central-#{version}-universal.pkg"
 

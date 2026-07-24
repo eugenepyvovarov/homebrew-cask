@@ -1,9 +1,9 @@
 cask "chia" do
   arch arm: "-arm64"
 
-  version "2.5.7"
-  sha256 arm:   "173a0a4882bafcf9bfa6cbc51847c8b393364a20f1b2de820759e9fc8ef576aa",
-         intel: "2bbcaa1702ddd10d4bf6741a7ecb083ce4fed2c33f68c3dae734a32927831d99"
+  version "2.7.3"
+  sha256 arm:   "9ad5a80804c7e8d8662aab2182aa7b39e8ebbf3600c2c19e51c17bb439a93c1d",
+         intel: "448aec7ff859c56b6d4b291cb3530ed8a526d3724506d671253929382cb0a737"
 
   url "https://github.com/Chia-Network/chia-blockchain/releases/download/#{version}/Chia-#{version}#{arch}.dmg",
       verified: "github.com/Chia-Network/chia-blockchain/"
@@ -16,7 +16,7 @@ cask "chia" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :sequoia
 
   app "Chia.app"
 

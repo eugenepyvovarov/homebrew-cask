@@ -14,23 +14,34 @@ cask "r-app" do
     pkg "R-#{version}.pkg"
   end
   on_big_sur :or_newer do
-    version "4.5.2"
-    sha256 arm:   "10f542fc6285c2445f3d1ca0083a5500aa3ec3daad9f4adcdb4e25f054a6d98c",
-           intel: "d4aa5394aff1c5f3ee0c5f01d71a81060622bcf89209a87f1b4d2c79b0a24fae"
+    sha256 arm:   "67f6eea4ced4ce48f0a0d4fa3a1cac43d1859a05a88993ee3dff7c52e7edbc4b",
+           intel: "612bb00cb4c627721d6d80b0f5224227c0fcdefb4a5b6c917511480361c16571"
 
-    url "https://cloud.r-project.org/bin/macosx/big-sur-#{arch}/base/R-#{version}-#{arch}.pkg"
+    on_arm do
+      version "4.6.1,sonoma"
+    end
+    on_intel do
+      version "4.6.1,big-sur"
+    end
+
+    url "https://cloud.r-project.org/bin/macosx/#{version.csv.second}-#{arch}/base/R-#{version.csv.first}-#{arch}.pkg"
 
     livecheck do
       url "https://cloud.r-project.org/bin/macosx/"
-      regex(/href=.*?R[._-]v?(\d+(?:\.\d+)*)([._-]#{arch})?\.pkg/i)
+      regex(%r{href=["'].*?/?([^/]+)[._-]#{arch}/base/R[._-]v?(\d+(?:\.\d+)*)(?:[._-]#{arch})?\.pkg}i)
+      strategy :page_match do |page, regex|
+        page.scan(regex).map { |match| "#{match[1]},#{match[0]}" }
+      end
     end
 
-    pkg "R-#{version}-#{arch}.pkg"
+    pkg "R-#{version.csv.first}-#{arch}.pkg"
   end
 
   name "R"
   desc "Environment for statistical computing and graphics"
   homepage "https://www.r-project.org/"
+
+  depends_on :macos
 
   uninstall pkgutil: [
               "org.r-project*",

@@ -1,6 +1,6 @@
 cask "swinsian" do
-  version "3.0.4"
-  sha256 "f516d5debe9129e5fb70b63aa12e443c1b2d972d6d53b6b854c9f0e4dca84eb0"
+  version "3.0.8"
+  sha256 "05739cc1eeeae2a5a7eb6dd0eaaad7cba484c051e5c2a28f157a78f3f7670ad7"
 
   url "https://www.swinsian.com/sparkle/Swinsian_#{version}.zip"
   name "Swinsian"
@@ -13,6 +13,7 @@ cask "swinsian" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Swinsian.app"
 

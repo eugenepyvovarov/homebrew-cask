@@ -1,5 +1,5 @@
 cask "spacelauncher" do
-  version "2.0.12"
+  version "3.4.0"
   sha256 :no_check
 
   url "https://spacelauncherapp.com/download/SpaceLauncher.zip"
@@ -13,7 +13,7 @@ cask "spacelauncher" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "SpaceLauncher.app"
 

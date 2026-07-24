@@ -20,9 +20,9 @@ cask "raycast" do
     end
   end
   on_ventura :or_newer do
-    version "1.104.1"
-    sha256 arm:   "ce6fabedfeee4d43edbcb4d5c957f5f15c000e5b723aeafc94faaabe95ab46ef",
-           intel: "4d03563d0ceb3f0e3785e5becce09e8baacce6c418708cfa3045e89e3f05dd63"
+    version "1.104.23"
+    sha256 arm:   "fdaa2d6f2719998f0548e2f351299130c7f3c2c37fdafd3ca0d7b88ad798da81",
+           intel: "e47e3d3795e3404e786b372c55293a4900fee601ce58e582a519cc14b10c1a87"
 
     livecheck do
       url "https://releases.raycast.com/releases/latest?build=#{arch}"
@@ -40,7 +40,7 @@ cask "raycast" do
   no_autobump! because: :bumped_by_upstream
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Raycast.app"
 

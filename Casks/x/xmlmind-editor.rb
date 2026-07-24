@@ -1,6 +1,6 @@
 cask "xmlmind-editor" do
-  version "11.0.0"
-  sha256 "3b5d107fcb846693a60c7158c5facf01c8c1ce683dcf8e7dc004dab61bd08533"
+  version "11.2.0"
+  sha256 "229bbafb806c3180a6da01030eca62ec6930f250199e4f58c6f9073d3820294b"
 
   url "https://www.xmlmind.com/xmleditor/_download/xxe-perso-#{version.dots_to_underscores}.dmg"
   name "XMLMind XML Editor"
@@ -17,6 +17,8 @@ cask "xmlmind-editor" do
       match[1].tr("_", ".")
     end
   end
+
+  depends_on :macos
 
   app "XMLmind.app"
 

@@ -1,6 +1,6 @@
 cask "bean" do
-  version "3.7.4"
-  sha256 "1ac18506804f2c8e4abcfd3bff7ef4e2dd24f1244ea7645faf4254a5a506a64b"
+  version "3.7.7"
+  sha256 "8a7956e19616d9995e6096d5bd3d467cea194a38df4a28edd3fa0c7d2ab05286"
 
   url "https://www.bean-osx.com/releases/Bean-Install-#{version.dots_to_hyphens}.zip"
   name "Bean"
@@ -13,6 +13,8 @@ cask "bean" do
       xml.elements["//availableVersion"]&.text&.strip
     end
   end
+
+  depends_on :macos
 
   app "Bean-Install-#{version.dots_to_hyphens}/Bean.app"
 

@@ -1,6 +1,6 @@
 cask "fontbase" do
-  version "2.24.9"
-  sha256 "2f225d919af4d31290779488b84192e499f0d344922052e0e84ceab17dbdfe63"
+  version "2026.5.23"
+  sha256 "a83df8f6babc9243618dce027865590c11f108d236e29a636f1d310cb8c05e8a"
 
   url "https://releases.fontba.se/mac/FontBase-#{version}.dmg"
   name "FontBase"
@@ -13,7 +13,7 @@ cask "fontbase" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "FontBase.app"
 

@@ -1,22 +1,21 @@
 cask "screaming-frog-seo-spider" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "23.2"
-  sha256 arm:   "03326e627b796c0d44135a6a215ae01f50f973f8ebd624ab2e0ea52c15b2fc4d",
-         intel: "504d125ed8984fc7653036d15dbb8476649f245ad749cfb25e6caa67c3347347"
+  version "24.3"
+  sha256 arm:   "6487d07b0f16782a85f8080cfbef56a59df8dec9372940f2504b0d95df32fc7b",
+         intel: "0f70c9fccb92edfc4378e66f90dad3078c177ebe239cf7564dab57553a3f2fad"
 
   url "https://download.screamingfrog.co.uk/products/seo-spider/ScreamingFrogSEOSpider-#{version}-#{arch}.dmg"
   name "Screaming Frog SEO Spider"
   desc "SEO site audit tool"
   homepage "https://www.screamingfrog.co.uk/seo-spider/"
 
-  # The homepage links to the latest dmg files but Cloudflare protections
-  # prevent us from fetching it, so it must be checked manually.
   livecheck do
-    skip "Cannot be fetched due to Cloudflare protections"
+    url "https://download.screamingfrog.co.uk/products/seo-spider/getlatestversion.php"
+    regex(/(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Screaming Frog SEO Spider.app"
 

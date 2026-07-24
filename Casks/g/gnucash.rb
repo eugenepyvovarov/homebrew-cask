@@ -1,9 +1,9 @@
 cask "gnucash" do
   arch arm: "Arm", intel: "Intel"
 
-  version "5.14-1"
-  sha256 arm:   "0e424f0a82486852ff14373483c849c6918b49738b7be2fe64c88c7e95080a89",
-         intel: "e1619de5d9307b6ba6d389d2a8b944485643c56d485d435b5f17383986717eb1"
+  version "5.16-3"
+  sha256 arm:   "26ae2e340edf2a58fdb906962cc48eb4ec1cf1a7b5862b72108f9a5401fd664b",
+         intel: "f86d41e70a2d2124395baabc357124e1d04120039c741c18775473bd0deb3705"
 
   url "https://github.com/Gnucash/gnucash/releases/download/#{version.hyphens_to_dots.major_minor}/Gnucash-#{arch}-#{version}.dmg",
       verified: "github.com/Gnucash/gnucash/"
@@ -24,7 +24,7 @@ cask "gnucash" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Gnucash.app"
 

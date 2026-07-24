@@ -1,6 +1,6 @@
 cask "favro" do
-  version "1.0.185"
-  sha256 "73bbef57897f731042e660d88dc00bc0df7569fe06539f5aca083dcb401f90d5"
+  version "1.0.193"
+  sha256 "149517d30e2c8b6f978990613ba09fc4b6805dc98206d99f5786a7a9122cb898"
 
   url "https://download.favro.com/FavroDesktop/macOS/x64/Favro-#{version}.dmg"
   name "Favro"
@@ -14,7 +14,7 @@ cask "favro" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Favro.app"
 

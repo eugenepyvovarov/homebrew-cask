@@ -1,6 +1,6 @@
 cask "aptible" do
-  version "0.26.1,20260113191247,gh-68"
-  sha256 "239d8906aad720cd5d910c2a9d504be791bd67cdc6dbe27514aeb80b5cdb92c0"
+  version "0.26.8,20260608224702,gh-89"
+  sha256 "0abe0783430ea31172064535eb9a79bd3ecbab1f4a4aacb59f257eee251ef554"
 
   url "https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/master/#{version.csv.third}/pkg/aptible-toolbelt-#{version.csv.first}%2B#{version.csv.second}-mac-os-x.10.15.7-1.pkg",
       verified: "omnibus-aptible-toolbelt.s3.amazonaws.com/"
@@ -18,6 +18,7 @@ cask "aptible" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
+  depends_on :macos
   depends_on formula: "libfido2"
 
   pkg "aptible-toolbelt-#{version.csv.first}+#{version.csv.second}-mac-os-x.10.15.7-1.pkg"

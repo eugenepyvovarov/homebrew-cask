@@ -1,9 +1,9 @@
 cask "datadog-agent" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "7.74.1-1"
-  sha256 arm:   "494066294c1526da6f59ad65e3a374bad4bc5a0ddecf048c4403908d78ada200",
-         intel: "21af540bf75cceaeaf26745ec108c0806708727894010f84400d77135e539529"
+  version "7.81.2-1"
+  sha256 arm:   "ed3c87923ed9dc7c711974a8d7e0686cf0e027a7a0679e42340bf4b435f87c63",
+         intel: "a2d1461035b87b6cd8255222a51b0b87908bfba5ef109296631dcba276a154dd"
 
   url "https://dd-agent.s3.amazonaws.com/datadog-agent-#{version}.#{arch}.dmg",
       verified: "dd-agent.s3.amazonaws.com/"
@@ -24,7 +24,7 @@ cask "datadog-agent" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   installer manual: "datadog-agent-#{version}.#{arch}.pkg"
 

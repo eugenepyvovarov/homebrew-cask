@@ -1,6 +1,6 @@
 cask "spacewalker" do
-  version "1.8.1"
-  sha256 "1e768a9b46cd319e68a11ba03bcc4725ecaf68a3c8b5283b0a20becdfcf5c24c"
+  version "1.8.4"
+  sha256 "c9544d26394c3d0f9d0f2499820a0651f61afcbad44bee4518821d9b5f03546e"
 
   url "https://static.viture.dev/external-file/macOS/SpaceWalker-Installer_v#{version}.dmg",
       verified: "static.viture.dev/external-file/macOS/"
@@ -16,7 +16,7 @@ cask "spacewalker" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "SpaceWalker.app"
 

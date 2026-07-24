@@ -1,9 +1,9 @@
 cask "kotlin-native" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "2.3.0"
-  sha256 arm:   "59fcbfe007b86941e419d3fe4ba0c165ea7663b5e753b05ab488db466813d3e2",
-         intel: "d1f43a0b353c6bd08d6e708a277325deb3009047a54cbf5ae4ddf8bfe09c2d34"
+  version "2.4.10"
+  sha256 arm:   "55ded039bb56a69aec9df354a92b42df9e916104e3c53d8d9852d9cc6617ed9d",
+         intel: "7bfda60c2a4ce859fc85011ea2c3229961b1eb40e9cc0b6b85fee885f23973cb"
 
   url "https://github.com/JetBrains/kotlin/releases/download/v#{version}/kotlin-native-prebuilt-macos-#{arch}-#{version}.tar.gz",
       verified: "github.com/JetBrains/kotlin/"
@@ -15,6 +15,8 @@ cask "kotlin-native" do
     url :url
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
+
+  depends_on :macos
 
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/cinterop"
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/generate-platform"

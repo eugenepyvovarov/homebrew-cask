@@ -1,9 +1,9 @@
 cask "nrf-connect" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.2.1"
-  sha256 arm:   "fe03fd1586195c60f3a1eda32fb9dfdd3b081abd6a5f44f02d39a814844aee83",
-         intel: "04b3bd673a97bac572e717cdeb9ae7737ae9dc047d9f022589f0093435783e38"
+  version "5.3.2"
+  sha256 arm:   "f2560327241bb237204780365f612a4f5657972e33eea3fe460fa44ec934f300",
+         intel: "83fcc54158d45db9223dc1cdc1076871e538e0158d653104e212ce0aacb6454c"
 
   url "https://github.com/NordicSemiconductor/pc-nrfconnect-launcher/releases/download/v#{version}/nrfconnect-#{version}-#{arch}.dmg",
       verified: "github.com/NordicSemiconductor/pc-nrfconnect-launcher/"
@@ -17,6 +17,7 @@ cask "nrf-connect" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "nRF Connect for Desktop.app"
 

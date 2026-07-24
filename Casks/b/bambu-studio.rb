@@ -1,6 +1,6 @@
 cask "bambu-studio" do
-  version "02.04.00.70,20251118194119"
-  sha256 "00514330982d1fd96d143e4f8c6ecadb6bf80b39960e61369e1a2cd818159b6f"
+  version "02.07.01.62,20260616174358"
+  sha256 "1e54c25aefc5249d56b63711cf773bed56f14430aafcc34340cd4894aef15896"
 
   url "https://github.com/bambulab/BambuStudio/releases/download/v#{version.csv.third || version.csv.first}/Bambu_Studio_mac-v#{version.csv.first}-#{version.csv.second}.dmg",
       verified: "github.com/bambulab/BambuStudio/"
@@ -21,7 +21,7 @@ cask "bambu-studio" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "BambuStudio.app"
 

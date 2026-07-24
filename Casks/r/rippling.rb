@@ -1,6 +1,6 @@
 cask "rippling" do
-  version "3.6.48"
-  sha256 "58958dd911c53eddf4778186d1c736dbbfacf6381a571b24a7ee0c6c3bbfd672"
+  version "3.6.52"
+  sha256 "862a146a6d95382224c7e6d1a86317c8c61d78d4401c5bc0ee8599918f44cd0d"
 
   url "https://public-assets.ripplingcdn.com/global/hardware-public/device_release/electron-installer/#{version}/macos/Rippling.dmg",
       verified: "public-assets.ripplingcdn.com/"
@@ -13,7 +13,7 @@ cask "rippling" do
     strategy :header_match
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Rippling.app"
 

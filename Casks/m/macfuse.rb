@@ -1,6 +1,6 @@
 cask "macfuse" do
-  version "5.1.3"
-  sha256 "e5f80ff8c3df826e997fb786b35125a0c6a672f4bba2770b0def6ba63ca4ef81"
+  version "5.3.3"
+  sha256 "7a0b7b66c0e7f8932707d1215dc9cf486e178d097ae0a2dcdf17d8530566aa15"
 
   url "https://github.com/macfuse/macfuse/releases/download/macfuse-#{version}/macfuse-#{version}.dmg",
       verified: "github.com/macfuse/macfuse/"
@@ -17,10 +17,11 @@ cask "macfuse" do
 
   auto_updates true
   conflicts_with cask: "macfuse@dev"
+  depends_on :macos
 
   pkg "Extras/macFUSE #{version}.pkg"
 
-  postflight do
+  postflight_steps do
     set_ownership ["/usr/local/include", "/usr/local/lib"]
   end
 

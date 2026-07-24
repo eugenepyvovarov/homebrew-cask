@@ -14,6 +14,7 @@ cask "virtualbox@6" do
     "virtualbox",
     "virtualbox@beta",
   ]
+  depends_on :macos
   depends_on arch: :x86_64
 
   pkg "VirtualBox.pkg",
@@ -40,7 +41,7 @@ cask "virtualbox@6" do
         },
       ]
 
-  postflight do
+  postflight_steps do
     # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew,
     # it creates it itself with incorrect permissions that break other packages.
     # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026

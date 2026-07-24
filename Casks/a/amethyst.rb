@@ -11,8 +11,8 @@ cask "amethyst" do
     end
   end
   on_big_sur :or_newer do
-    version "0.24.1"
-    sha256 "298efde2b5242f7910591a129a73756662c47a78113d482f59477131e49e7759"
+    version "0.24.3"
+    sha256 "442d2b9fe53f8062051dd63e5d01512ed2020c78cbdbe4f93ecf30290a5b0302"
 
     url "https://github.com/ianyh/Amethyst/releases/download/v#{version}/Amethyst.zip",
         verified: "github.com/ianyh/Amethyst/"
@@ -28,6 +28,7 @@ cask "amethyst" do
   homepage "https://ianyh.com/amethyst/"
 
   auto_updates true
+  depends_on :macos
 
   app "Amethyst.app"
 

@@ -1,25 +1,30 @@
 cask "topaz-gigapixel" do
-  version "1.0.7"
-  sha256 "878921d02eeb094050aec588e1e422e9d9481099c0f241ad8630e7d6ceed2c3e"
+  arch arm: "arm64", intel: "x86_64"
+  livecheck_arch = on_arch_conditional intel: "/intel"
 
-  url "https://downloads.topazlabs.com/deploy/TopazGigapixel/#{version}/TopazGigapixel-#{version}.pkg"
+  version "1.3.2"
+  sha256 arm:   "3014a4ef7d8eb1388c9cd6fd019055ccb92d72254b011f790410d5bcdf4c2172",
+         intel: "23d2c99ba07c396b52a57d42306ff517de859a307fbf853f177d3a0f4d91ff5e"
+
+  url "https://downloads.topazlabs.com/deploy/TopazGigapixel/#{version}/TopazGigapixel-#{version}-#{arch}.pkg"
   name "Topaz Gigapixel"
   desc "AI image upscaler"
   homepage "https://www.topazlabs.com/topaz-gigapixel"
 
   livecheck do
-    url "https://topazlabs.com/d/gigapixelstudio/latest/mac/full"
+    url "https://topazlabs.com/d/gigapixelstudio/latest/mac#{livecheck_arch}/full"
+    regex(/TopazGigapixel[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}/i)
     strategy :header_match
   end
 
   auto_updates true
-  depends_on arch:  :arm64,
-             macos: ">= :monterey"
+  depends_on macos: :monterey
 
-  pkg "TopazGigapixel-#{version}.pkg"
+  pkg "TopazGigapixel-#{version}-#{arch}.pkg"
 
   uninstall pkgutil: "com.topazlabs.TopazGigapixel",
             delete:  [
+              "/Applications/Topaz Gigapixel.app",
               "/Library/Application Support/Adobe/Plug-Ins/CC/TopazGigapixel.plugin",
               "/Library/Application Support/Adobe/Plug-Ins/CC/TopazGigapixelApply.plugin",
               "/Library/Application Support/Adobe/Plug-Ins/CC/TopazGigapixelAutomate.plugin",

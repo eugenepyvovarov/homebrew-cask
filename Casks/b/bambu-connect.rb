@@ -1,9 +1,9 @@
 cask "bambu-connect" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.2.0-beta.1"
-  sha256 arm:   "fa9387817ea36be340d6258ca9f1e06af0fbb15ba0ff1ff027fcc7b7d305154a",
-         intel: "21bc467bf6af678f8d5c2f22d27d97d1053b17164f762ea056c62366665d60a1"
+  version "2.5.0-beta.12"
+  sha256 arm:   "067cfef8624e937007839d84375758fe8d2db6dce5ebd5e61ccaa149979b2c7d",
+         intel: "2423e89bbfdb1e1eb82b379cca23f5d01f01164fc2d5c54c646f5bdf4fb756e9"
 
   url "https://public-cdn.bblmw.com/upgrade/bambu-connect/updates/versions/#{version}/bambu-connect-v#{version}-darwin-#{arch}.dmg",
       verified: "public-cdn.bblmw.com/upgrade/bambu-connect/updates/versions/"
@@ -16,7 +16,7 @@ cask "bambu-connect" do
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Bambu Connect.app"
 

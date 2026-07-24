@@ -1,6 +1,6 @@
 cask "osquery" do
-  version "5.21.0"
-  sha256 "94e146f864aec681f7d2b86917c640890d6d4ada25968de117617d75fdfb0006"
+  version "5.23.1"
+  sha256 "9f40cea0358759ab2ee871c577055657e3cc2c7cbe5c1247f764245941178aa6"
 
   url "https://github.com/osquery/osquery/releases/download/#{version}/osquery-#{version}.pkg",
       verified: "github.com/osquery/osquery/"
@@ -12,6 +12,8 @@ cask "osquery" do
     url :url
     strategy :github_latest
   end
+
+  depends_on :macos
 
   pkg "osquery-#{version}.pkg"
 

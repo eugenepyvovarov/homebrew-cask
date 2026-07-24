@@ -1,8 +1,8 @@
 cask "butterkit" do
-  version "1.5.03"
-  sha256 "5ee05153cac4fc8ac7b43975fb20049683cbb7f1515489dfbda9862404a38d07"
+  version "2.1.07"
+  sha256 "d595f7259d92402a7120c46fb31ad3bad4bd6c179b091f9cbe7fd2d2778e60e8"
 
-  url "https://butterkit.app/updates/ButterKit-Direct-#{version}-macOS.zip"
+  url "https://download.butterkit.app/updates/ButterKit-Direct-#{version}-macOS.zip"
   name "ButterKit"
   desc "App Store screenshots editor"
   homepage "https://butterkit.app/"
@@ -13,7 +13,7 @@ cask "butterkit" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :tahoe
 
   app "ButterKit-Direct-#{version}-macOS.app", target: "ButterKit.app"
 

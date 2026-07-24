@@ -1,6 +1,6 @@
 cask "strawberry" do
-  version "0.0.76"
-  sha256 "d8dfeca2f18cf379b2ac2af494d061d9e640332772714bfa1463ecb16b76d5d6"
+  version "0.1.21"
+  sha256 "4059c4327d7c3e6af8356fbb3b5713cd6ef176914009aed9ed33aec3706a5a7b"
 
   url "https://strawberrybucket.com/strawberry-#{version}.dmg",
       verified: "strawberrybucket.com/"
@@ -14,7 +14,7 @@ cask "strawberry" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Strawberry.app"
 

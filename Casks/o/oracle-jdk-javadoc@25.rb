@@ -1,6 +1,6 @@
 cask "oracle-jdk-javadoc@25" do
-  version "25.0.2,10,b1e0dfa218384cb9959bdcb897162d4e"
-  sha256 "3038c898c461c024622460a7a7c6c7fb281f04521916a8ed18ce909eb8f8807f"
+  version "25.0.4,7,eda28b422d69454c901d71e19e354064"
+  sha256 "74673f5f6116845322fe3f3d0929ce6f047a7d992b652da1af5492cb929e9b81"
 
   url "https://download.oracle.com/otn_software/java/jdk/#{version.csv.first}+#{version.csv.second}/#{version.csv.third}/jdk-#{version.csv.first}_doc-all.zip",
       cookies: {
@@ -17,6 +17,8 @@ cask "oracle-jdk-javadoc@25" do
       page.scan(regex).map { |match| "#{match[0]},#{match[1]},#{match[2]}" }
     end
   end
+
+  depends_on :macos
 
   artifact "docs", target: "/Library/Java/JavaVirtualMachines/jdk-#{version.major}.jdk/Contents/Home/docs"
 

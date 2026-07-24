@@ -1,9 +1,9 @@
 cask "passepartout" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3.6.5"
-  sha256 arm:   "d7010e112eb45e6161369749a6c310f26385cffae448d0be6cac2d80be1a2d98",
-         intel: "b95948b3d3c1726c84910fa69b49b52f4308120f1f96286f042af7183032f8e9"
+  version "3.9.2"
+  sha256 arm:   "ec1c2da6ee3064cccaeb5a9e62b7bfb7452b55dbdbbcf0a6a3e27d57c771e534",
+         intel: "ae140433ace86f9482aa6877dbb9312ddaffb1e1ec2c86e5c1543cf258c0fb53"
 
   url "https://github.com/passepartoutvpn/passepartout/releases/download/v#{version}/Passepartout.#{arch}.dmg",
       verified: "github.com/passepartoutvpn/passepartout/"
@@ -16,7 +16,7 @@ cask "passepartout" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Passepartout.app"
 

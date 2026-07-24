@@ -1,8 +1,8 @@
 cask "fmail3" do
-  version "1.4.9"
-  sha256 "19025d7cda77dea820dc403038352ef7a55fac1aa1e1e8a2a8b0ace90bc26cfa"
+  version "2.6.0"
+  sha256 "1ae04208e88b50794581eb8732d79d073fcf241b7652882c8b4a20939245ead4"
 
-  url "https://fmail3.appmac.fr/update/sparkle/FMail3_#{version.no_dots}.zip"
+  url "https://fmail3.appmac.fr/update/sparkle/FMail3-#{version}.dmg"
   name "FMail3"
   desc "Unofficial native application for Fastmail"
   homepage "https://fmail3.appmac.fr/"
@@ -13,7 +13,7 @@ cask "fmail3" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "FMail3.app"
 

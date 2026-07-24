@@ -1,6 +1,6 @@
 cask "hedy" do
-  version "2.13.3"
-  sha256 "5f1c47a3ed9ce934e1113f8aad7d92518a2b43c982a877be1f7c8c241972d1d4"
+  version "3.7.2"
+  sha256 "4e793ed131eb15604ffabed4efd3cbd5b446f8e110b35e6f7a7cd3c09c623784"
 
   url "https://dl.hedy.ai/Hedy-MacOS-#{version}.dmg"
   name "Hedy AI"
@@ -13,7 +13,7 @@ cask "hedy" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Hedy.app"
 

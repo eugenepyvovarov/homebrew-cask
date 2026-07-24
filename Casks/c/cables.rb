@@ -1,9 +1,9 @@
 cask "cables" do
   arch arm: "-arm64", intel: "-x64"
 
-  version "0.9.0"
-  sha256 arm:   "abf15ea487a17218d6dc90a0f8ade3e5efee2b05ab077926e4777400c5a377a9",
-         intel: "da36956dfb9ec8376610faf6ad5405a5adbbecc0033e5eee708da9a9db91f177"
+  version "0.11.0"
+  sha256 arm:   "babf02969076034c1ed67a7d23fe35490d9b6c19eb4a3dbf3c015a18e5c019c5",
+         intel: "d16f7d00d1ad521f22d2df53b941b5030f60c68c0c754a0cfd5c4df5b2c328a0"
 
   url "https://github.com/cables-gl/cables_electron/releases/download/v#{version}/cables-#{version}-mac#{arch}.dmg"
   name "Cables"
@@ -17,7 +17,9 @@ cask "cables" do
     end
   end
 
-  app "cables-#{version}.app"
+  depends_on :macos
+
+  app "cables.app"
 
   zap trash: [
     "~/Library/Application Support/cables_electron",

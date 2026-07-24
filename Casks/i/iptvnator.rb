@@ -1,9 +1,9 @@
 cask "iptvnator" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.18.0"
-  sha256 arm:   "540d9fa8f1d0bcbafb1e9e6455756af8f058a1e3e3ad864a04ee501ac77704c0",
-         intel: "4482f67d2cc10d748e76e109c43aa447e7da4b6e0bc934f8aa1e8cbeec30001f"
+  version "0.22.0"
+  sha256 arm:   "1e30ca02e43f60c1233feb76a6af63b36ac4fe30321c1f642055bb69f47df799",
+         intel: "f0ed47d9eb59333440bdf1c6e4aceadc1d0c3d65fa5f56f0ee712e1531e2941a"
 
   url "https://github.com/4gray/iptvnator/releases/download/v#{version}/iptvnator-#{version}-mac-#{arch}.dmg"
   name "IPTVnator"
@@ -15,9 +15,7 @@ cask "iptvnator" do
     strategy :github_latest
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
-
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "iptvnator.app"
 

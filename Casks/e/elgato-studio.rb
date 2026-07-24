@@ -1,6 +1,6 @@
 cask "elgato-studio" do
-  version "1.0.3.877"
-  sha256 "0e997a4bc5b029b6adfba607264be38f2142d9254e1ae1c68bdd9e71b56bb132"
+  version "1.1.0.1170"
+  sha256 "90eb81b1b06b166f69e309e0861f176e99159555aaccd86993f79f1563e54795"
 
   url "https://edge.elgato.com/egc/macos/estm/release/ElgatoStudio-#{version}.dmg"
   name "Elgato Studio"
@@ -13,7 +13,7 @@ cask "elgato-studio" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Elgato Studio.app"
 

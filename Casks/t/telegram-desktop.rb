@@ -1,6 +1,6 @@
 cask "telegram-desktop" do
-  version "6.4.2"
-  sha256 "a374d407380938a32d1072976ca2008c88d628de1b6d1e4c177a2e4a44ab8754"
+  version "7.0.5"
+  sha256 "97af678a6f61762f3a9bf5d5bbf59bc0d42606d7af411d88cb8c4cd1876da6da"
 
   url "https://updates.tdesktop.com/tmac/tsetup.#{version}.dmg",
       verified: "updates.tdesktop.com/tmac/"
@@ -15,6 +15,7 @@ cask "telegram-desktop" do
 
   auto_updates true
   conflicts_with cask: "telegram-desktop@beta"
+  depends_on :macos
 
   # Renamed to avoid conflict with telegram
   app "Telegram.app", target: "Telegram Desktop.app"

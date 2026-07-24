@@ -1,6 +1,6 @@
 cask "karing" do
-  version "1.2.11.1406"
-  sha256 "820d8dad9dd109f9af9ad55af6074a19bc9be7e43f03341f1a5d85e5d4d82841"
+  version "1.2.22.2502"
+  sha256 "5dbf6d57013dccb57ff8d9b542527ccc63fe9f806ebf299e08517f25c0fe8407"
 
   url "https://github.com/KaringX/karing/releases/download/v#{version}/karing_#{version}_macos_universal.dmg",
       verified: "github.com/KaringX/karing/"
@@ -13,7 +13,7 @@ cask "karing" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Karing.app"
 

@@ -1,19 +1,20 @@
 cask "fly" do
-  version "8.0.0"
-  sha256 "141fcc1607f18e55b655bd7dd3198814238733001347ba814b3e4442dc4d2d7d"
+  arch arm: "arm64", intel: "amd64"
 
-  url "https://github.com/concourse/concourse/releases/download/v#{version}/fly-#{version}-darwin-amd64.tgz"
+  version "8.2.4"
+  sha256 arm:   "7a724647463ff1b8d68bfc8496aecd350a670f6264c989f210286347b45ca1bb",
+         intel: "9638db4ddab788adaa62cd1a68e86e93dc45c26396d2543eacecaa944f8cf572"
+
+  url "https://github.com/concourse/concourse/releases/download/v#{version}/fly-#{version}-darwin-#{arch}.tgz"
   name "fly"
   desc "Official CLI tool for Concourse CI"
   homepage "https://github.com/concourse/concourse"
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
+  depends_on :macos
+
   binary "fly"
 
   # No zap stanza required
-
-  caveats do
-    requires_rosetta
-  end
 end

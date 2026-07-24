@@ -1,9 +1,9 @@
 cask "notion-calendar" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.132.0"
-  sha256 arm:   "2c336bde3e3ab22a9ac2d2cbbe942947200db874a65a3837bf85c25ddb806371",
-         intel: "4b8315cb09b102dfde681837d1d9008cb5769a99ea27891ce15c2fcaefb305a7"
+  version "1.138.0"
+  sha256 arm:   "5cb399fa9596777831aa21f411b7b86f47e6327bd58b32e0d0ba777dab71e3e4",
+         intel: "46c7dedfd89caf6cb9700a315d0fd2f59515c417203b7ac468ad0764e10c2ded"
 
   url "https://calendar-desktop-release.notion-static.com/Notion%20Calendar-darwin-#{arch}-#{version}.zip",
       verified: "calendar-desktop-release.notion-static.com/"
@@ -17,7 +17,7 @@ cask "notion-calendar" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Notion Calendar.app"
 

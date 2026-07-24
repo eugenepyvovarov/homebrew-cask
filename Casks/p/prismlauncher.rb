@@ -22,8 +22,8 @@ cask "prismlauncher" do
     end
   end
   on_monterey :or_newer do
-    version "10.0.2"
-    sha256 "e3b988b56246d733d0d13ee6ad046e5e6def71d017ee381707b1d7f92aff3794"
+    version "11.0.3"
+    sha256 "b8e06ef55ec78fceddfa9f4270b3d4d93f2606b83f70ad6a2c6dde90f2b65408"
 
     url "https://github.com/PrismLauncher/PrismLauncher/releases/download/#{version}/PrismLauncher-macOS-#{version}.zip",
         verified: "github.com/PrismLauncher/PrismLauncher/"
@@ -39,6 +39,7 @@ cask "prismlauncher" do
   homepage "https://prismlauncher.org/"
 
   auto_updates true
+  depends_on :macos
 
   app "Prism Launcher.app"
   binary "#{appdir}/Prism Launcher.app/Contents/MacOS/prismlauncher"

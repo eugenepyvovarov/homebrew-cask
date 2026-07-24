@@ -1,9 +1,9 @@
 cask "mongodb-compass@beta" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.49.0-beta.0"
-  sha256 arm:   "9f818cc2fc325aa9a07663ae74aa4388e82ae88944409b67b8a18a7fc7e5e596",
-         intel: "dc474eb4e1b6d288cf678e01b77cf56f2feebbd09c47172d5005356f9623d482"
+  version "1.49.12-beta.0"
+  sha256 arm:   "08e283e488e9d535c328a70231e61327ddf1c074075c3ba8e6bdd0791d0adf36",
+         intel: "b2470f2fc992121e2780fd2cca6db5fa58f9076c6fb7715c21828a9dac784a00"
 
   url "https://downloads.mongodb.com/compass/beta/mongodb-compass-#{version}-darwin-#{arch}.dmg"
   name "MongoDB Compass"
@@ -23,7 +23,7 @@ cask "mongodb-compass@beta" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "MongoDB Compass Beta.app"
 

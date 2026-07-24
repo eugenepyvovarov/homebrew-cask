@@ -1,6 +1,6 @@
 cask "notepadexe" do
-  version "1.4.1791"
-  sha256 "941d2699decbb80c97bc7efd227685e1ba682ee9ebb112dc5ecd3c08268f02f2"
+  version "1.5.6"
+  sha256 "8dacd2f3a2ea2126aaec0a2cc59e65ede493a49a881dd8834ddf6cceb03f8d51"
 
   url "https://github.com/notepadhq/notepadexe-public/releases/download/#{version}/Notepad.zip",
       verified: "github.com/notepadhq/notepadexe-public/releases/download/"
@@ -9,12 +9,12 @@ cask "notepadexe" do
   homepage "https://notepadexe.com/"
 
   livecheck do
-    url "https://softwareupdate-notepadexe.swift.best/notepadexe-appcast.xml"
+    url "https://softwareupdate.notepadexe.com/appcast/notepadexe-appcast.xml"
     strategy :sparkle, &:short_version
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Notepad.exe.app"
 
@@ -22,6 +22,7 @@ cask "notepadexe" do
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/best.swift.notepad.sfl*",
     "~/Library/Application Support/Notepad.exe",
     "~/Library/Autosave Information/Notepad.exe",
+    "~/Library/Caches/best.swift.Notepad",
     "~/Library/Caches/Notepad.exe",
     "~/Library/Caches/SentryCrash/Notepad.exe",
     "~/Library/HTTPStorages/best.swift.Notepad",

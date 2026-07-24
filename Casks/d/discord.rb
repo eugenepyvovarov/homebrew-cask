@@ -8,8 +8,8 @@ cask "discord" do
     end
   end
   on_big_sur :or_newer do
-    version "0.0.372"
-    sha256 "3e4654ff51b13e67f1ab6a8fff980653ce441583c8d55e368877e8cbdc7d7ca2"
+    version "0.0.402"
+    sha256 "568293a1f65fab2244b5acdac282b88b6f00efd87defd76cc77185d1b9caba64"
 
     livecheck do
       url "https://discord.com/api/download/stable?platform=osx"
@@ -24,8 +24,15 @@ cask "discord" do
   homepage "https://discord.com/"
 
   auto_updates true
+  depends_on :macos
 
   app "Discord.app"
+
+  uninstall quit: [
+    "com.hnc.Discord",
+    "com.hnc.Discord.helper.Plugin",
+    "com.hnc.Discord.helper.Renderer",
+  ]
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.hnc.discord.sfl*",

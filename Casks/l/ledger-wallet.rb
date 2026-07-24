@@ -1,6 +1,6 @@
 cask "ledger-wallet" do
-  version "2.137.0"
-  sha256 "b02af84a4e931829fc3294792aae567fdc23c6be1f675819c765fe82ff30b904"
+  version "4.11.0"
+  sha256 "eab3a90cce02ea85024b811054aedda968f5726daa1e55e23f38f0b28897d2e2"
 
   url "https://download.live.ledger.com/ledger-live-desktop-#{version}-mac.dmg"
   name "Ledger Wallet"
@@ -13,7 +13,7 @@ cask "ledger-wallet" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Ledger Wallet.app"
 

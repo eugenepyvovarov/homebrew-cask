@@ -13,6 +13,10 @@ cask "send-to-kindle" do
     strategy :extract_plist
   end
 
+  disable! date: "2026-06-01", because: :unreachable
+
+  depends_on :macos
+
   pkg "SendToKindleForMac-installer.pkg"
 
   uninstall launchctl: "com.amazon.sendtokindle.launcher",

@@ -1,9 +1,9 @@
 cask "corretto@11" do
   arch arm: "aarch64", intel: "x64"
 
-  version "11.0.29.7.1"
-  sha256 arm:   "233008d87989692ada759ce061269425da636f09d305ec527ef49d0b70cea261",
-         intel: "9aea81e586474f28ef12a2b16ad5b31a82bf4fb3728d534f4fe7012d9b7d17bb"
+  version "11.0.32.9.1"
+  sha256 arm:   "5f0f80bbdf1266097431cd5ba91bce7a19f0b8f392e083f350559192a8fa3fb5",
+         intel: "956d8d1a164fc3269339807f71642eda6225dc369dbd411573d38d6644a300e9"
 
   url "https://corretto.aws/downloads/resources/#{version.sub(/-\d+/, "")}/amazon-corretto-#{version}-macosx-#{arch}.pkg"
   name "AWS Corretto JDK"
@@ -15,6 +15,8 @@ cask "corretto@11" do
     regex(%r{/amazon-corretto-(\d+(?:\.\d+)+)-macosx-#{arch}\.pkg}i)
     strategy :header_match
   end
+
+  depends_on :macos
 
   pkg "amazon-corretto-#{version}-macosx-#{arch}.pkg"
 

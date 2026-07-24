@@ -1,6 +1,6 @@
 cask "repo-prompt" do
-  version "1.5.68"
-  sha256 "7a5d5c69b1941f542cbc267a0010710062a7791d0989e6db3b92c5ea2da10315"
+  version "2.1.33"
+  sha256 "8931ec9450a0146e212f36a3f75a5b950a3d4b4d441746eb4f293ae7ba542c57"
 
   url "https://repoprompt.s3.us-east-2.amazonaws.com/RepoPrompt-#{version}.dmg",
       verified: "repoprompt.s3.us-east-2.amazonaws.com/"
@@ -14,7 +14,7 @@ cask "repo-prompt" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Repo Prompt.app"
 

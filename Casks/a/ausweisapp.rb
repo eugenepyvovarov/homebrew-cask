@@ -1,6 +1,6 @@
 cask "ausweisapp" do
-  version "2.4.0"
-  sha256 "bce7cfeb988a6f50e99c45a3cb66f32b1b4effcb2b1e72bfdbc51363209b24b4"
+  version "2.5.4"
+  sha256 "9472083ecda8cf5f3107eb7e2f0f692d6b20f7e1d7f6ce2327144d11cc6fae05"
 
   url "https://github.com/Governikus/AusweisApp/releases/download/#{version}/AusweisApp-#{version}.dmg",
       verified: "github.com/Governikus/AusweisApp/"
@@ -14,7 +14,7 @@ cask "ausweisapp" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :sonoma
 
   app "AusweisApp.app"
 

@@ -1,6 +1,6 @@
 cask "lightburn" do
-  version "2.0.05"
-  sha256 "913068b92c598c29f1b8784f7fef6f6120aa61a19f44ce1edc5bdb61fae3e09c"
+  version "2.1.03"
+  sha256 "18bf0b4882cd40704593cc60c04e76b0407213826b7c5923e15a602d306a674c"
 
   url "https://release.lightburnsoftware.com/LightBurn/Release/LightBurn-v#{version}/LightBurn.V#{version}.dmg"
   name "LightBurn"
@@ -12,7 +12,7 @@ cask "lightburn" do
     regex(/href=.*?LightBurn[._-]V?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "LightBurn.app"
 

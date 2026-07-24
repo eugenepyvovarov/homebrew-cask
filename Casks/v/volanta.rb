@@ -1,6 +1,6 @@
 cask "volanta" do
-  version "1.15.0,1240645b"
-  sha256 "2ccc4d596b6f9d19cab06b2b02fc0b8afac1b3b8f03a467f9515a57427617419"
+  version "1.18.0,c424ced6"
+  sha256 "2daaec0ad878f4c3905c793003e46ac16cc110efc75f6c18bcb21094c0408673"
 
   url "https://cdn.volanta.app/software/volanta-app/#{version.csv.first}-#{version.csv.second}/volanta-#{version.csv.first}.dmg"
   name "Volanta"
@@ -20,7 +20,7 @@ cask "volanta" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Volanta.app"
 

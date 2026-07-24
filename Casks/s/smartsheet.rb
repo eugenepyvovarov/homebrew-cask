@@ -1,5 +1,5 @@
 cask "smartsheet" do
-  version "1.0.53"
+  version "1.0.54"
   sha256 :no_check
 
   url "https://builds.desktopapp.smartsheet.com/public/darwin/Smartsheet-setup.dmg"
@@ -13,7 +13,7 @@ cask "smartsheet" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Smartsheet.app"
 

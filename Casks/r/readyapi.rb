@@ -1,9 +1,9 @@
 cask "readyapi" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.64.0"
-  sha256 arm:   "e4dfb11620d95c6ab1c985fb89d64e1ca44dddebad6cba850de28ba8aac53f29",
-         intel: "9af43c2f6849cac8a4b7348f4d42ab40ec00f70983dacaa90a7b1112604c8dfd"
+  version "4.1.0"
+  sha256 arm:   "c8eff4947e459aee32a1200d4055469f4968a0db5cf2e3771dc452d6bc90f84f",
+         intel: "a81b33ac70bab1b176d2bdca759446def5254ecb1012c0c03a7c7d721b1aa208"
 
   url "https://dl.eviware.com/ready-api/#{version}/ReadyAPI-#{arch}-#{version}.dmg",
       verified: "dl.eviware.com/ready-api/"
@@ -16,17 +16,12 @@ cask "readyapi" do
     regex(/>\s*Ready(?:!\s+)?API\s+v?(\d+(?:\.\d+)+)/i)
   end
 
-  installer script: {
-    executable: "ReadyAPI #{version} Installer.app/Contents/MacOS/JavaApplicationStub",
-    args:       ["-q"],
-  }
+  depends_on :macos
 
-  uninstall delete: [
-    "/Applications/ReadyAPI-#{version}.app",
-    "~/Desktop/ReadyAPI #{version}",
-  ]
+  app "ReadyAPI-#{version}.app"
 
   zap trash: [
+    "~/.readyapi",
     "~/Library/Application Support/ReadyAPI-#{version}",
     "~/Library/Preferences/com.smartbear.ready.plist",
   ]

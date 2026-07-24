@@ -6,14 +6,14 @@ cask "brilliant" do
       verified: "s3.eu-north-1.amazonaws.com/brilliant.design/"
   name "Brilliant"
   desc "Design and communication tool"
-  homepage "https://try-brilliant.com/"
+  homepage "https://brilliant.design/"
 
   livecheck do
     skip "No version information available"
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Brilliant.Design.app"
 

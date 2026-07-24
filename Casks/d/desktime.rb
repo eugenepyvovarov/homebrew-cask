@@ -1,9 +1,9 @@
 cask "desktime" do
   arch arm: "arm64", intel: "x64"
 
-  version "6.1.3"
-  sha256 arm:   "0a18b52931598f6bb18bc5ecd81bdaf6a1588117d068cb695f03dea14bba3520",
-         intel: "552ebf0718786a81e65eaa13361ce003d978a63e3b4099513fe444420ab6b599"
+  version "6.2.1"
+  sha256 arm:   "2ae730a79aa604272875bbf2476c05b6157a1e1803223263d15a58550456dc42",
+         intel: "ccfe2a8089d68641e94c030fe72471d3e4e22fb688f996b378a1b8a03c17d511"
 
   url "https://desktime.com/storage/updates/electro-builder-auto-updater/stable/DeskTime-#{version}-#{arch}.dmg"
   name "DeskTime"
@@ -16,6 +16,7 @@ cask "desktime" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "DeskTime.app"
 

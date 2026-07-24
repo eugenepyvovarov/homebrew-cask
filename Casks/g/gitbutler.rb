@@ -1,9 +1,9 @@
 cask "gitbutler" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.18.4,2771"
-  sha256 arm:   "58170cb189c5a8616e24d5d49c060fbc315d32c4c6bce918c38996ac00b34b39",
-         intel: "df84d4424b182ddb77ae1d35cf9f9484a53570057e5737447b98aa9c5670f010"
+  version "0.21.2,3163"
+  sha256 arm:   "f2a42fad87dbb222ea40964107c5105ea6d9ae156f5443a883559a3124273da0",
+         intel: "33b7669b89d21cfc1fb29faf58e5804c072facc1ae0505e2954f8c3698da09a7"
 
   url "https://releases.gitbutler.com/releases/release/#{version.csv.first}-#{version.csv.second}/macos/#{arch}/GitButler.app.tar.gz"
   name "GitButler"
@@ -22,6 +22,7 @@ cask "gitbutler" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "GitButler.app"
   binary "#{appdir}/GitButler.app/Contents/MacOS/gitbutler-tauri", target: "but"

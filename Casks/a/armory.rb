@@ -8,7 +8,14 @@ cask "armory" do
   desc "Python-Based Bitcoin Software"
   homepage "https://btcarmory.com/"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "Armory.app"
 

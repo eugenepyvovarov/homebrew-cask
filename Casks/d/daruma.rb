@@ -1,5 +1,5 @@
 cask "daruma" do
-  version "1.2.4"
+  version "1.2.6"
   sha256 :no_check
 
   url "https://delivery.kadomaru.app/daruma/Daruma.dmg"
@@ -13,7 +13,7 @@ cask "daruma" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Daruma.app"
 

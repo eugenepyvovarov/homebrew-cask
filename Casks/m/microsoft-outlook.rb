@@ -22,18 +22,17 @@ cask "microsoft-outlook" do
     end
   end
   on_sonoma :or_newer do
-    version "16.105.26011018"
-    sha256 "c1c4df00a51e60ab5ae016a064ce54b04cf34bdd8fc445501975a9553aed3655"
+    version "16.111.26071325"
+    sha256 "16207f42ed65c4aa74e17647e9a8dd09f3586f58a3b82fcafd466acd95c47a4e"
 
     livecheck do
-      url "https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/0409OPIM2019.xml"
-      strategy :xml do |xml|
-        xml.get_elements("//key[text()='Update Version']").map { |item| item.next_element&.text&.strip }
-      end
+      url "https://go.microsoft.com/fwlink/p/?linkid=525137"
+      strategy :header_match
     end
   end
 
-  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Outlook_#{version}_Installer.pkg"
+  url "https://res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Outlook_#{version}_Installer.pkg",
+      verified: "res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/"
   name "Microsoft Outlook"
   desc "Email client"
   homepage "https://www.microsoft.com/en-us/microsoft-365/outlook/outlook-for-business"
@@ -43,6 +42,7 @@ cask "microsoft-outlook" do
     "microsoft-office",
     "microsoft-office-businesspro",
   ]
+  depends_on :macos
 
   pkg "Microsoft_Outlook_#{version}_Installer.pkg",
       choices: [

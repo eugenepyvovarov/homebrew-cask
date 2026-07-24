@@ -1,5 +1,5 @@
 cask "soundsource" do
-  version "6.0.2"
+  version "6.1.0"
   sha256 :no_check
 
   url "https://cdn.rogueamoeba.com/soundsource/download/SoundSource.zip"
@@ -14,7 +14,7 @@ cask "soundsource" do
 
   auto_updates true
   conflicts_with cask: "soundsource@test"
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "SoundSource.app"
 

@@ -1,6 +1,6 @@
 cask "zoc" do
-  version "9.02.5"
-  sha256 "d83a6349f8ec6c99d9500b03b876a4762e636c233e54e6e9238e1ea179b70afe"
+  version "9.04.0"
+  sha256 "44bfa484e263a3733f048c9174e972f59936584c5e2a28817f8194633be83824"
 
   url "https://www.emtec.com/downloads/zoc/zoc#{version.no_dots}.dmg"
   name "ZOC"
@@ -11,6 +11,8 @@ cask "zoc" do
     url "https://www.emtec.com/downloads/zoc/zoc_changes.txt"
     regex(/\*\s*VERSION\s*(\d+(?:\.\d+)+)/i)
   end
+
+  depends_on :macos
 
   app "zoc#{version.major}.app"
 

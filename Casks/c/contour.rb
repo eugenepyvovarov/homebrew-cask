@@ -29,7 +29,9 @@ cask "contour" do
     end
   end
 
-  depends_on macos: ">= :sonoma"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: :sonoma
 
   app "contour.app"
   binary "#{appdir}/contour.app/Contents/MacOS/contour"

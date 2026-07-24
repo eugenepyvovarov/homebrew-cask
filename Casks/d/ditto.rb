@@ -1,6 +1,6 @@
 cask "ditto" do
-  version "1.11.8"
-  sha256 "c9f22f136df2354d259b54359289bb539226fec16176821e7c9106b4bd745d80"
+  version "1.11.10"
+  sha256 "9882c093c86f12743b6fd1e8cf980f2a74d1ee5e887cd77c8ed7ca6d2e0ef9fb"
 
   url "https://download.airsquirrels.com/Ditto/App/Mac/Ditto-#{version}.dmg"
   name "Ditto"
@@ -13,6 +13,7 @@ cask "ditto" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Ditto.app"
 

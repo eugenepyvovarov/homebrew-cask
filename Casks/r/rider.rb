@@ -1,9 +1,9 @@
 cask "rider" do
   arch arm: "-aarch64"
 
-  version "2025.3.1,253.29346.144"
-  sha256 arm:   "d7080323412900f5d37270233e5a4c773011c6853d6031ce1f5e635c77511426",
-         intel: "addd816dbdf130e2ef5e7dc184d7a8087f8bfbf6eba4e32ead2452069a49607d"
+  version "2026.2,262.8665.328"
+  sha256 arm:   "63e8574d332a1c71a6e6926143cc9ea6666603392217bca53b1ae839af411ba4",
+         intel: "662d260dbb985a4b03fad75449e11722e95c3cc9ac480a644838a1f8f7b6e5c3"
 
   url "https://download.jetbrains.com/rider/JetBrains.Rider-#{version.csv.first}#{arch}.dmg"
   name "JetBrains Rider"
@@ -24,6 +24,7 @@ cask "rider" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Rider.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

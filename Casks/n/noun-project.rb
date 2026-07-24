@@ -10,10 +10,12 @@ cask "noun-project" do
 
   livecheck do
     url :url
-    strategy :extract_plist do |item|
-      item["com.thenounproject.Noun-Project"]&.short_version
+    strategy :extract_plist do |items|
+      items["com.thenounproject.Noun-Project"]&.short_version
     end
   end
+
+  depends_on :macos
 
   app "Noun Project.app"
 

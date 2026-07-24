@@ -1,6 +1,6 @@
 cask "iina+" do
-  version "0.8.17"
-  sha256 "f49c0dc464e618ac3e0c0bed4f8e23b84139afe5eaf37458d323eabe864fd25a"
+  version "0.8.21"
+  sha256 "570e93a839afbae8762eea751fe74fed6db363c05da28abcc1ff072150c7c592"
 
   url "https://github.com/xjbeta/iina-plus/releases/download/#{version}/IINA+.#{version}.dmg"
   name "IINA+"
@@ -10,7 +10,7 @@ cask "iina+" do
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "IINA+.app"
 

@@ -1,9 +1,9 @@
 cask "dotnet-runtime" do
   arch arm: "arm64", intel: "x64"
 
-  version "10.0.2"
-  sha256 arm:   "329593d3703036eaa9c766e426f1dc36e45ecb4537e24e6fc2c28329226e2830",
-         intel: "678c5b67fc7c79b847d62a44ce7ec1d71316bf7ddd595fa6e1cdaf8068287bdd"
+  version "10.0.10"
+  sha256 arm:   "238990637faf831a5a2e21eda41810bc7d2a31b55afcb722262d27f4956cd6c8",
+         intel: "1def9abdcd19a58ada87fa2452e42242ea233ccc048861845f54f606d23442a5"
 
   url "https://builds.dotnet.microsoft.com/dotnet/Runtime/#{version}/dotnet-runtime-#{version}-osx-#{arch}.pkg"
   name ".Net Runtime"
@@ -31,7 +31,7 @@ cask "dotnet-runtime" do
     "dotnet-sdk",
     "dotnet-sdk@preview",
   ]
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   pkg "dotnet-runtime-#{version.csv.first}-osx-#{arch}.pkg"
   binary "/usr/local/share/dotnet/dotnet"

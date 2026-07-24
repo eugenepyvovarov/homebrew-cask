@@ -1,6 +1,6 @@
 cask "wechat" do
-  version "4.1.6.47,33480"
-  sha256 "a0468c8b53bacdd088c4f1d0b7ad5060b40ca8ef860053b977ecc752e25493d5"
+  version "4.1.12.25,269337"
+  sha256 "1048b2374c9507ce557c831f0df425cd04af5116bde99a522827741f6cf4fa8f"
 
   url "https://dldir1.qq.com/weixin/Universal/Mac/xWeChatMac_universal_#{version.csv.first}_#{version.csv.second}.dmg"
   name "WeChat for Mac"
@@ -24,7 +24,7 @@ cask "wechat" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "WeChat.app"
 

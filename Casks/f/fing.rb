@@ -1,16 +1,31 @@
 cask "fing" do
-  version "3.9.3"
-  sha256 "77df6bab228e60dc4d14a690b2b97d46041dd047d1c86863fd5ce4fdcee59643"
+  on_arm do
+    version "4.0.3"
+    sha256 "a82600762d494916fe0caed28621123d26f56bf5e369c76b2460661919c3d1bb"
 
-  url "https://get.fing.com/fing-desktop-releases/mac/Fing-#{version}.dmg"
+    url "https://get.fing.com/fing-desktop-releases/mac/Fing-#{version}-mac.zip"
+
+    livecheck do
+      url "https://get.fing.com/fing-desktop-releases/mac/latest-mac.yml"
+      strategy :electron_builder
+    end
+  end
+  on_intel do
+    version "3.10.1"
+    sha256 "f0ccdf3b1a57117dc08e4e6970aded3f453eae75d1e6d8b28aa7a590381eeacf"
+
+    url "https://get.fing.com/fing-desktop-releases/mac/Fing-#{version}.dmg"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+
   name "Fing Desktop"
   desc "Network scanner"
-  homepage "https://www.fing.com/products/fing-desktop"
+  homepage "https://www.fing.com/desktop/"
 
-  livecheck do
-    url "https://get.fing.com/fing-desktop-releases/mac/latest-mac.yml"
-    strategy :electron_builder
-  end
+  depends_on :macos
 
   app "Fing.app"
 
@@ -22,8 +37,4 @@ cask "fing" do
     "~/Library/Preferences/com.fing.app.plist",
     "~/Library/Saved Application State/com.fing.app.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

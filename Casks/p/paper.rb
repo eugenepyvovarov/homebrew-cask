@@ -1,20 +1,19 @@
 cask "paper" do
-  version "5.3.0"
-  sha256 "475c6938114873fc527486e8c116dbba34856420dcdcfbb767c74e9c8f16c3c6"
+  version "5.5.1"
+  sha256 "357dc25c2c3e40c9385c5af3b725fe617f222ac9fcccb92003f0930f14187434"
 
-  url "https://s3.nxn.fun/dl/paper-v#{version}.dmg",
-      verified: "s3.nxn.fun/"
+  url "https://www.paperapp.net/app/pap.er_v#{version}.dmg"
   name "pap.er"
   desc "Pap.er, 4K 5K HD Wallpaper Application"
-  homepage "https://paper.photos/"
+  homepage "https://www.paperapp.net/"
 
   livecheck do
     url :homepage
-    regex(/paper[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    regex(/pap\.?er[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "pap.er.app"
 

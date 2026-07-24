@@ -1,6 +1,6 @@
 cask "squirrelsql" do
-  version "5.0.0"
-  sha256 "e88ac67e109f7201f2a674746a03402f1b310c5770a282e76c84ef4eb3040350"
+  version "5.1.0"
+  sha256 "f7f46612844f3988c3f0a56f86aefb974430ca60cf80da8a5b06c8f2a4a99420"
 
   url "https://downloads.sourceforge.net/squirrel-sql/1-stable/#{version}/squirrel-sql-#{version}-MACOSX-install.jar",
       verified: "sourceforge.net/squirrel-sql/"
@@ -8,6 +8,7 @@ cask "squirrelsql" do
   desc "Graphical Java program for viewing the structure of a JDBC compliant database"
   homepage "https://squirrel-sql.sourceforge.io/"
 
+  depends_on :macos
   container type: :naked
 
   installoptions = "#{staged_path}/install-options.xml"

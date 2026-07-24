@@ -1,6 +1,6 @@
 cask "dayflow" do
-  version "1.5.4"
-  sha256 "63f4561121e769a4268fa4528ac7c58aa5f886ff5beae7fcc68310c4174db784"
+  version "2.0.3"
+  sha256 "dc502be08caa3f3588e860b62dfa9a82eb5eab86bcc6ea0cf841f92f7989a87a"
 
   url "https://github.com/JerryZLiu/Dayflow/releases/download/v#{version}/Dayflow.dmg"
   name "Dayflow"
@@ -8,12 +8,12 @@ cask "dayflow" do
   homepage "https://github.com/JerryZLiu/Dayflow"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://jerryzliu.github.io/Dayflow/appcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Dayflow.app"
 

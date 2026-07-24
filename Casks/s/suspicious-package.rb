@@ -16,7 +16,7 @@ cask "suspicious-package" do
     end
   end
   on_monterey :or_newer do
-    version "4.6,1311"
+    version "4.6.2,1311.4"
     sha256 :no_check
 
     url "https://www.mothersruin.com/software/downloads/SuspiciousPackage.dmg"
@@ -36,6 +36,8 @@ cask "suspicious-package" do
   name "Suspicious Package"
   desc "Application for inspecting installer packages"
   homepage "https://www.mothersruin.com/software/SuspiciousPackage/"
+
+  depends_on :macos
 
   app "Suspicious Package.app"
   binary "#{appdir}/Suspicious Package.app/Contents/SharedSupport/spkg"

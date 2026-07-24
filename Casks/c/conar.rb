@@ -1,9 +1,9 @@
 cask "conar" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.26.1,260119t8biwc2dm"
-  sha256 arm:   "4c687ed4904ed902eee9fb6da019f54af9478e1807190ed908d57d5929ce399f",
-         intel: "3057b8013bcbd4fe89ae2fac94d09f6dddbda7a73597507b1e925c66af410d17"
+  version "0.32.0,260626zr7mzvf8f"
+  sha256 arm:   "1c024b63b492d8866b3c060a3a0be0d77e5e364b2e79cd033af9a99fe72cd863",
+         intel: "1330a223ddb308073a91bc84fbf8e7dde95aa8cfcc2bb21412d6556c0f4f0a62"
 
   url "https://download.todesktop.com/25112796k32u7/Conar%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}-mac.zip",
       verified: "download.todesktop.com/25112796k32u7/"
@@ -25,7 +25,7 @@ cask "conar" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Conar.app"
 

@@ -1,19 +1,20 @@
 cask "alt-tab" do
-  version "8.2.0"
-  sha256 "b58a5367542f06b6b990884a8523be626fad13bdbd219e347b6582fa336ccfc8"
+  version "11.4.3"
+  sha256 "f6471d3cfc3ca70986ab55fe2dd334da5ad629d517eaf8eb3449fc0e7123eddd"
 
   url "https://github.com/lwouis/alt-tab-macos/releases/download/v#{version}/AltTab-#{version}.zip",
       verified: "github.com/lwouis/alt-tab-macos/"
   name "AltTab"
   desc "Enable Windows-like alt-tab"
-  homepage "https://alt-tab-macos.netlify.app/"
+  homepage "https://alt-tab.app/"
 
   livecheck do
-    url "https://raw.githubusercontent.com/lwouis/alt-tab-macos/master/appcast.xml"
+    url "https://alt-tab.app/appcast.xml"
     strategy :sparkle
   end
 
   auto_updates true
+  depends_on :macos
 
   app "AltTab.app"
 
@@ -22,9 +23,13 @@ cask "alt-tab" do
   zap trash: [
     "~/Library/Application Support/com.lwouis.alt-tab-macos",
     "~/Library/Caches/com.lwouis.alt-tab-macos",
+    "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.lwouis.alt-tab-macos",
     "~/Library/Cookies/com.lwouis.alt-tab-macos.binarycookies",
     "~/Library/HTTPStorages/com.lwouis.alt-tab-macos",
+    "~/Library/HTTPStorages/com.lwouis.alt-tab-macos.binarycookies",
     "~/Library/LaunchAgents/com.lwouis.alt-tab-macos.plist",
+    "~/Library/Preferences/com.lwouis.alt-tab-macos.license.plist",
     "~/Library/Preferences/com.lwouis.alt-tab-macos.plist",
+    "~/Library/Preferences/com.lwouis.alt-tab-macos.usage.plist",
   ]
 end

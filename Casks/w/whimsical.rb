@@ -1,9 +1,9 @@
 cask "whimsical" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.4.3,260105wfy1puxcq"
-  sha256 arm:   "a22e52f4fa814f8f8fa98b4c59c47343b5f482d41cc6eb50073d777cf2acaa53",
-         intel: "da8563b9411d14c7e41951b9085c4dadc1d167875b5cb3ae2b8f614c6b3f6141"
+  version "0.5.4,260715rbz8m950p"
+  sha256 arm:   "07713e04569d4b8812f0e048031a7365308eb0323e5ba5a4128ae522f76b3eef",
+         intel: "a046d7edf42e0e0d238e3ee80c5ae3cb9a4ea6d190959b53c48ce1afe94a06d0"
 
   url "https://download.todesktop.com/2402209z4j37b73/Whimsical%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}-mac.zip",
       verified: "download.todesktop.com/2402209z4j37b73/"
@@ -25,7 +25,7 @@ cask "whimsical" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Whimsical.app"
 

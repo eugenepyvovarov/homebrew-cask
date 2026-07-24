@@ -1,9 +1,9 @@
 cask "zalo" do
-  version "26.1.10"
-  sha256 "2ea311592321eeeec5c575a0e1a822438d4199afc8b4a0bcc367aa4d91be9c62"
+  version "26.7.10"
+  sha256 "945ba046144ab16655516572eb787628044ba3b2b6f1cbd9cdf30b560cb8b3d6"
 
-  url "https://res-zaloapp-aka.zdn.vn/mac/ZaloSetup-universal-#{version}.dmg",
-      verified: "res-zaloapp-aka.zdn.vn/mac/"
+  url "https://res-download-pc.zadn.vn/mac/ZaloSetup-universal-#{version}.dmg",
+      verified: "res-download-pc.zadn.vn/mac/"
   name "Zalo"
   desc "Messaging and calling application"
   homepage "https://zalo.me/"
@@ -13,7 +13,7 @@ cask "zalo" do
     strategy :header_match
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Zalo.app"
 

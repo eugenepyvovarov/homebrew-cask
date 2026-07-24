@@ -1,10 +1,10 @@
 cask "monal" do
-  version "1072"
-  sha256 "e1c1e9715592ef76f8d309402d2ed896ecbb02123099c0ee93eca980fd61dfc7"
+  version "1092"
+  sha256 "559da3f9bba9a6c50d3a39ff0c38b01bf86a8e7da0e11eee323cc0e835aa0764"
 
   url "https://downloads.monal-im.org/monal-im/stable/macOS/Monal-#{version}.zip"
   name "Monal"
-  desc "Tool to securely connect to chat servers"
+  desc "XMPP chat client"
   homepage "https://monal-im.org/"
 
   livecheck do
@@ -13,7 +13,7 @@ cask "monal" do
   end
 
   conflicts_with cask: "monal@beta"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Monal.app"
 

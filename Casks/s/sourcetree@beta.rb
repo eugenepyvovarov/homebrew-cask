@@ -1,6 +1,6 @@
 cask "sourcetree@beta" do
-  version "4.2.16b26,306"
-  sha256 "8cf6a99e262661d51b64eb0fde377a433c13dfaf7c742734232560468d4d3ea4"
+  version "4.2.19b29,314"
+  sha256 "26298f8705d002c91cbf1f807166786cbf6c09d6c9c1b989efe8411ded54f1c1"
 
   url "https://product-downloads.atlassian.com/software/sourcetree/beta/Sourcetree_#{version.csv.first}_#{version.csv.second}.zip",
       verified: "product-downloads.atlassian.com/software/sourcetree/beta/"
@@ -12,6 +12,8 @@ cask "sourcetree@beta" do
     url "https://product-downloads.atlassian.com/software/sourcetree/Appcast/SparkleAppcastBeta.xml"
     strategy :sparkle
   end
+
+  depends_on :macos
 
   app "Sourcetree-Beta.app"
   binary "#{appdir}/Sourcetree-Beta.app/Contents/Resources/stree", target: "stree-beta"

@@ -22,8 +22,8 @@ cask "microsoft-word" do
     end
   end
   on_sonoma :or_newer do
-    version "16.105.26011018"
-    sha256 "ceae56a1772b4e314470edc3d17edd7692a403d40663acc25b2f5b3f5a9f13a7"
+    version "16.111.26071913"
+    sha256 "db5c3c4383f9ba66403e398923f6241951ba358e1c25391692a8e8051a9fc11f"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525134"
@@ -31,7 +31,8 @@ cask "microsoft-word" do
     end
   end
 
-  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_#{version}_Installer.pkg"
+  url "https://res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_#{version}_Installer.pkg",
+      verified: "res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/"
   name "Microsoft Word"
   desc "Word processor"
   homepage "https://www.microsoft.com/en-US/microsoft-365/word"
@@ -41,6 +42,7 @@ cask "microsoft-word" do
     "microsoft-office",
     "microsoft-office-businesspro",
   ]
+  depends_on :macos
 
   pkg "Microsoft_Word_#{version}_Installer.pkg",
       choices: [

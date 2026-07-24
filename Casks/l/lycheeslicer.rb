@@ -1,6 +1,6 @@
 cask "lycheeslicer" do
-  version "7.5.5"
-  sha256 "df09b8615d5f0cd94725479e1c0de790ad91867caa916b40116f9731f3c21fa3"
+  version "7.6.6"
+  sha256 "70fd494199795476e5c5feeaa9822e0253e13d93cdade2dd45d0a7ca14cf15c0"
 
   url "https://mango-lychee.nyc3.cdn.digitaloceanspaces.com/LycheeSlicer-#{version}.dmg",
       verified: "mango-lychee.nyc3.cdn.digitaloceanspaces.com/"
@@ -12,6 +12,8 @@ cask "lycheeslicer" do
     url "https://mango-lychee.nyc3.digitaloceanspaces.com/latest-mac.yml"
     strategy :electron_builder
   end
+
+  depends_on :macos
 
   app "LycheeSlicer.app"
 

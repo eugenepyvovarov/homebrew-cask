@@ -1,9 +1,9 @@
 cask "wpsoffice-cn" do
   arch arm: "arm64", intel: "x64"
 
-  version "12.1.24709"
-  sha256 arm:   "3ddac505b527318ac7fc00e92c538af310f03307e5fbcafd39c506b4574e97d6",
-         intel: "12b3015a906de10b02e116449888d9af39f5474c6c5ed04736d3fb3298474abe"
+  version "12.1.26050"
+  sha256 arm:   "a7723ebcdb27fd54acacd3490b0ae9c058896ef394190fa83ae202687b0ca435",
+         intel: "bb83d9d1b9fa2e46bf14a2fa06c31a234deac1a4f979ce98db890e3ed74a9a5a"
 
   url "https://package.mac.wpscdn.cn/mac_wps_pkg/#{version}/WPS_Office_#{version}(#{version.patch})_#{arch}.dmg",
       verified: "package.mac.wpscdn.cn/mac_wps_pkg/"
@@ -17,6 +17,7 @@ cask "wpsoffice-cn" do
   end
 
   conflicts_with cask: "wpsoffice"
+  depends_on :macos
 
   app "wpsoffice.app"
 

@@ -1,6 +1,6 @@
 cask "support" do
-  version "3.0"
-  sha256 "fc90b88d20defc7a6d05c8ea9e1dee0313a585aa2be4418d1c2a75b83cafe0f1"
+  version "3.0.3"
+  sha256 "a299f44ff460398536b3e520777fcd66bb7d13fb6ce210f841aa87e0412b8578"
 
   url "https://github.com/root3nl/SupportApp/releases/download/v#{version}/Support.#{version}.zip"
   name "Support App"
@@ -12,7 +12,7 @@ cask "support" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Support.app"
 

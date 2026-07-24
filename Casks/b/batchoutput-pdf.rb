@@ -12,7 +12,11 @@ cask "batchoutput-pdf" do
     regex(/BatchOutput\s*PDF\s*(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "BatchOutput PDF.app"
+
+  uninstall quit: "com.zevrix.BatchOutputPDF*"
 
   zap trash: [
     "~/Library/Caches/com.zevrix.BatchOutputPDF*",

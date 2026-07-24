@@ -1,5 +1,5 @@
 cask "calibre" do
-  on_monterey :or_older do
+  on_ventura :or_older do
     on_catalina :or_older do
       version "6.11.0"
       sha256 "d7c40f3f35ba9043c13303632526f135b2c4086471a5c09ceb8b397c55c076fa"
@@ -12,14 +12,18 @@ cask "calibre" do
       version "6.29.0"
       sha256 "2f76428ae19617875c5725cd892751a80eb2acdda76e06cd19c2f21a63966998"
     end
+    on_ventura do
+      version "9.6.0"
+      sha256 "1e20b1a9859eae7411f4ff4fd7f7c64524ca16339d969aeb828b791673d03d4c"
+    end
 
     livecheck do
       skip "Legacy version"
     end
   end
-  on_ventura :or_newer do
-    version "8.16.2"
-    sha256 "c25a527a19b574adc3cf48bea38ca96c6ba722f4c7886e80ab99c560ff6ad35f"
+  on_sonoma :or_newer do
+    version "9.11.0"
+    sha256 "300c1acf1f8b941e265d0f8c39fc608c3cfea865a31702e084643d536b78c951"
 
     livecheck do
       url "https://calibre-ebook.com/dist/osx"
@@ -35,6 +39,8 @@ cask "calibre" do
   name "calibre"
   desc "E-books management software"
   homepage "https://calibre-ebook.com/"
+
+  depends_on :macos
 
   app "calibre.app"
   binary "#{appdir}/calibre.app/Contents/MacOS/calibre"

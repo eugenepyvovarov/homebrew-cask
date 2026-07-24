@@ -7,14 +7,9 @@ cask "novation-play" do
   desc "Virtual instrument for Novation Launchkey MK4 hardware"
   homepage "https://novationmusic.com/software/novation-play/"
 
-  livecheck do
-    url "https://klevgrand.com/api/play/version"
-    strategy :json do |json|
-      json ["version"]
-    end
-  end
+  disable! date: "2026-02-22", because: "download requires authentication"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   pkg "Play.pkg"
 

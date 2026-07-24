@@ -1,9 +1,9 @@
 cask "processing" do
   arch arm: "aarch64", intel: "x64"
 
-  version "4.5.1,1312"
-  sha256 arm:   "cf210c6a4d7ad1d0be467d2b19cb0620f6b4289f991d9c5f71ebcad77302278b",
-         intel: "39f4e7366690c5057a537b10d245c3fd3b566e65f396761879eb660728698ae2"
+  version "4.5.6,1434"
+  sha256 arm:   "f543a70d06fa43ea4f57955368734296c49960b71b24b2220da18d14806ed3fa",
+         intel: "3addfee22d3c6bfd907d33b8c7a875032275564c71ce42234ffe5613bad4d8fd"
 
   url "https://github.com/processing/processing4/releases/download/processing-#{version.csv.second}-#{version.csv.first}/processing-#{version.csv.first}-macos-#{arch}.dmg",
       verified: "github.com/processing/processing4/"
@@ -28,6 +28,7 @@ cask "processing" do
   end
 
   conflicts_with cask: "processing@3"
+  depends_on :macos
 
   app "Processing.app"
 

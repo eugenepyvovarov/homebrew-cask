@@ -1,6 +1,6 @@
 cask "serial-studio" do
-  version "3.2.1"
-  sha256 "87f2843fa574efa3cbbdd772f630314bcd63be424782725b04553be86d0db48d"
+  version "4.0.1"
+  sha256 "2dad21f5823e7d36fa628c334f54469b370a0e8b91d4f0a12e89c3fa9d5f9489"
 
   url "https://github.com/Serial-Studio/Serial-Studio/releases/download/v#{version}/Serial-Studio-Pro-#{version}-macOS.dmg",
       verified: "github.com/Serial-Studio/Serial-Studio/"
@@ -13,7 +13,7 @@ cask "serial-studio" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Serial Studio Pro.app"
 

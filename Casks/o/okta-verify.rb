@@ -1,6 +1,6 @@
 cask "okta-verify" do
-  version "9.55.0,5890-a5cb8c9"
-  sha256 "35b8485b406eafc5332a37d9f37f30bd0d697b456209c687895b0f7425be8e48"
+  version "9.67.1,6374-c501c62"
+  sha256 "f8bba964544cf9a3260eee3f234d4c675af8e53f55e7a69c00be5ce5c75fb967"
 
   url "https://okta.okta.com/artifacts/OKTA_VERIFY_MACOS/#{version.csv.first}/OktaVerify-#{version.csv.first}-#{version.csv.second}.pkg"
   name "Okta Verify"
@@ -20,7 +20,7 @@ cask "okta-verify" do
     end
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   pkg "OktaVerify-#{version.csv.first}-#{version.csv.second}.pkg"
 

@@ -1,9 +1,9 @@
 cask "clickhouse" do
   arch arm: "-aarch64"
 
-  version "25.12.3.21-stable"
-  sha256 arm:   "6023fd26d38612389ec332841166a8684393ed025b5f61dfbb3fcd0344965525",
-         intel: "77de677b774ab499aec42fb1d88c52b50cd51e1dbc60733b6ae389e743dc9b64"
+  version "26.7.1.1315-stable"
+  sha256 arm:   "6863789d74cc4007f13e040fe843b04361894be935b8ed6f4375adab763e761a",
+         intel: "63e9337132c09064d0aa9249edfc4e5d5a3201b7ab050c01600387c2ecbf00d1"
 
   url "https://github.com/ClickHouse/ClickHouse/releases/download/v#{version}/clickhouse-macos#{arch}",
       verified: "github.com/ClickHouse/ClickHouse/"
@@ -17,6 +17,8 @@ cask "clickhouse" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   binary "clickhouse-macos#{arch}", target: "clickhouse"
 

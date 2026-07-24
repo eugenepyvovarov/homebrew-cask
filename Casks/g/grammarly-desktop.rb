@@ -1,6 +1,6 @@
 cask "grammarly-desktop" do
-  version "1.149.1.0"
-  sha256 "24cce1460afc09b4fe50b9bf78b61c05b3b49b1f5b12fe4afcd262f9ffb49ec7"
+  version "1.177.0.0"
+  sha256 "40f9b8468902d8e710bb877f6adedf695333dab34ace7f25b28c774a445f79d9"
 
   url "https://download-mac.grammarly.com/versions/#{version}/Grammarly.dmg"
   name "Grammarly Desktop"
@@ -13,8 +13,15 @@ cask "grammarly-desktop" do
   end
 
   auto_updates true
+  depends_on macos: :big_sur
 
   app "Grammarly Installer.app", target: "Grammarly Desktop.app"
+
+  uninstall launchctl: [
+    "com.grammarly.ProjectLlama.LoginHelper",
+    "com.grammarly.ProjectLlama.Shepherd",
+    "com.grammarly.ProjectLlama.Uninstaller",
+  ]
 
   zap trash: [
     "~/Library/Application Support/com.grammarly.ProjectLlama",

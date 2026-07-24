@@ -1,35 +1,31 @@
 cask "itch" do
-  version "26.1.9"
-  sha256 :no_check
+  arch arm: "arm64", intel: "amd64"
 
-  url "https://broth.itch.zone/install-itch/darwin-amd64/LATEST/archive/default",
-      verified: "broth.itch.zone/"
+  version "26.15.0"
+  sha256 arm:   "c00fc6c24970752be2deb838819f5ac61fada7a1849a8da1c86041adeb593c7c",
+         intel: "f941e5f10fddf9d50760bc1985f4bb5a25efb705d4ff2766bd5d665e6fb91b85"
+
+  url "https://github.com/itchio/itch/releases/download/v#{version}/itch-v#{version}-darwin-#{arch}.tar.gz",
+      verified: "github.com/itchio/itch/"
   name "itch"
   desc "Game client for itch.io"
   homepage "https://itch.io/app"
 
   livecheck do
-    url "https://broth.itch.zone/itch/darwin-amd64"
-    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   auto_updates true
+  depends_on macos: :monterey
 
-  installer script: "Install itch.app/Contents/MacOS/itch-setup"
+  app "itch.app"
 
-  uninstall quit:   "io.itch.mac",
-            delete: [
-              "~/Applications/itch.app",
-              "~/Library/Application Support/itch-setup",
-            ]
+  uninstall quit: "io.itch.mac"
 
   zap trash: [
     "~/Library/Application Support/itch",
     "~/Library/Preferences/io.itch.mac.helper.plist",
     "~/Library/Preferences/io.itch.mac.plist",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

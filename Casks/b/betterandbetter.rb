@@ -1,6 +1,6 @@
 cask "betterandbetter" do
-  version "2.7.3,20251112801"
-  sha256 "5217d3d09b5a682effe712ff1a6cdf14dc224267fd568d7cf4aa2e4e281a5721"
+  version "2.7.9,2026062701"
+  sha256 "34f19dbf4149a62325c7cf0de1e1090b6f6e8b24c18373688318a44bf827b124"
 
   url "https://cdn.better365.cn/BetterAndBetter/#{version.csv.second[0, 4]}/BetterAndBetter_#{version.csv.first}_#{version.csv.second}.zip"
   name "Better And Better"
@@ -22,6 +22,7 @@ cask "betterandbetter" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "BetterAndBetter.app"
 

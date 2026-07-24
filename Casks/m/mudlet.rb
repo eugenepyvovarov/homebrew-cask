@@ -1,16 +1,23 @@
 cask "mudlet" do
-  version "4.18.5"
-  sha256 "ccdabebadf309e5e7b1a87aa07734a9a374d8b431b1be55b61863ece3ac70eaa"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://www.mudlet.org/wp-content/files/Mudlet-#{version}.dmg"
+  version "4.22.0"
+  sha256 arm:   "54d976936d9ad54cc1ddd65d5e1cc2e3253d84646430636d3237455a10261bdb",
+         intel: "64371626f0af7a3ab2f276100e57f6d44344b157cd3f405601955677e64ac6d7"
+
+  url "https://github.com/Mudlet/Mudlet/releases/download/Mudlet-#{version}/Mudlet-#{version}-#{arch}.dmg",
+      verified: "github.com/Mudlet/Mudlet/"
   name "Mudlet"
   desc "Multi-User Dungeon client"
   homepage "https://www.mudlet.org/"
 
   livecheck do
-    url "https://www.mudlet.org/wp-content/files/"
-    regex(/href=.*?Mudlet[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    url :url
+    strategy :github_latest
   end
+
+  auto_updates true
+  depends_on :macos
 
   app "Mudlet.app"
 
@@ -19,8 +26,4 @@ cask "mudlet" do
     "~/Library/Saved Application State/org.mudlet.mudlet.savedState",
     "~/mudlet-data",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

@@ -5,8 +5,8 @@ cask "blender" do
   # https://www.blender.org/download/lts/ when updating this cask, as we cannot
   # identify LTS versions using livecheck.
   on_arm do
-    version "5.0.1"
-    sha256 "102a81ddee5346c96339c6a529069a2d52df05f330eb9bfd431c8dd79fb4afb6"
+    version "5.2.0"
+    sha256 "ed4d8390166dec5ea0a2813a03db6221f206ce016442be7f59f41d760972568a"
 
     # The upstream download page (https://www.blender.org/download/) cannot be
     # fetched due to Cloudflare protections, so we have to naively assume a
@@ -34,8 +34,8 @@ cask "blender" do
     end
   end
   on_intel do
-    version "4.5.5"
-    sha256 "f60c27f9a52ccde87e9e68ae8184e5c8c56f8b622d0657b345c64ad2b1232174"
+    version "4.5.12"
+    sha256 "1250a7ea95c8b3b9f6141fbd072e75a8f7d1e985519e2bc05a313fcfcae0e2b1"
 
     # Intel support is limited to version 4.5.x series.
     livecheck do
@@ -52,7 +52,7 @@ cask "blender" do
   homepage "https://www.blender.org/"
 
   conflicts_with cask: "blender@lts"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Blender.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

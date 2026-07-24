@@ -1,6 +1,6 @@
 cask "realvnc-connect" do
-  version "8.2.2"
-  sha256 "413e0a1dfb7d1b3fe17bac948babea5762a3d00faf904454c924cf6d23bf3bb9"
+  version "8.4.2"
+  sha256 "cb4e3f1e4ec24f7be605e17600013e7d403cea09e02288190cd9e62b38b87565"
 
   url "https://downloads.realvnc.com/download/file/realvnc-connect/RealVNC-Connect-#{version}-MacOSX-universal.pkg"
   name "RealVNC Connect"
@@ -14,7 +14,7 @@ cask "realvnc-connect" do
     skip "Cannot be fetched due to Cloudflare protections"
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   pkg "RealVNC-Connect-#{version}-MacOSX-universal.pkg"
 

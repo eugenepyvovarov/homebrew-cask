@@ -1,6 +1,6 @@
 cask "taphouse" do
-  version "1.4.0"
-  sha256 "b325707c215050d90089a18f56ccc427651a605b93cdb9b6750b31834ef24931"
+  version "1.5.4.10"
+  sha256 "38ba1c838a232c187f6111bdc5967983f465f6adb48d864e5da64a7751aea241"
 
   url "https://taphouse.multimodalsolutions.gr/downloads/Taphouse-#{version}.dmg"
   name "Taphouse"
@@ -13,7 +13,7 @@ cask "taphouse" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Taphouse.app"
 

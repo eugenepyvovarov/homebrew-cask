@@ -8,8 +8,8 @@ cask "launchcontrol" do
     end
   end
   on_big_sur :or_newer do
-    version "2.10.1"
-    sha256 "67d8d91c6d1312185025fc6addec398a3e63d9d606b7751721fef6004d4b92f7"
+    version "2.10.5"
+    sha256 "275ef2032c20abb1e7a60c0101076aeef9c9471c29996b8b64131c064935dba8"
 
     livecheck do
       url "https://www.soma-zone.com/LaunchControl/a/appcast-update-#{version.major}.xml"
@@ -23,6 +23,7 @@ cask "launchcontrol" do
   homepage "https://www.soma-zone.com/LaunchControl/"
 
   auto_updates true
+  depends_on :macos
 
   app "LaunchControl.app"
   binary "#{appdir}/LaunchControl.app/Contents/MacOS/fdautil"

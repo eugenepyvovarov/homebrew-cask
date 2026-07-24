@@ -1,6 +1,6 @@
 cask "sqlpro-for-mysql" do
-  version "2025.10"
-  sha256 "aa3dc24bd8ab1ca62b39cf4519e4af40982438029ffd5d1dcefbdf001c666d1f"
+  version "2026.173"
+  sha256 "fdd7029f0fcfa49c289915e59ba4e4255f14af718249f2f85842fed8c3df179a"
 
   url "https://d3fwkemdw8spx3.cloudfront.net/mysql/SQLProMySQL.#{version}.app.zip",
       verified: "d3fwkemdw8spx3.cloudfront.net/mysql/"
@@ -12,6 +12,8 @@ cask "sqlpro-for-mysql" do
     url "https://www.mysqlui.com/download.php"
     strategy :header_match
   end
+
+  depends_on macos: :sonoma
 
   app "SQLPro for MySQL.app"
 

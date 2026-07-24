@@ -3,12 +3,16 @@ cask "vimcal" do
   host_suffix = on_arch_conditional arm: "m1", intel: "production"
 
   on_arm do
-    version "1.0.41"
-    sha256 "dd7e588498e0376ab23054c0a8c7c5aa9a0bbf2e292c2f93527dd2c484afe1e2"
+    version "1.0.48"
+    sha256 "f77489563c93c56a98c78040b85883690711efb17b58c654291f4a6e06f64fe7"
+
+    depends_on macos: :monterey
   end
   on_intel do
-    version "1.0.40"
-    sha256 "c3d12755f990b7aa6bedf55c94f2105138e9aa07ab01cb91e673d633f737083b"
+    version "1.0.47"
+    sha256 "00596285cbe1f34aa171a02f6cb9ce043e501ea83e8783dd54e1864b0f6de897"
+
+    depends_on macos: :big_sur
   end
 
   url "https://vimcal-#{host_suffix}.s3.amazonaws.com/Vimcal-#{version}#{arch}.dmg",
@@ -23,7 +27,7 @@ cask "vimcal" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "Vimcal.app"
 

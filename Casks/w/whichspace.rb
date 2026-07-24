@@ -1,10 +1,10 @@
 cask "whichspace" do
-  version "0.14.0"
-  sha256 "a6859471e3837ebe0516b77210e223e2c55f7b4a1dea8d660ef6bcfff3381a66"
+  version "1.1.8"
+  sha256 "2c9a520ebf172eac27bc47cd27cac46cda62db73d7b24f73a10da4bc9ca3f588"
 
   url "https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
   name "WhichSpace"
-  desc "Active space menu bar icon"
+  desc "Menu bar utility for viewing and switching Spaces"
   homepage "https://github.com/gechr/WhichSpace"
 
   livecheck do
@@ -12,10 +12,8 @@ cask "whichspace" do
     strategy :sparkle
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
-
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "WhichSpace.app"
 

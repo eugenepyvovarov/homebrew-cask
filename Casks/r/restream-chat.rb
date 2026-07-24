@@ -1,6 +1,6 @@
 cask "restream-chat" do
-  version "2.5.4-beta"
-  sha256 "32b4dae6cdce145b1f6a43b5046636bfa2188c924d792b21337c9604d3dc1809"
+  version "2.7.1"
+  sha256 "e3cfb00f13c0c75667ae66cb5cf2615ea2a5a66b3d22f43aa25cfdb476a9533f"
 
   url "https://chat-client.restream.io/Restream+Chat-#{version}.dmg"
   name "Restream Chat"
@@ -11,6 +11,8 @@ cask "restream-chat" do
     url "https://website-backend.restream.io/v2/public/chat/download/mac"
     strategy :header_match
   end
+
+  depends_on :macos
 
   app "Restream Chat.app"
 

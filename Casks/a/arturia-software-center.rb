@@ -9,17 +9,15 @@ cask "arturia-software-center" do
   homepage "https://www.arturia.com/technology/asc"
 
   livecheck do
-    url "https://www.arturia.com/api/resources?slugs=asc&types=soft"
-    strategy :json do |json|
-      json.map do |item|
-        next if item["platform_type"] != "mac"
-
-        item["version"]
-      end
+    url "https://www.arturia.com/support/downloads-manuals"
+    regex(/href=.*?Arturia[._-]Software[._-]Center[._-]+v?(\d+(?:[._]\d+)+)\.pkg/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_", ".") }
     end
   end
 
   auto_updates true
+  depends_on :macos
 
   pkg "Arturia_Software_Center__#{version.dots_to_underscores}.pkg"
 

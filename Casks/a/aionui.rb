@@ -1,9 +1,9 @@
 cask "aionui" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.7.2"
-  sha256 arm:   "f684fe42a80e7ca67316510e25d6663927517653702cbdf49bfdfb7b853ea325",
-         intel: "32edd76796b37d45426acb6a48694a5514fbbbf88c04ba3aecb56160f1e71bba"
+  version "2.1.40"
+  sha256 arm:   "119d5e4ed18ebb9c4408cd3228363b474b38fe2e20aa09fe496fee3e6d5138ea",
+         intel: "1cef58fe87a2fbd1028378a6a4a2038778db31ab1933ec16d05ea73cc87a24ae"
 
   url "https://github.com/iOfficeAI/AionUi/releases/download/v#{version}/AionUi-#{version}-mac-#{arch}.dmg"
   name "AionUi"
@@ -16,7 +16,7 @@ cask "aionui" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "AionUi.app"
 

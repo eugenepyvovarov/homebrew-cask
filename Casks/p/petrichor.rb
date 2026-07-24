@@ -1,6 +1,6 @@
 cask "petrichor" do
-  version "1.3.1"
-  sha256 "9c6b7e42fad19fce9d752fc3e464061ba1e770ac4feedf5fcbdd7a59e031d67a"
+  version "1.6.1"
+  sha256 "5d5330eb9d3b03fb3885c3c4e875dfc68d742cd1375e4ca1ac4c86c802993650"
 
   url "https://github.com/kushalpandya/Petrichor/releases/download/v#{version}/Petrichor-#{version}-Universal.dmg"
   name "Petrichor"
@@ -13,7 +13,7 @@ cask "petrichor" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Petrichor.app"
 

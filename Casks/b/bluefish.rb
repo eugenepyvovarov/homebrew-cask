@@ -1,6 +1,6 @@
 cask "bluefish" do
-  version "2.2.19"
-  sha256 "21eecb9232ca838113259749d2db35f6dc333a32f61324cdbd0feff5b34b05d6"
+  version "2.4.2"
+  sha256 "c10c1d90a61319553f85febde2955d9684de23a2e5ab39210df773b9f46855b5"
 
   url "https://www.bennewitz.com/bluefish/stable/binaries/macosx/Bluefish-#{version}.dmg",
       verified: "bennewitz.com/"
@@ -14,6 +14,8 @@ cask "bluefish" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "Bluefish.app"
 

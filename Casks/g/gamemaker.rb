@@ -1,6 +1,6 @@
 cask "gamemaker" do
-  version "2024.14.2.213"
-  sha256 "f70a9e02d07811eb784fd28219f2067dcb857cb92c5d6e419a212eac8b1194fa"
+  version "2024.14.4.222"
+  sha256 "8cbd33a9a92ed60ebd53734413b33afdeb8c677326ada0c80971e9f91555cc7f"
 
   url "https://gms.yoyogames.com/GameMaker-#{version}.pkg",
       verified: "gms.yoyogames.com/"
@@ -12,6 +12,8 @@ cask "gamemaker" do
     url "https://gms.yoyogames.com/update-mac.rss"
     strategy :sparkle
   end
+
+  depends_on :macos
 
   pkg "GameMaker-#{version}.pkg"
 

@@ -1,6 +1,6 @@
 cask "pale-moon" do
-  version "34.0.0"
-  sha256 "bb3bc06ae792b7aa0c563716a03713fccf7ed6537f916da3282e0d6b95573452"
+  version "34.3.1"
+  sha256 "b93f8ad536eaf379e3b3dae067e0189b68fa5b2301381226fb18c788aae6642f"
 
   url "https://rm-us.palemoon.org/release/palemoon-#{version}.arm64.dmg"
   name "Pale Moon"
@@ -13,7 +13,7 @@ cask "pale-moon" do
     strategy :header_match
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "Pale Moon.app"

@@ -1,6 +1,6 @@
 cask "mace" do
-  version "0.0.14-alpha"
-  sha256 "ccc6676d46c5b75261cfae97d998337ae51762fcfe1e77348b7620c226efc564"
+  version "1.0.0"
+  sha256 "a24d47f5c26d43ba673ed05ed5dcdd24025405790e82f10ce77c374ce9411577"
 
   url "https://github.com/MACE-App/MACE/releases/download/v#{version}/M.A.C.E.V#{version}.dmg"
   name "MACE"
@@ -10,10 +10,10 @@ cask "mace" do
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:-alpha)?)/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sonoma
 
   app "MACE.app"
 

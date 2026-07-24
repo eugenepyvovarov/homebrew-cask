@@ -1,6 +1,6 @@
 cask "obsidian" do
-  version "1.11.4"
-  sha256 "d025d210a3251b5655826d62bee276cb3870f940908a4cb0f36a346c94d62a30"
+  version "1.12.7"
+  sha256 "3b85c13b4ce55512e86e170a7cd2a494e2db695ac888c0601e153cb85b77881b"
 
   url "https://github.com/obsidianmd/obsidian-releases/releases/download/v#{version}/Obsidian-#{version}.dmg",
       verified: "github.com/obsidianmd/"
@@ -16,9 +16,10 @@ cask "obsidian" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Obsidian.app"
+  binary "#{appdir}/Obsidian.app/Contents/MacOS/obsidian-cli", target: "obsidian"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/md.obsidian.sfl*",

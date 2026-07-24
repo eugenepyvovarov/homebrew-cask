@@ -1,6 +1,6 @@
 cask "dropbox-dash" do
-  version "3.110.6"
-  sha256 "57590ffc4155e6b5334d0c815ff6a0db0d5b7cdfec7fe58e39c4198bf9e58ecb"
+  version "3.167.12"
+  sha256 "8735ac0cfd7b31f8df60695c06694802dc11eb7340f5a259ec793130e42058ef"
 
   url "https://edge.dropboxstatic.com/dbx-releng/products/dash-tesla/#{version}/mac.x86_64/Dropbox%20Dash-#{version}.dmg",
       verified: "edge.dropboxstatic.com/dbx-releng/products/dash-tesla/"
@@ -14,7 +14,7 @@ cask "dropbox-dash" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Dropbox Dash.app"
 

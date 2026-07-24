@@ -1,9 +1,9 @@
 cask "java@beta" do
   arch arm: "aarch64", intel: "x64"
 
-  version "27,5"
-  sha256 arm:   "c7b65275b6033a4f54c2205e970c3e530716e09b8d35bdceae05e2d358f7c574",
-         intel: "b48348459e1d4cfccedfefca4c17840c3e0742815cbbef622b72ad03d2876715"
+  version "27,22"
+  sha256 arm:   "0d3a5d8933511c2650c83885b698268c192d79d6893a9dc19e7d62e07e6c1667",
+         intel: "9a4028a08994fa37f6cabfcf70683464b6f56b7b001601286192d90cf000b7fa"
 
   url "https://download.java.net/java/early_access/jdk#{version.major}/#{version.csv.second}/GPL/openjdk-#{version.csv.first}-ea+#{version.csv.second}_macos-#{arch}_bin.tar.gz"
   name "OpenJDK Early Access Java Development Kit"
@@ -28,6 +28,8 @@ cask "java@beta" do
       version_page[:content]&.scan(regex)&.map { |match| "#{match[0]},#{match[1]}" }
     end
   end
+
+  depends_on :macos
 
   artifact "jdk-#{version.csv.first}.jdk", target: "/Library/Java/JavaVirtualMachines/openjdk-#{version.csv.first}.jdk"
 

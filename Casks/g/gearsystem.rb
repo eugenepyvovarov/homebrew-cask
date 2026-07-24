@@ -1,15 +1,16 @@
 cask "gearsystem" do
-  arch arm: "arm", intel: "intel"
+  arch arm: "arm64", intel: "intel"
 
-  version "3.8.6"
-  sha256 arm:   "f85017e23960359a7ac740b3fd1aad1a358c1b34c73c176bb33b1737bb27fd24",
-         intel: "a10df0621dc0ce03fffd10c0e84ea07f6c62d4b56cd3af6cce51dec6a2cd6ea9"
+  version "3.9.13"
+  sha256 arm:   "bf03dade4d526787de5b33c76dcbba8796200909a33c21bc0eea2baa279626a6",
+         intel: "156b86c7ddeb2d0fad99bb2e6d942b601b75485c340a47294acd256468c0d407"
 
-  url "https://github.com/drhelius/Gearsystem/releases/download/#{version}/Gearsystem-#{version}-macos-#{arch}.zip"
+  url "https://github.com/drhelius/Gearsystem/releases/download/#{version}/Gearsystem-#{version}-desktop-macos-#{arch}.zip"
   name "Gearsystem"
   desc "Sega Master System, Game Gear and SG-1000 emulator"
   homepage "https://github.com/drhelius/Gearsystem"
 
+  depends_on :macos
   container nested: "Gearsystem.app.zip"
 
   app "Gearsystem.app"

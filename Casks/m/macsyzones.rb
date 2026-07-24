@@ -1,6 +1,6 @@
 cask "macsyzones" do
-  version "2.0.2"
-  sha256 "0090b8764fe3698f1ad101b89399614a87567b9a5d2477455bea75fb901b901b"
+  version "3.0.4"
+  sha256 "a303a484f3f9f7b5da36031ed7dce13dc630d301dce1aa850f2e3372014f6c7a"
 
   url "https://github.com/rohanrhu/MacsyZones/releases/download/v#{version}/MacsyZones.zip",
       verified: "github.com/rohanrhu/MacsyZones/"
@@ -14,7 +14,7 @@ cask "macsyzones" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "MacsyZones.app"
 

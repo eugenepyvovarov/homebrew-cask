@@ -1,9 +1,9 @@
 cask "ace-studio" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2.0.4,1714"
-  sha256 arm:   "a5f37816a54bbaea906af1ca8c350d20287c1f4c5cbb7775d3b6f400dafa022c",
-         intel: "96ed7fa664d335608a81bdc96d7af7ca002747a705a31b979d6abdd71ef0a8c9"
+  version "2.1.3,2202"
+  sha256 arm:   "6982f42c10a982ab71aed21accf4b1b0998390e6ed7529f92a729d4273b93e35",
+         intel: "cc3618852f2dc0c5ba477b95c1920a90c4a5ba8944271ed3457962fe9985df7a"
 
   url "https://as-api-ws-cdn-1.tdacestudio.com/web/app/ACE_Studio_#{version.csv.first}_#{version.csv.second}_#{arch}_general.dmg",
       verified: "as-api-ws-cdn-1.tdacestudio.com/web/app/"
@@ -24,7 +24,7 @@ cask "ace-studio" do
     end
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "ACE Studio.app"
 

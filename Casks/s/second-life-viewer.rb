@@ -1,6 +1,6 @@
 cask "second-life-viewer" do
-  version "7.2.3.19375695301"
-  sha256 "23d34f4747bea9a88432b68572424fc6dc933f37fcc668c3495c641d20113871"
+  version "26.2.0.25386466510"
+  sha256 "2b5914bc16d83687df643225d77d273a3e7d8c26a737184eaa4ebc2a09945be4"
 
   url "https://viewer-download.secondlife.com/Viewer_#{version.major}/Second_Life_#{version.dots_to_underscores}_universal.dmg"
   name "Linden Lab Second Life Viewer"
@@ -18,7 +18,7 @@ cask "second-life-viewer" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Second Life Viewer.app"
 

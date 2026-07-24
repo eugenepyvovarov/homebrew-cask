@@ -12,6 +12,7 @@
     "https://helpx.adobe.com/camera-raw/using/adobe-dng-converter.html",
     "https://helpx.adobe.com/photoshop/kb/uptodate.html"
   ],
+  "blood-on-the-clocktower-online": "https://bloodontheclocktower.com/",
   "canon-ufrii-driver": "https://www.usa.canon.com/bin/canon/support/getsoftwarediver.ds.MACOS_14.39319.All.English.json",
   "elecom-mouse-util": "https://www.elecom.co.jp/global/download-list/utility/mouse_assistant/mac/",
   "gotomeeting": "https://www.goto.com/meeting",
@@ -22,6 +23,8 @@
   ],
   "logmein-client": "https://www.logmein.com/pro",
   "ltspice": "https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html",
+  "mplab-xc32": "https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc32",
+  "mplabx-ide": "https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide",
   "mysql-shell": [
     "https://dev.mysql.com/downloads/shell/",
     "https://dev.mysql.com/downloads/shell/?tpl=platform&os=33"
@@ -48,6 +51,9 @@
   "tableau-reader": [
     "https://www.tableau.com/products/reader",
     "https://downloads.tableau.com/TableauAutoUpdate.xml"
+  ],
+  "tal-drum": [
+    "https://tal-software.com/products/tal-drum"
   ],
   "vuze": "https://www.vuze.com/",
   "xcodepilot": "https://xcodepilot.thriller.fun/docs/"

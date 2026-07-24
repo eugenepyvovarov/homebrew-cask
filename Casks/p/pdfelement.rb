@@ -1,5 +1,5 @@
 cask "pdfelement" do
-  version "12.1.4"
+  version "12.1.22"
   sha256 :no_check
 
   url "https://download.wondershare.com/cbs_down/mac-pdfelement_full5237.dmg"
@@ -14,7 +14,7 @@ cask "pdfelement" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "PDFelement.app"
 

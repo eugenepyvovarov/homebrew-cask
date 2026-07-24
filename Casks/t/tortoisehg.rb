@@ -13,6 +13,10 @@ cask "tortoisehg" do
     regex(/TortoiseHg-(\d+(?:\.\d+)*)-mac-x64-qt5\.dmg/i)
   end
 
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
+
   app "TortoiseHg.app"
 
   zap trash: "~/.config/tortoisehg.org"

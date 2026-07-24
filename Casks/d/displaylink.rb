@@ -40,8 +40,8 @@ cask "displaylink" do
     end
   end
   on_sonoma :or_newer do
-    version "15.0,2025-12"
-    sha256 "4cedae42b642c3662b3eea0e81989226e5ae510a404bcf1fbbbb90262a71e014"
+    version "16.2,2026-07"
+    sha256 "fd9eafab9542e592baa39984ed4e87e64e89f3de6b9a4429ab13a2334a7538e6"
 
     url "https://www.synaptics.com/sites/default/files/exe_files/#{version.csv.second}/DisplayLink%20Manager%20Graphics%20Connectivity#{version.csv.first}-EXE.pkg"
 
@@ -59,6 +59,8 @@ cask "displaylink" do
   name "DisplayLink USB Graphics Software"
   desc "Drivers for DisplayLink docks, adapters and monitors"
   homepage "https://www.synaptics.com/products/displaylink-graphics"
+
+  depends_on :macos
 
   uninstall launchctl: [
               "73YQY62QM3.com.displaylink.DisplayLinkAPServer",

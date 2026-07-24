@@ -1,6 +1,6 @@
 cask "rambox" do
-  version "2.5.2"
-  sha256 "0abfc3e27f8eff374e71ad5d51bbea65cec80d254cf101a23e7bf71da2bbba35"
+  version "2.7.0"
+  sha256 "d5728c36b5b09599456cabb65ac1b897abb3cad9f4e326a26c05e9d1dd06d146"
 
   url "https://github.com/ramboxapp/download/releases/download/v#{version}/Rambox-#{version}-mac.zip",
       verified: "github.com/ramboxapp/download/"
@@ -9,7 +9,7 @@ cask "rambox" do
   homepage "https://rambox.app/"
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Rambox.app"
 

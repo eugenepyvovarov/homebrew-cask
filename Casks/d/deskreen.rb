@@ -1,9 +1,9 @@
 cask "deskreen" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.2.1"
-  sha256 arm:   "99ddd60294d67e025bbb482bffe318c05b1dff49eb3de3ca21c767b8ab69aad1",
-         intel: "2a0698c9244fa91f62399fec525fb3149161cf32e3cc1f1d498d57005ce42744"
+  version "3.2.16"
+  sha256 arm:   "09a3be94f5fa2afc13e9098b8f6ad1f3285cf41f6f7a0de64a529944398d9177",
+         intel: "bc36361d6a8251e4bc8a93575de27d321708873ac4f8f6f34e990ddae39e9b43"
 
   url "https://github.com/pavlobu/deskreen/releases/download/v#{version}/Deskreen-ce-#{version}-#{arch}.dmg",
       verified: "github.com/pavlobu/deskreen/"
@@ -16,7 +16,7 @@ cask "deskreen" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Deskreen CE.app"
 

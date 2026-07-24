@@ -1,6 +1,6 @@
 cask "rave" do
-  version "1.17.12"
-  sha256 "fde24033bd3f32b26d27d02d79ddcb48a65efef179a08023312da1a81339df29"
+  version "1.18.11"
+  sha256 "3fb38d7ca29e534643ebfcf7ab5e5f7f8ad613c28ccf313b36e4ff4af6838daa"
 
   url "https://static.rave-web.com/rave-desktop/mac/x64/Rave-#{version}.dmg",
       verified: "static.rave-web.com/rave-desktop/mac/"
@@ -13,8 +13,10 @@ cask "rave" do
     strategy :electron_builder
   end
 
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Rave.app"
 

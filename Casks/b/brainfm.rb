@@ -1,9 +1,9 @@
 cask "brainfm" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.217"
-  sha256 arm:   "b357a123ff7beed6def0a4619110175bcd30f14512d98f0a4ce644e17a7afd50",
-         intel: "d09c1d3388207f4cc7ebeee4860daaac02fcd422192ab8aaabd90a11b0de9e7a"
+  version "0.0.295"
+  sha256 arm:   "8eaf381b6e011b869f41f26d7bbc1c5df50c2249a8ab375055bfd520c6bed1b7",
+         intel: "fb75b4cd67c5d8bb745f050f2f0b04263379b03ff8b8a8133c73c3d245b52e6a"
 
   url "https://download.brain.fm/darwin/#{arch}/Brain.fm-#{version}-#{arch}.dmg"
   name "Brain.fm"
@@ -18,7 +18,7 @@ cask "brainfm" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Brain.fm.app"
 

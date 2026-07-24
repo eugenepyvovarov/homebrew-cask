@@ -13,6 +13,7 @@ cask "mplab-xc16" do
     regex(%r{href=.*?ProductDocuments/SoftwareTools/xc16[._-]v?(\d+(?:\.\d+)+)-full-install-osx64-installer\.dmg}i)
   end
 
+  depends_on :macos
   depends_on arch: :x86_64
 
   installer script: {
@@ -43,8 +44,8 @@ cask "mplab-xc16" do
   binary "#{staged_path}/bin/xc16-strings"
   binary "#{staged_path}/bin/xc16-strip"
 
-  postflight do
-    set_ownership staged_path.to_s
+  postflight_steps do
+    set_ownership "."
   end
 
   uninstall script: {

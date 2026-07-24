@@ -22,8 +22,8 @@ cask "microsoft-powerpoint" do
     end
   end
   on_sonoma :or_newer do
-    version "16.105.26011018"
-    sha256 "256a9b984e69d0d4eb39bcf2ade6cc6f4716a8ea1c738e3e844df375d4d82fe6"
+    version "16.111.26071913"
+    sha256 "967942c039bcbbec3dc61bd7adbf4d6d17b399f7406068b6c2331046b1659eb2"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525136"
@@ -31,7 +31,8 @@ cask "microsoft-powerpoint" do
     end
   end
 
-  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_PowerPoint_#{version}_Installer.pkg"
+  url "https://res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_PowerPoint_#{version}_Installer.pkg",
+      verified: "res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/"
   name "Microsoft PowerPoint"
   desc "Presentation software"
   homepage "https://www.microsoft.com/en-US/microsoft-365/powerpoint"
@@ -41,6 +42,7 @@ cask "microsoft-powerpoint" do
     "microsoft-office",
     "microsoft-office-businesspro",
   ]
+  depends_on :macos
 
   pkg "Microsoft_PowerPoint_#{version}_Installer.pkg",
       choices: [

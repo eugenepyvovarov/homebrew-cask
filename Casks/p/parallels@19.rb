@@ -28,7 +28,7 @@ cask "parallels@19" do
     "parallels@17",
     "parallels@18",
   ]
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Parallels Desktop.app"
 
@@ -45,13 +45,12 @@ cask "parallels@19" do
                    sudo: true
   end
 
-  uninstall_preflight do
-    set_ownership "#{appdir}/Parallels Desktop.app"
+  uninstall_preflight_steps do
+    set_ownership "Parallels Desktop.app", base: :appdir
   end
 
   uninstall signal: ["TERM", "com.parallels.desktop.console"],
             delete: [
-              "/Library/Preferences/Parallels",
               "/usr/local/bin/prl_convert",
               "/usr/local/bin/prl_disk_tool",
               "/usr/local/bin/prl_perf_ctl",
@@ -61,7 +60,8 @@ cask "parallels@19" do
               "/usr/local/bin/prlsrvctl",
             ]
 
-  zap trash: [
+  zap delete: "/Library/Preferences/Parallels",
+      trash:  [
         "~/.parallels_settings",
         "~/Applications (Parallels)",
         "~/Library/Application Scripts/*.com.parallels.Desktop",
@@ -85,7 +85,7 @@ cask "parallels@19" do
         "~/Library/Preferences/Parallels",
         "~/Library/Saved Application State/com.parallels.desktop.console.savedState",
       ],
-      rmdir: [
+      rmdir:  [
         "/Users/Shared/Parallels",
         "~/Library/Caches/Parallels Software",
         "~/Library/Parallels",

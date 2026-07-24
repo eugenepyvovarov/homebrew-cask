@@ -2,12 +2,12 @@ cask "yandex" do
   arch arm: "Arm64"
 
   on_arm do
-    version "25.12.0.2215,95603"
-    sha256 "fb00211c23cd9a91cdee92b64afbd4bd16238f3a22df8efb09df7481b3c01e70"
+    version "26.6.0.1845,111963"
+    sha256 "ff36033d9910cdbd5769af581ccf70b8ace0279b86dd655e5e0a940ea8813891"
   end
   on_intel do
-    version "25.12.0.2213,95614"
-    sha256 "1410eaa4a5b951c760187312ce07ec83dead9b46373cc1c0ae5b29dea63b51bb"
+    version "26.6.0.1847,111970"
+    sha256 "dce4605511d40b3b4e92c4d01083dfff1f187e3723889f35cd6c6e2b63651870"
   end
 
   url "https://download.cdn.yandex.net/browser/update/#{version.csv.first.dots_to_underscores}_#{version.csv.second}_m_s_r/yandex.dmg",
@@ -29,7 +29,7 @@ cask "yandex" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Yandex.app"
 

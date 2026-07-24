@@ -1,6 +1,6 @@
 cask "obscura-vpn" do
-  version "1.151"
-  sha256 "df1e8b537d85a248d8991fb64f41b86934600be2cbe163260a8ed3e0c2bee250"
+  version "1.167"
+  sha256 "700755c91c22bd0605127923c56578bc5bea08c22e266c33ccf8c7a405dec6e1"
 
   url "https://pkgs.obscura.net/macos/obscura-#{version}.dmg"
   name "Obscura VPN"
@@ -13,7 +13,7 @@ cask "obscura-vpn" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Obscura VPN.app"
 

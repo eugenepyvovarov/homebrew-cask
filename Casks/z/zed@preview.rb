@@ -1,9 +1,9 @@
 cask "zed@preview" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.220.2"
-  sha256 arm:   "caed9733efc693964696d31678e3c57be3381f4b523107ada3508524d8eb2ca7",
-         intel: "c99605d25a27790eaddaa945fe074792cf2eedfbf33cca411539c94eba94a976"
+  version "1.13.0"
+  sha256 arm:   "b569f517dd263bc02c4e3277df7706f98d5c178bf86c8dbd660eb9763a860ca3",
+         intel: "e9d6128e144e3bcc9880b15c0edf38e18f0c0dd9fa163eddefc69dc7a6793cd9"
 
   url "https://zed.dev/api/releases/preview/#{version}/Zed-#{arch}.dmg"
   name "Zed Preview"
@@ -11,16 +11,22 @@ cask "zed@preview" do
   homepage "https://zed.dev/"
 
   livecheck do
-    url "https://zed.dev/api/releases/latest?asset=Zed.dmg&preview=1&os=macos&arch=#{arch}"
+    url "https://cloud.zed.dev/releases/preview/latest/asset?asset=zed&os=macos&arch=#{arch}"
     strategy :json do |json|
       json["version"]
     end
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Zed Preview.app"
   binary "#{appdir}/Zed Preview.app/Contents/MacOS/cli", target: "zed-preview"
+
+  generate_completions_from_executable "#{HOMEBREW_PREFIX}/bin/zed-preview", "--completions",
+                                       shells: [:bash, :zsh, :fish, :pwsh]
+
+  uninstall quit: "dev.zed.Zed-Preview"
 
   zap trash: [
     "~/.config/zed",

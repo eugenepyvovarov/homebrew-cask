@@ -1,9 +1,9 @@
 cask "appium-inspector" do
   arch arm: "arm64", intel: "x64"
 
-  version "2026.1.2"
-  sha256 arm:   "63bde33359c7ade71226169d76984231c4ed529d4f14f88ee5b612321245b66a",
-         intel: "1f112e8217e4de5d087b2a2b55829221ada9851a7fcf3a7cb14247ccd309d5ac"
+  version "2026.5.1"
+  sha256 arm:   "e374ad5517d1a4dcac445b3aa56ccdacb23039a974834733ed801b3f55c80af0",
+         intel: "2ae8f990096122600cf7e771da8a671a1b608877ac8220a48c4ca164ef6e54b2"
 
   url "https://github.com/appium/appium-inspector/releases/download/v#{version}/Appium-Inspector-#{version}-mac-#{arch}.zip"
   name "Appium Inspector GUI"
@@ -31,7 +31,7 @@ cask "appium-inspector" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Appium Inspector.app"
 

@@ -33,7 +33,7 @@ cask "logi-options+" do
     end
   end
   on_ventura :or_newer do
-    version "1.98.824948"
+    version "2.1.854976"
     sha256 :no_check
 
     url "https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.zip",
@@ -52,6 +52,7 @@ cask "logi-options+" do
   homepage "https://www.logitech.com/en-us/software/logi-options-plus.html"
 
   auto_updates true
+  depends_on :macos
 
   # The installer path can be inconsistent between versions/systems without notice
   rename "Logi Options+ Installer.app", "logioptionsplus_installer.app"
@@ -82,6 +83,7 @@ cask "logi-options+" do
             delete:    [
               "/Applications/logioptionsplus.app",
               "/Applications/Utilities/Logi Options+ Driver Installer.bundle",
+              "/Library/Application Support/Logi",
               "/Library/Application Support/Logitech.localized/LogiOptionsPlus",
             ],
             rmdir:     "/Library/Application Support/Logitech.localized"
@@ -89,11 +91,16 @@ cask "logi-options+" do
   zap trash: [
     "/Users/Shared/logi",
     "/Users/Shared/LogiOptionsPlus",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.logi.optionsplus*.sfl*",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.logi.*.sfl*",
+    "~/Library/Application Support/Logi",
     "~/Library/Application Support/LogiOptionsPlus",
+    "~/Library/HTTPStorages/LogiPluginServiceNative",
+    "~/Library/Logs/xlog_logitech",
     "~/Library/Preferences/com.logi.cp-dev-mgr.plist",
+    "~/Library/Preferences/com.logi.lps.settings.plist",
     "~/Library/Preferences/com.logi.optionsplus.driverhost.plist",
     "~/Library/Preferences/com.logi.optionsplus.plist",
+    "~/Library/Preferences/com.logi.pluginservice.plist",
     "~/Library/Saved Application State/com.logi.optionsplus.savedState",
   ]
 

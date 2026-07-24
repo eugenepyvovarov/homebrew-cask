@@ -8,8 +8,8 @@ cask "itsycal" do
     end
   end
   on_big_sur :or_newer do
-    version "0.15.10"
-    sha256 "25095796017ca84ae20336e94ef30a59bc74b8514128c74e2d05bbca07cbb62a"
+    version "0.15.12"
+    sha256 "b03f8f546b035b5954ffc481e4cec3b9895a60a7378aaa36cdf544581ed057da"
 
     livecheck do
       url "https://itsycal.s3.amazonaws.com/itsycal.xml"
@@ -24,6 +24,7 @@ cask "itsycal" do
   homepage "https://www.mowglii.com/itsycal/"
 
   auto_updates true
+  depends_on :macos
 
   app "Itsycal.app"
 

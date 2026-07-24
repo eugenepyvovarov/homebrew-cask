@@ -1,22 +1,28 @@
 cask "android-studio-preview@beta" do
   arch arm: "mac_arm", intel: "mac"
 
-  version "2025.2.3.8"
-  sha256 arm:   "b5a3897c72ccd1ded40fdb0b461104b34733dbcb5b893f0fbda012ab5dfaa128",
-         intel: "586c2790a190ba8ad82222b5050e25a66e7ee5f7546d3cb8004db322f463783f"
+  version "2026.1.3.6,quail3-rc2"
+  sha256 arm:   "e522664d047078578026c656bf4bc780af99b521eed20a7e6a5f220c610083e1",
+         intel: "00917f8adcc2cab9416d1b4daf23d55e4d6eb580c273f6a4a45616c1c8be3934"
 
-  url "https://redirector.gvt1.com/edgedl/android/studio/install/#{version}/android-studio-#{version}-#{arch}.dmg",
-      verified: "redirector.gvt1.com/edgedl/android/studio/install/"
+  url "https://edgedl.me.gvt1.com/android/studio/install/#{version.csv.first}/android-studio#{"-#{version.csv.second}" if version.csv.second}-#{arch}.dmg",
+      verified: "edgedl.me.gvt1.com/android/studio/install/"
   name "Android Studio Preview (Beta)"
   desc "Tools for building Android applications"
   homepage "https://developer.android.com/studio/preview/"
 
   livecheck do
     url :homepage
-    regex(%r{href=.*?/android[._-]studio[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg(.*\n*\s*.*)(Beta|RC)}i)
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/android[._-]studio(?:[._-]([^"' >]+))?[._-]#{arch}\.dmg[^>]*?beta}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map do |match|
+        match[1].present? ? "#{match[0]},#{match[1]}" : match[0]
+      end
+    end
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Android Studio.app", target: "Android Studio Preview Beta.app"
   binary "#{appdir}/Android Studio Preview Beta.app/Contents/MacOS/studio", target: "studio-beta"

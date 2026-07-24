@@ -1,6 +1,6 @@
 cask "herd" do
-  version "1.25.0"
-  sha256 "d01ed82e87bfb60cbc1470b245d9020d855621f4b2e4c01c65a763a1bb887740"
+  version "1.29.0"
+  sha256 "dc5d092651e46b96d86890c08972bdd25c1eb00e9f5f7b48436e1794f2d52379"
 
   url "https://download.herdphp.com/app_versions/Herd_#{version}.dmg",
       verified: "download.herdphp.com/app_versions/"
@@ -14,7 +14,7 @@ cask "herd" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Herd.app"
 

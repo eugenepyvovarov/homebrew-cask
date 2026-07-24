@@ -1,16 +1,29 @@
 cask "recut" do
-  version "4.3.4"
-  sha256 "db979442ba85ac4eb9fe34fac1c7dbcadb579cf8c24bb4387287f3fce8496f0b"
+  version "4.4.8,eyJfcmFpbHMiOnsiZGF0YSI6MTI0LCJwdXIiOiJibG9iX2lkIn19--a60e46fe8adaf5abc2a811fd2b8dfab13e7c4289"
+  sha256 "a703bc2e0da1abb6fafba70a0d7d18b3d1aa6f64ecc83b35ae6c76d662f008e4"
 
-  url "https://updates.getrecut.com/universal/Recut_#{version}_universal.dmg"
+  url "https://updates.getrecut.com/rails/active_storage/blobs/redirect/#{version.csv.second}/Recut_#{version.csv.first}_universal.dmg"
   name "Recut"
   desc "Remove silence from videos and automatically generate a cut list"
   homepage "https://getrecut.com/"
 
   livecheck do
     url "https://updates.getrecut.com/latest-mac"
-    strategy :header_match
+    regex(%r{/redirect/([^/]+)/Recut[._-]v?(\d+(?:\.\d+)+)}i)
+    strategy :header_match do |all_headers, regex|
+      version = nil
+      all_headers.each do |headers|
+        match = headers["location"]&.match(regex)
+        next unless match
+
+        version = "#{match[2]},#{match[1]}"
+        break
+      end
+      version
+    end
   end
+
+  depends_on :macos
 
   app "Recut.app"
 

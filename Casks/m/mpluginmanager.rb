@@ -1,6 +1,6 @@
 cask "mpluginmanager" do
-  version "02.16"
-  sha256 "073b8d3037f31957f615d7d2bb63bd4e3bce6902403d2c666a74b8affd940fc0"
+  version "02.27"
+  sha256 "ce86a6e39379128fa105084fd1752152ecb2f246a8eb9b67f4ab5318f06d57cf"
 
   url "https://meldaproduction.b-cdn.net/download/mpluginmanager/MPluginManager_#{version.dots_to_underscores}_setupmac.zip",
       verified: "meldaproduction.b-cdn.net/download/mpluginmanager/"
@@ -17,6 +17,7 @@ cask "mpluginmanager" do
   end
 
   auto_updates true
+  depends_on :macos
 
   pkg "MPluginManager_#{version.dots_to_underscores}_setupmac.pkg"
 

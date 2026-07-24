@@ -1,9 +1,9 @@
 cask "fiji" do
   arch arm: "-arm64", intel: "64"
 
-  version "20260119-1317"
-  sha256 arm:   "f40994fa3c4c79048d7aec9a89faa1e4e0981add02d279ff6950a080a108719a",
-         intel: "6771886b36e3204d0d00a046a2d8d522d97e11f1d22dc8596136b76fd31e05b8"
+  version "20260718-0417"
+  sha256 arm:   "e66a395160b5affc0c2328accb4782918703918c4b7391a79cfc7300299fea72",
+         intel: "b82046df1ac8d270c8ff5b358c7d58e5eace9bbfca836a4ce681459e5fc543b6"
 
   url "https://downloads.imagej.net/fiji/archive/latest/#{version}/fiji-latest-macos#{arch}-jdk.zip",
       verified: "downloads.imagej.net/fiji/archive/"
@@ -17,9 +17,9 @@ cask "fiji" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
-  app "Fiji/Fiji.app"
+  suite "Fiji"
 
   zap trash: [
     "~/Library/Preferences/sc.fiji.cellcounter.plist",

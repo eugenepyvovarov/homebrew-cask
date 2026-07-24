@@ -1,6 +1,6 @@
 cask "devknife" do
-  version "1.9.0"
-  sha256 "7d62b28202325d2fbd5f1e9ea2ceb9664c674c50cb9c524947e97dffdba2d630"
+  version "1.16.0"
+  sha256 "ce91719791e25e191822126840a7638930c76cc528bc7bc6396eb8c030d79c3a"
 
   url "https://files.solotuna.com/devknife/DevKnife-#{version}.dmg",
       verified: "files.solotuna.com/devknife/"
@@ -14,7 +14,7 @@ cask "devknife" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "DevKnife.app"
 

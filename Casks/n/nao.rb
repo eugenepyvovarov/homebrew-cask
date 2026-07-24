@@ -1,14 +1,9 @@
 cask "nao" do
   arch arm: "arm64", intel: "x64"
 
-  on_arm do
-    version "0.16.4"
-    sha256 "e26810abd9c9a924561063d60397815f938eac783057c9e7801ad8b6ee191d1b"
-  end
-  on_intel do
-    version "0.16.3"
-    sha256 "19cc85548a7abde73e2062012c4960925f68c9024420d8b51fd71678e18250bc"
-  end
+  version "0.16.8"
+  sha256 arm:   "b860eb8a2b9c20e91cc9d8a431ecbcdbeeb8d4d8d82949c5538ab316152cfa7a",
+         intel: "78ddf4666a563344d9ab02f968e09bbce873c40ec8d0aaf8776c90fa62ca1750"
 
   url "https://storage.googleapis.com/nao-releases/nao/darwin-#{arch}/#{version}/nao.#{arch}.#{version}.dmg",
       verified: "storage.googleapis.com/nao-releases/nao/"
@@ -29,7 +24,7 @@ cask "nao" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "nao.app"
   binary "#{appdir}/nao.app/Contents/Resources/app/bin/nao"

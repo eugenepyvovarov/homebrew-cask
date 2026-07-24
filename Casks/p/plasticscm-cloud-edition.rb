@@ -1,6 +1,6 @@
 cask "plasticscm-cloud-edition" do
-  version "11.0.16.9872"
-  sha256 "c00e3ab9006ae914379d4f0d33566975f84990d2fddae98448faf5c36ec8c8a1"
+  version "11.0.16.10303"
+  sha256 "75da6a9095c159f1c04e57e56ce7fd7ff8cbd4f5e6e4f4be9156b05884317c82"
 
   url "https://d26z97tczqnlef.cloudfront.net/releases/#{version}/plasticscm/osx/unity-vcs-#{version}-mac.pkg.zip",
       verified: "d26z97tczqnlef.cloudfront.net/"
@@ -13,13 +13,16 @@ cask "plasticscm-cloud-edition" do
     regex(%r{href=.*?/download/v?(\d+(?:\.\d+)+)/plasticscm/[^/]+/cloudedition}i)
   end
 
+  depends_on :macos
+
   pkg "unity-vcs-osx-x64-#{version}.pkg"
 
   uninstall launchctl: [
               "com.codicesoftware.plasticscm.macplastic",
               "com.codicesoftware.plasticscm.server",
+              "com.codicesoftware.unityvcstray",
             ],
-            quit:      "com.codicesoftware.plasticscm",
+            quit:      ["com.codicesoftware.plasticscm", "com.codicesoftware.unityvcstray"],
             pkgutil:   [
               "com.codicesoftware.plasticscm.macplastic",
               "com.codicesoftware.plasticscm.server",

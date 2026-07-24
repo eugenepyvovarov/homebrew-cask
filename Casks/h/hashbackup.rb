@@ -1,5 +1,5 @@
 cask "hashbackup" do
-  version "3325"
+  version "3336"
   sha256 :no_check
 
   url "https://www.hashbackup.com/download/hb-mac-64bit.tar.gz"
@@ -13,6 +13,8 @@ cask "hashbackup" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   binary "hb"
 

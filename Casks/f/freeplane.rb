@@ -1,9 +1,9 @@
 cask "freeplane" do
   arch arm: "apple", intel: "intel"
 
-  version "1.12.16"
-  sha256 arm:   "e8ff21c9e3a5ca2108b9cf3ac460fa2ee8716ef61edc4affaa1c1d3a0fcfff5e",
-         intel: "2da23693d52a2f56fd4944c8bcf597af81523927a9db3105c3a88b65b575f9a7"
+  version "1.13.3"
+  sha256 arm:   "f6c8639cbe91ca431c84b44eb64ab0b3f984454ec0203e1132e49586265a2347",
+         intel: "5946877c7f27c1932daf10ff456a57cfe07201f727ab5d53a527dd1d3306ec44"
 
   url "https://downloads.sourceforge.net/freeplane/Freeplane-#{version}-#{arch}.dmg",
       verified: "downloads.sourceforge.net/freeplane/"
@@ -15,6 +15,8 @@ cask "freeplane" do
     url "https://sourceforge.net/projects/freeplane/rss?path=/freeplane%20stable"
     regex(%r{url=.*?/Freeplane[._-]v?(\d+(?:\.\d+)+)(?:[._-]#{arch})?\.dmg}i)
   end
+
+  depends_on :macos
 
   app "Freeplane.app"
 

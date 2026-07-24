@@ -17,13 +17,13 @@ cask "virtual-ii" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   suite "Virtual ]["
 
-  preflight do
+  preflight_steps do
     # There is no sub-folder in the DMG; the root *is* the folder
-    FileUtils.mv(staged_path.children, staged_path.join("Virtual ][").tap(&:mkpath))
+    move_children ".", "Virtual ]["
   end
 
   zap trash: [

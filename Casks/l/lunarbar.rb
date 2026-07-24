@@ -1,8 +1,11 @@
 cask "lunarbar" do
-  version "1.8.2"
-  sha256 "4e80f7fbff4e49bcfcb4052b7c01328c0aaec5baa0e21a8147fe70d1ec62b331"
+  arch arm: "-apple-silicon"
 
-  url "https://github.com/LunarBar-app/LunarBar/releases/download/v#{version}/LunarBar-#{version}.dmg"
+  version "1.9.1"
+  sha256 arm:   "c7b61c9f73021689bdedd357c359e9f6767cd29a7560e1777a6ab2bc55fe74df",
+         intel: "06a978706e081a90180f868f52fe3614ea98e97c32014f229dff550955f2eae3"
+
+  url "https://github.com/LunarBar-app/LunarBar/releases/download/v#{version}/LunarBar-#{version}#{arch}.dmg"
   name "LunarBar"
   desc "Lunar calendar for menu bar"
   homepage "https://github.com/LunarBar-app/LunarBar"
@@ -12,7 +15,7 @@ cask "lunarbar" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "LunarBar.app"
 

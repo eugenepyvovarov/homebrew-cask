@@ -1,9 +1,16 @@
 cask "tableau" do
   arch arm: "-arm64"
 
-  version "2025.3.1"
-  sha256 arm:   "c6420f18cef7efc90aa806fc70f11dcd293e927e75625ed30c459181a32f023f",
-         intel: "f808f854520ad2d1a19fabbb58d5060ddfd1f9232d85745540e5af890c4769d1"
+  version "2026.2.1"
+  sha256 arm:   "c5710b65cda0b902009f035983e8b4b1705645e3b9e578afe79dee370954d595",
+         intel: "72abc4c91a5330056425b72c44afedac2d276d63d3c57324e73d88ad50484ba0"
+
+  on_arm do
+    depends_on macos: :ventura
+  end
+  on_intel do
+    depends_on macos: :catalina
+  end
 
   url "https://downloads.tableau.com/esdalt/#{version}/TableauDesktop-#{version.dots_to_hyphens}#{arch}.dmg",
       user_agent: :curl
@@ -30,6 +37,8 @@ cask "tableau" do
       end
     end
   end
+
+  depends_on macos: :ventura
 
   pkg "Tableau Desktop.pkg"
 

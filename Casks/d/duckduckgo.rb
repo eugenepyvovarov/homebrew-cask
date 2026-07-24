@@ -1,6 +1,6 @@
 cask "duckduckgo" do
-  version "1.173.0,604"
-  sha256 "8279ebc9d655a9a0e804e67d36cb4648839d50475a1772c3380ec02a810a1d07"
+  version "1.199.0,762"
+  sha256 "388b90af43451cca2469bf3b8cde29ba1c7507ebdfb9767de02da9e6826c07f2"
 
   url "https://staticcdn.duckduckgo.com/macos-desktop-browser/duckduckgo-#{version.csv.first}.#{version.csv.second}.dmg"
   name "DuckDuckGo"
@@ -15,13 +15,17 @@ cask "duckduckgo" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "DuckDuckGo.app"
 
   zap trash: [
+    "~/Library/Application Scripts/HKE973VLUW.com.duckduckgo.macos.browser*",
+    "~/Library/Application Support/com.duckduckgo.macos.browser",
+    "~/Library/Application Support/DuckDuckGo",
     "~/Library/Caches/com.duckduckgo.macos.browser",
     "~/Library/Containers/com.duckduckgo.macos.browser",
+    "~/Library/Group Containers/HKE973VLUW.com.duckduckgo.macos.browser*",
     "~/Library/HTTPStorages/com.duckduckgo.macos.browser",
     "~/Library/Preferences/com.duckduckgo.macos.browser.plist",
     "~/Library/Saved Application State/com.duckduckgo.macos.browser.savedState",

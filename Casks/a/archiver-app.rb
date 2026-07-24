@@ -1,6 +1,6 @@
 cask "archiver-app" do
-  version "5.0.0"
-  sha256 "73d8468028c945ba0bc7ba86e90f1539623960ecca2beab0feadcf7c87324914"
+  version "5.0.10"
+  sha256 "dedd172f31bf6fcfd2ed7afceeccbb4f01b0e585dd9f16447d1c5cf50cfae618"
 
   url "https://github.com/incbee/archiver-#{version.major}-releases/releases/download/v#{version}/Archiver-#{version}-universal-mac.zip",
       verified: "github.com/incbee/archiver-#{version.major}-releases/"
@@ -13,7 +13,7 @@ cask "archiver-app" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Archiver.app"
 

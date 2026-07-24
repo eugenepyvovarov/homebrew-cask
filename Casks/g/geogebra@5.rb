@@ -1,6 +1,6 @@
 cask "geogebra@5" do
-  version "5.4.913.0"
-  sha256 "24e99c777a7f0ccd5753843dc3890b3ee1bbf50e8e34bcd40ab4cd2a4ee6b6da"
+  version "5.4.925.3"
+  sha256 "6a20bcad4b756ac170ba27e7545f77cde35c461ea166cf5daba5301d9a91742d"
 
   url "https://download.geogebra.org/installers/#{version.major_minor}/GeoGebra-MacOS-Installer-withJava-#{version.dots_to_hyphens}.zip"
   name "GeoGebra"
@@ -17,6 +17,8 @@ cask "geogebra@5" do
       match[1].tr("-", ".")
     end
   end
+
+  depends_on :macos
 
   app "Geogebra.app"
 

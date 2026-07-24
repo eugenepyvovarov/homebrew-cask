@@ -1,6 +1,6 @@
 cask "adguard@nightly" do
-  version "2.19.0.2208"
-  sha256 "8a822a4e34b12a21769b8200d124c4ff5b5e14188b47b512d987c02388e147ef"
+  version "2.20.0.2402"
+  sha256 "ac47ecc9024af396b713ea233f6902dab45c10aa8826eee9e9a8a8188ee9572f"
 
   url "https://static.adguard.com/mac/nightly/AdGuard-#{version}.dmg"
   name "Adguard"
@@ -16,7 +16,7 @@ cask "adguard@nightly" do
 
   auto_updates true
   conflicts_with cask: "adguard"
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   pkg "AdGuard.pkg"
 

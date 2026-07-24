@@ -1,6 +1,6 @@
 cask "kaleidoscope" do
-  version "6.4.1,9379"
-  sha256 "0d42d432584c430dacd6d50510866cbddc29763eb91b1dcb80e5019c86141302"
+  version "6.7,10249"
+  sha256 "c7c91e3380126d2f569036ab5a357cb878d1933711e22477ae61d267d3d26035"
 
   url "https://updates.kaleidoscope.app/v#{version.major}/prod/Kaleidoscope-#{version.csv.first}-#{version.csv.second}.app.zip"
   name "Kaleidoscope"
@@ -17,7 +17,7 @@ cask "kaleidoscope" do
     kaleidoscope@2
     kaleidoscope@3
   ]
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Kaleidoscope.app"
 

@@ -1,14 +1,13 @@
 cask "safari-technology-preview" do
-  # when adjusting the on_{os} scoping, also update the livecheck regex
-  on_sequoia :or_older do
-    version "235,047-13739-20260114-5d6c0f76-26ef-4d2a-8f5e-96113211bbc9"
-    sha256 "6a92ad80c04471620ad03310ef2300bf956821af7d1cfadfe53a62c331dd4dd0"
+  on_tahoe :or_older do
+    version "248,140-68976-20260721-b3545a30-cb78-4d14-9ddb-c1f43098f3ef"
+    sha256 "d73f1cd7e3117cc1243088f887dbe096ff7464f9f0780f3ce3a6712e7c07d24b"
 
     livecheck do
       url :homepage
       regex(%r{
         href=.*?/([^/]+)/Safari(?:%20|\+)?Technology(?:%20|\+)?Preview\.dmg
-        .*?macOS(?:\s|&nbsp;)*15[\s.<]
+        .*?macOS(?:\s|&nbsp;)*26[\s.<]
       }ix)
       strategy :page_match do |page, regex|
         release = page[%r{>\s*Release\s*</p>\s*<p[^>]*>\s*(\d+)[^<]*<}i, 1]
@@ -17,15 +16,16 @@ cask "safari-technology-preview" do
       end
     end
   end
-  on_tahoe :or_newer do
-    version "235,047-13724-20260114-ba19b299-e1aa-4a1f-adcb-01bf838fbcff"
-    sha256 "31da6d89cd836bae5333bae1d5e5442c347c8089e2bdb12dae92bc209df5f2f7"
+  # when adjusting the on_{os} scoping, also update the livecheck regex
+  on_golden_gate :or_newer do
+    version "247,140-34366-20260630-87ebbe6a-e3ef-4af1-9d0e-848f2ab2ec7a"
+    sha256 "65b28478653fd40a51c6488814793e785e07cc7632d7ddc337e6d1a1f4ec9e2b"
 
     livecheck do
       url :homepage
       regex(%r{
         href=.*?/([^/]+)/Safari(?:%20|\+)?Technology(?:%20|\+)?Preview\.dmg
-        .*?macOS(?:\s|&nbsp;)*26[\s.<]
+        .*?macOS(?:\s|&nbsp;)*27[\s.<]
       }ix)
       strategy :page_match do |page, regex|
         release = page[%r{>\s*Release\s*</p>\s*<p[^>]*>\s*(\d+)[^<]*<}i, 1]
@@ -41,7 +41,7 @@ cask "safari-technology-preview" do
   homepage "https://developer.apple.com/safari/resources/"
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :tahoe
 
   pkg "Safari Technology Preview.pkg"
 

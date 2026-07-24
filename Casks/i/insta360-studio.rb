@@ -1,6 +1,6 @@
 cask "insta360-studio" do
-  version "5.8.8,release_insta360,RC_build53,_20260109_114123_signed_1767949918094,a8bf763e56b94cc283df47428b15783b"
-  sha256 "20224d0b2da439617671b88c664c64ab8a9131e302c566c256b2ee55ede9160f"
+  version "5.9.10,release_insta360,RC_build1,_20260616_180401_signed_1781605485608,0936c65680294e4aaac04a549a7bf74e"
+  sha256 "09f28fbc438ab115d410806097f65d85490b50bc454fb403c11cf955695d6f93"
 
   url "https://wassets.insta360.com/common/#{version.csv.fifth}/Insta360_Studio_#{version.csv.first}_#{version.csv.second}(#{version.csv.third})#{version.csv.fourth}.zip"
   name "Insta360 Studio"
@@ -36,6 +36,8 @@ cask "insta360-studio" do
       "#{match[2]},#{match[3].tr("()", ",")},#{match[1]}"
     end
   end
+
+  depends_on :macos
 
   # The pkg is often inconsistently named comparatively to the url version
   rename "Insta360_Studio*.pkg", "Insta360_Studio.pkg"

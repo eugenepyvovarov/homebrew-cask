@@ -1,9 +1,9 @@
 cask "xournal++" do
   arch arm: "ARM64", intel: "X64"
 
-  version "1.3.1"
-  sha256 arm:   "b87e710e4158711c34cbae0b5a999b552724c338050b62f0f7b3fd2ed01c0051",
-         intel: "4c8f3cd1a4fee86466deeef33c6a81f0cc25a410102e1b5f3c16424f15c92d01"
+  version "1.3.6"
+  sha256 arm:   "6f66096ee0168601e2130f23da20aab2dc14d1d6d3d167043ef165f0223ecde7",
+         intel: "f0ff4c96caa1b3f72a3bd9e078297e2f8a5b1143cdea73865361150302b08cdc"
 
   url "https://github.com/xournalpp/xournalpp/releases/download/v#{version}/xournalpp-#{version}-macOS-#{arch}.dmg"
   name "Xournal++"
@@ -16,6 +16,8 @@ cask "xournal++" do
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "Xournal++.app"
 

@@ -3,9 +3,9 @@ cask "qqnews" do
   url_arch = on_arch_conditional arm: "arm64", intel: "intel"
   livecheck_arch = on_arch_conditional arm: "arm64", intel: "intel"
 
-  version "2.2.90"
-  sha256 arm:   "8788c1a10511bbc717534046c3253984f9732e9bf68f03ad704cb7227fcbaeeb",
-         intel: "77c395a5bbf9db8d575b20e14ee55be48cedb930855d1f7da99678f5d3f532fe"
+  version "2.3.80"
+  sha256 arm:   "02ecedced3a3f3913e676bc965920a1207c28277ecf51bfc5e740547c5939c38",
+         intel: "ff151b4369bba69d5e0ff88c2268cbe8c1a3bc356280e0e14ae78764e206bf2d"
 
   url "https://h5.news.qq.com/qqnews-desk/mac-#{url_arch}/qqnews_#{version}_#{arch}_signed.zip"
   name "qqnews"
@@ -19,7 +19,7 @@ cask "qqnews" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: :catalina
 
   app "腾讯新闻.app"
 

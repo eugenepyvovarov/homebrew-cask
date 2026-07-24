@@ -1,9 +1,9 @@
 cask "duplicati" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.2.0.3,2026-01-06"
-  sha256 arm:   "36a246569d3788071d10f6ce29d70499983da8cda52df9a43ef418db5bb8e676",
-         intel: "7b50bb461f7fe27899635003379f5df60303395efc06699a6aec5115e6901098"
+  version "2.3.0.4,2026-07-09"
+  sha256 arm:   "2f6574f1de3fe8050da831e7a63529bd75c62912ab0d8c51991275be6dca08e8",
+         intel: "09257cb1b308b76c4e1c5513db858a3c5ad4a60373107f3182e950e6511218fa"
 
   url "https://updates.duplicati.com/stable/duplicati-#{version.csv.first}_stable_#{version.csv.second}-osx-#{arch}-gui.dmg"
   name "Duplicati"
@@ -21,7 +21,7 @@ cask "duplicati" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Duplicati.app"
 

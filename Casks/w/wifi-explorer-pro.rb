@@ -1,6 +1,6 @@
 cask "wifi-explorer-pro" do
-  version "3.9.2"
-  sha256 "67234bcb3e047889e64a52c434a1a282fc5ab891f3b31cadfe9e62e5849c092e"
+  version "3.10.2"
+  sha256 "d36116c2e4460fd33676fb905a07af13a8dc51634114840d8ac656be32a170b1"
 
   url "https://www.intuitibits.com/downloads/WiFiExplorerPro_#{version}.pkg"
   name "WiFi Explorer Pro"
@@ -13,7 +13,7 @@ cask "wifi-explorer-pro" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   pkg "WiFiExplorerPro_#{version}.pkg"
 

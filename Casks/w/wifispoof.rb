@@ -1,6 +1,6 @@
 cask "wifispoof" do
-  version "4.1.5"
-  sha256 "5513873655c2a474fe648a4e931549d73fa29fff7595839ca8b301d21e2b0d90"
+  version "4.2"
+  sha256 "8c73f8e7794eefd59a05006ed01904ac43c7555b7b6316bcafb42e168e71fd6f"
 
   url "https://sweetpproductions.com/products/wifispoof#{version.major}/WiFiSpoof.dmg",
       verified: "sweetpproductions.com/products/"
@@ -14,7 +14,7 @@ cask "wifispoof" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "WiFiSpoof.app"
 

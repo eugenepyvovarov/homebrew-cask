@@ -2,9 +2,9 @@ cask "frame0" do
   # NOTE: "0" is not a version number, but an intrinsic part of the product name
   arch arm: "arm64", intel: "x64"
 
-  version "1.5.0"
-  sha256 arm:   "51d719427dd71b77c514af119f2e9eb9c949927a76b4f9186c5ad3cbaa809288",
-         intel: "0594e52a7464bd70e04f8cf6dd65ca831951e3b97f9e52f79e29de07c28f5c7e"
+  version "1.7.0"
+  sha256 arm:   "08721df258085aeea0d3d4b09bf9f53d8941a4496359c522c11b2f9b0dcb7d4f",
+         intel: "4169a8381d0aaa64a74145409675acd065da1056a9fad1944a36576fd5e80cdd"
 
   url "https://files.frame0.app/releases/darwin/#{arch}/Frame0-#{version}-#{arch}.dmg"
   name "Frame0"
@@ -19,6 +19,8 @@ cask "frame0" do
       end
     end
   end
+
+  depends_on macos: :big_sur
 
   app "Frame0.app"
 

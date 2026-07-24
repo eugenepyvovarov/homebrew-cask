@@ -1,9 +1,9 @@
 cask "emdash" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.3.53"
-  sha256 arm:   "6560802e93cb38c10e5483f36c8e74f40edec5659d65146df615083ddf3447d9",
-         intel: "ddab0b3a25e448ee1e7f3979fc69968afc7c1bba43388ccc0da22d0b20db1ecf"
+  version "1.1.40"
+  sha256 arm:   "b78f007a9799f64fb9d19dd9ca8669317dafea564f2d072189318f048f5e4ad7",
+         intel: "8190d833caaabab5d396bdfad0416213d798a5d5a9dd9f09ca3307e81ded62dc"
 
   url "https://github.com/generalaction/emdash/releases/download/v#{version}/emdash-#{arch}.dmg",
       verified: "github.com/generalaction/emdash/"
@@ -11,14 +11,20 @@ cask "emdash" do
   desc "UI for running multiple coding agents in parallel"
   homepage "https://www.emdash.sh/"
 
-  depends_on macos: ">= :big_sur"
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
+  depends_on macos: :monterey
 
   app "emdash.app"
 
   zap trash: [
-    "/Library/Logs/emdash",
-    "/Library/Saved Application State/com.emdash.savedState",
-    "~/Library/Application Support/emdash",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.emdash.sfl*",
+    "~/Library/Application Support/Emdash",
+    "~/Library/Logs/emdash",
     "~/Library/Preferences/com.emdash.plist",
+    "~/Library/Saved Application State/com.emdash.savedState",
   ]
 end

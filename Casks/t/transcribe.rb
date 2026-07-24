@@ -21,9 +21,9 @@ cask "transcribe" do
     end
   end
   on_ventura :or_newer do
-    version "9.50.1"
-    sha256 arm:   "b9d0c2a1b9355b8fb4d7cd31f2e77e5c30d9e306fbfb2398a21fc117c70cdab2",
-           intel: "1e2838787f961c70a0d235e9bfd0885ffcf6706a2f9edd1ecc33ea92357eae08"
+    version "9.60.3"
+    sha256 arm:   "7d0feff75a1d21657a5e47cbe7b7d795e58c4bf874828aa0c27f518525626745",
+           intel: "12aa4b86fd6341a60d411ca1b01e910bad7b5004816c48db92f510ee9292d655"
 
     url "https://www.seventhstring.com/xscribe/downmo/transcribe-#{arch}-#{version}.dmg"
 
@@ -36,6 +36,8 @@ cask "transcribe" do
   name "Transcribe!"
   desc "Transcribes recorded music"
   homepage "https://www.seventhstring.com/xscribe/overview.html"
+
+  depends_on :macos
 
   app "Transcribe!.app"
 

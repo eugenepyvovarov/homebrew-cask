@@ -1,9 +1,9 @@
 cask "kreya" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.18.0"
-  sha256 arm:   "b03ecf4b1147745498e7373d577a5a6165948a88ba728064a98c0e3d8c1eba53",
-         intel: "17f4773e06ffd91fd5233332d1f8fcf9357ea4a8efdce8274f941091d78e33e4"
+  version "1.20.3"
+  sha256 arm:   "a4956ddfcaf2b62f3c7cd44b48f7fcc729d9d27623d3072bb1aae26ea478ac86",
+         intel: "e6d25ff114f9bfdddcff9df083f2c4a2fbe68481b03c8982cbf1b0e10f5fa5de"
 
   url "https://stable-downloads.kreya.app/#{version}/Kreya-osx-#{arch}.zip"
   name "Kreya"
@@ -15,7 +15,7 @@ cask "kreya" do
     regex(/(\d+(?:\.\d+)+)\s\(\d{4}-\d{2}-\d{2}\)/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :ventura
 
   app "Kreya.app"
 

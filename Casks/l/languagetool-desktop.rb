@@ -1,6 +1,6 @@
 cask "languagetool-desktop" do
-  version "2.10.0"
-  sha256 "31afc6f634e70fc677956dbc9096181fbb53b700e243f104c1fe31775e112af7"
+  version "3.2.0"
+  sha256 "88a16c8d29ad4e4a42389a4ee709c5be0cb5c3467350ff83cc61e4ba87342920"
 
   url "https://languagetool.org/download/mac-app/LanguageToolDesktop-#{version.csv.first}#{version.csv.second if version.csv.second}.dmg"
   name "LanguageTool for Desktop"
@@ -26,15 +26,25 @@ cask "languagetool-desktop" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "LanguageTool for Desktop.app"
 
-  uninstall quit: "org.languagetool.desktop"
+  uninstall launchctl: [
+              "org.languageTool.desktop.LauncherApplication",
+              "org.languageTool.desktop.UninstallHelper",
+            ],
+            quit:      "org.languagetool.desktop"
 
   zap trash: [
+    "~/Library/Application Scripts/N6PF5J2JR8.org.languagetool.desktop.group",
+    "~/Library/Application Scripts/org.languagetool.desktop.ShareExtension",
     "~/Library/Application Support/LanguageTool for Desktop",
     "~/Library/Caches/org.languagetool.desktop",
+    "~/Library/Containers/org.languagetool.desktop.ShareExtension",
+    "~/Library/Group Containers/N6PF5J2JR8.org.languagetool.desktop.group",
+    "~/Library/HTTPStorages/org.languagetool.desktop*",
+    "~/Library/LaunchAgents/org.languageTool.desktop.UninstallHelper.plist",
     "~/Library/Preferences/org.languagetool.desktop.plist",
   ]
 end

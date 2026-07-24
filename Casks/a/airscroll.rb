@@ -1,5 +1,5 @@
 cask "airscroll" do
-  version "1.2.2"
+  version "1.3.2"
   sha256 :no_check
 
   url "https://airscroll.net/releases/AirScroll.app.zip"
@@ -13,7 +13,7 @@ cask "airscroll" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "AirScroll.app"
 

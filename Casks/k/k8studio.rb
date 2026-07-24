@@ -1,12 +1,11 @@
 cask "k8studio" do
   arch arm: "-arm64"
 
-  version "3.1.4"
-  sha256 arm:   "45356d4096d7b625137f8ab621aa04de8432464e23d04ce7fa04fb5ff66b86b8",
-         intel: "3db8e7e1b95f27d9c478c65fe79a42a30aa6d0083cc9123191a8f6b419ff09ad"
+  version "4.0.0"
+  sha256 arm:   "a022514aefc679f34389ae9125aab10e36d328e6b3181cbd451b1fd12a4ca242",
+         intel: "7386dae6e31e6544a97e4c69ca75a7f3a7e50f30a19ad4951f9f2e6cdf2dc691"
 
-  url "https://github.com/k8Studio/k8Studio/releases/download/v#{version}/K8Studio-#{version}#{arch}.dmg",
-      verified: "github.com/k8Studio/k8Studio/"
+  url "https://releases.k8studio.io/K8Studio-#{version}#{arch}.dmg"
   name "K8studio"
   desc "Kubernetes GUI"
   homepage "https://k8studio.io/"
@@ -16,7 +15,7 @@ cask "k8studio" do
     regex(/href=.*?k8studio[._-]v?(\d+(?:\.\d+)+(?:[._-]beta)?)\.dmg/i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "K8Studio.app"
 

@@ -1,5 +1,5 @@
 cask "smultron" do
-  version "14.4.5,14450"
+  version "14.4.9,14490"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://www.peterborgapps.com/downloads/Smultron#{version.major}.zip"
@@ -19,7 +19,7 @@ cask "smultron" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Smultron.app"
 

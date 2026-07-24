@@ -1,6 +1,6 @@
 cask "waterfox" do
-  version "6.6.8"
-  sha256 "37277b017828c25bddb1e7d019e8ce1fffddd533f11d7ef58fad7f2beacb24d0"
+  version "6.6.17"
+  sha256 "befa28b2bce215befcc31a59144fd558c94bcc424adada26b53b2a11ba4ff8f2"
 
   url "https://cdn1.waterfox.net/waterfox/releases/#{version}/Darwin_x86_64-aarch64/Waterfox%20#{version}.dmg"
   name "Waterfox"
@@ -13,6 +13,7 @@ cask "waterfox" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Waterfox.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

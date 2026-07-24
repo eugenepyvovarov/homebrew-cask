@@ -1,9 +1,9 @@
 cask "drawio" do
   arch arm: "arm64", intel: "x64"
 
-  version "29.3.0"
-  sha256 arm:   "920b82c0f6889f7b8f6b55d9329e2afb08d44dc2c934b0ad1e55ad9f5a2b6bfb",
-         intel: "dcc1390ea93b3ba1656a7df1d57a9a34a3b5a386e694d320e465f6eca9f23345"
+  version "31.0.2"
+  sha256 arm:   "e35e838417c208e29da9b3f5c2106923af825c565353eb9acf1a3ed9a829766d",
+         intel: "55232523da54f6f247f9025abf9bf8b156aa5754f6d879cb73974ba07926c4d5"
 
   url "https://github.com/jgraph/drawio-desktop/releases/download/v#{version}/draw.io-#{arch}-#{version}.dmg",
       verified: "github.com/jgraph/drawio-desktop/"
@@ -17,7 +17,7 @@ cask "drawio" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "draw.io.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

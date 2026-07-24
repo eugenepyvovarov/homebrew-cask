@@ -1,12 +1,12 @@
 cask "super-productivity" do
   arch arm: "arm64", intel: "x64"
 
-  version "16.9.4"
-  sha256 arm:   "feccad60f58351cf97061fc28e482f36798a877fa081f296d4a637b5edb65485",
-         intel: "bdda0a49958593b5a1d70c95bc6b890480d59c87ecaa7a4e31038a6c17bcdd5b"
+  version "18.15.1"
+  sha256 arm:   "0e7382260d0afba7bcb557038ee750270122d201756337bcec9081d701076591",
+         intel: "78e000594fe4e52f4f0a137217deea4085547bd6af08608bd50017a0a34d590a"
 
-  url "https://github.com/johannesjo/super-productivity/releases/download/v#{version}/superProductivity-#{arch}.dmg",
-      verified: "github.com/johannesjo/super-productivity/"
+  url "https://github.com/super-productivity/super-productivity/releases/download/v#{version}/superProductivity-#{arch}.dmg",
+      verified: "github.com/super-productivity/super-productivity/"
   name "Super Productivity"
   desc "To-do list and time tracker"
   homepage "https://super-productivity.com/"
@@ -16,7 +16,7 @@ cask "super-productivity" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Super Productivity.app"
 

@@ -1,6 +1,6 @@
 cask "ollama-app" do
-  version "0.14.2"
-  sha256 "dde749770228bdc8531e53be68addaddee1ba897f3cea90ea084d0a3d8115504"
+  version "0.32.3"
+  sha256 "3be39ebba6e7beee0e6498468dd391771db56e8fff84d77424fccc8bd94ccbfa"
 
   url "https://github.com/ollama/ollama/releases/download/v#{version}/Ollama-darwin.zip",
       verified: "github.com/ollama/ollama/"
@@ -14,15 +14,20 @@ cask "ollama-app" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Ollama.app"
   binary "#{appdir}/Ollama.app/Contents/Resources/ollama"
 
+  uninstall launchctl: "com.ollama.ollama",
+            quit:      "com.electron.ollama"
+
   zap trash: [
     "~/.ollama",
     "~/Library/Application Support/Ollama",
+    "~/Library/Caches/com.electron.ollama",
     "~/Library/Preferences/com.electron.ollama.plist",
     "~/Library/Saved Application State/com.electron.ollama.savedState",
+    "~/Library/Webkit/com.electron.ollama",
   ]
 end

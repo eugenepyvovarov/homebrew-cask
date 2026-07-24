@@ -1,8 +1,8 @@
 cask "camtasia" do
-  version "26.0.5"
-  sha256 "1dfbb490b64e27e2fce067b0e90da69870a61290ef1c1025a8034001ecf90508"
+  version "2026.1.4"
+  sha256 "52cb131102b2734f3906ee1e1eb01939a3c1e6bc0ed9b4dbce6530e52e268766"
 
-  url "https://download.techsmith.com/camtasiamac/releases/#{version.no_dots}/Camtasia.dmg"
+  url "https://download.techsmith.com/camtasiamac/releases/#{version}/Camtasia.dmg"
   name "Camtasia"
   desc "Screen recorder and video editor"
   homepage "https://www.techsmith.com/video-editor.html"
@@ -11,13 +11,13 @@ cask "camtasia" do
     url "https://www.techsmith.com/api/v/1/products/getallversions/9"
     strategy :json do |json|
       json.map do |item|
-        "#{item["Major"]}.#{item["Minor"]}.#{item["Maintenance"]}"
+        "20#{item["Major"]}.#{item["Minor"]}.#{item["Maintenance"]}"
       end
     end
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Camtasia.app"
 

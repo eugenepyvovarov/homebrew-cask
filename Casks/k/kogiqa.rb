@@ -1,6 +1,6 @@
 cask "kogiqa" do
-  version "0.4.946"
-  sha256 "8fe9af93c2d2999f340bbe8948ed6d40138eda1832e952138a73e88b1e1cd3e9"
+  version "0.5.1105"
+  sha256 "098b8416deafacaad53329c1a35ba6e0554243eb3b6db386597f54f33b519fe5"
 
   url "https://updater.kogiqa.com/release/kogi-qa-#{version}-universal.dmg"
   name "kogiQA"
@@ -13,7 +13,7 @@ cask "kogiqa" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "kogiQA.app"
 

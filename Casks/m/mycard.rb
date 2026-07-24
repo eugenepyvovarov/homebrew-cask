@@ -1,6 +1,6 @@
 cask "mycard" do
-  version "3.0.77"
-  sha256 "1dfe22d41779ee09d59ffea0888388340488bda9608b206b732c9cec934e66e2"
+  version "3.0.85"
+  sha256 "af5b7020a588b46d35ec3b19bb29a0fa9de120ecf0125d00462cd45865c03dc3"
 
   url "https://cdn02.moecube.com:444/downloads/MyCard-#{version}.dmg",
       verified: "cdn02.moecube.com:444/downloads/"
@@ -12,6 +12,8 @@ cask "mycard" do
     url "https://cdn02.moecube.com:444/downloads/latest-mac.yml"
     strategy :electron_builder
   end
+
+  depends_on :macos
 
   app "MyCard.app"
 

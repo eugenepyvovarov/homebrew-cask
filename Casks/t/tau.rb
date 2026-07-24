@@ -1,7 +1,7 @@
 cask "tau" do
   arch arm: "_arm64"
 
-  version "2.35"
+  version "2.35.2"
   sha256 :no_check
 
   url "https://www.cs.uoregon.edu/research/tau/tau#{arch}.dmg"
@@ -13,6 +13,8 @@ cask "tau" do
     url "https://www.cs.uoregon.edu/research/tau/downloads.php"
     regex(/version\s+(\d+(?:\.\d+)+)/i)
   end
+
+  depends_on :macos
 
   suite "TAU"
 

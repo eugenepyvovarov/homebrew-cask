@@ -1,6 +1,6 @@
 cask "quakenotch" do
-  version "2.1.1"
-  sha256 "65d962ddd9c66f440004ea0f92191e76d9b1e4ccf26aec28fd2cb94a427b7659"
+  version "3.3.1"
+  sha256 "e3299d922cff14d3d47cc8e64cd6bbadbbdbe8ba64d3151d98a9a11eaf0a8cf4"
 
   url "https://github.com/rohanrhu/QuakeNotch/releases/download/v#{version}/QuakeNotch.zip",
       verified: "github.com/rohanrhu/QuakeNotch/"
@@ -9,7 +9,7 @@ cask "quakenotch" do
   homepage "https://quakenotch.com/"
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "QuakeNotch.app"
 

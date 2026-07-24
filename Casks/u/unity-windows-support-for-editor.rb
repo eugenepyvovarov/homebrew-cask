@@ -1,6 +1,6 @@
 cask "unity-windows-support-for-editor" do
-  version "2023.2.20f1,0e25a174756c"
-  sha256 "ddb913827886eb914ae07afaf8b802c70d669c1864bc6ddfbb02e65629864372"
+  version "6000.5.3f1,c2eb47b3a2a9"
+  sha256 "5ab7bb771de8cccafb0d7aba422ea5b70cc6c1dd166a6031cc6a9572a4b4be5d"
 
   url "https://download.unity3d.com/download_unity/#{version.csv.second}/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-#{version.csv.first}.pkg",
       verified: "download.unity3d.com/download_unity/"
@@ -12,9 +12,10 @@ cask "unity-windows-support-for-editor" do
     cask "unity"
   end
 
+  depends_on :macos
   depends_on cask: "unity"
 
   pkg "UnitySetup-Windows-Mono-Support-for-Editor-#{version.csv.first}.pkg"
 
-  uninstall pkgutil: "com.unity3d.WindowsStandaloneSupport"
+  uninstall pkgutil: "com.unity3d.WindowsStandaloneSupport-#{version.csv.first}"
 end

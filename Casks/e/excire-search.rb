@@ -1,9 +1,9 @@
 cask "excire-search" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.0.3"
-  sha256 arm:   "b80e067e4326b65fe4f7982af08ec1732afe33cad29f9a52a99463abf588735d",
-         intel: "8dedfe8754d722e89f43f1684e81bceadb7dd6f8e101a285b40393a302a3312e"
+  version "5.0.6"
+  sha256 arm:   "e3b696f5be044a88568e254d5353981a3f79ab1777038da6bd0ca7070b0abd7c",
+         intel: "54475f47a93dd04cfb45f0307087369e4fe1ae46ef650b01299d9dd383834c69"
 
   url "https://www.excire.com/downloads/excire-search/ExcireSearch-#{version}-#{arch}.zip"
   name "Excire Search"
@@ -17,7 +17,7 @@ cask "excire-search" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   pkg "Install.pkg"
 

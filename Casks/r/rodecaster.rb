@@ -1,5 +1,5 @@
 cask "rodecaster" do
-  version "2.0.105"
+  version "2.0.111"
   sha256 :no_check
 
   url "https://update.rode.com/rc-app/RODECaster_App_MACOS.zip"
@@ -13,6 +13,8 @@ cask "rodecaster" do
       json.dig("rc-app-manifest", "macos", "main-version", "update-version")
     end
   end
+
+  depends_on :macos
 
   pkg "RØDECaster App.pkg"
 

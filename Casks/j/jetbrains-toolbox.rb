@@ -1,9 +1,9 @@
 cask "jetbrains-toolbox" do
   arch arm: "-arm64"
 
-  version "3.2,3.2.0.65851"
-  sha256 arm:   "40bfaf8a40b6db5649415c2123f6206e264501f8efe1538e3d8e8eab62e19d81",
-         intel: "824c2be1b3c7c99af1b9af02daae2d5a2153dbfe9da502ab5690e08e7c7b812a"
+  version "3.6.2,3.6.2.85969"
+  sha256 arm:   "7ac7ff01f4431a8595d392966fb09f241450be472cddb1b9fc895d713b8d64e0",
+         intel: "36ed8981ec56eca7010802a62308db4bf9977759c6b9ec162202b7b761861e68"
 
   url "https://download.jetbrains.com/toolbox/jetbrains-toolbox-#{version.csv.second}#{arch}.dmg"
   name "JetBrains Toolbox"
@@ -24,10 +24,12 @@ cask "jetbrains-toolbox" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "JetBrains Toolbox.app"
 
   uninstall launchctl: "com.jetbrains.toolbox",
+            quit:      "com.jetbrains.toolbox",
             signal:    ["TERM", "com.jetbrains.toolbox"]
 
   zap trash: [

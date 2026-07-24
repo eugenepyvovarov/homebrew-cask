@@ -1,5 +1,5 @@
 cask "chrome-remote-desktop-host" do
-  version "144.0.7559.13"
+  version "151.0.7922.13"
   sha256 :no_check
 
   url "https://dl.google.com/chrome-remote-desktop/chromeremotedesktop.dmg"
@@ -11,6 +11,8 @@ cask "chrome-remote-desktop-host" do
     url :url
     strategy :extract_plist
   end
+
+  depends_on :macos
 
   pkg "Chrome Remote Desktop Host.pkg"
 

@@ -16,7 +16,7 @@ cask "virtualbuddy" do
   auto_updates true
   conflicts_with cask: "virtualbuddy@beta"
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "VirtualBuddy.app"
   binary "#{appdir}/VirtualBuddy.app/Contents/MacOS/vctool", target: "vctool"
@@ -24,6 +24,7 @@ cask "virtualbuddy" do
   zap trash: [
     "~/Library/Application Support/VirtualBuddy",
     "~/Library/Caches/codes.rambo.VirtualBuddy",
+    "~/Library/Caches/VirtualBuddy",
     "~/Library/HTTPStorages/codes.rambo.VirtualBuddy",
     "~/Library/Preferences/codes.rambo.VirtualBuddy.plist",
   ]

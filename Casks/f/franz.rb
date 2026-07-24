@@ -1,17 +1,18 @@
 cask "franz" do
-  arch arm: "-arm64"
+  arch arm: "arm64", intel: "x64"
 
-  version "5.11.0"
-  sha256 arm:   "3390a32cab5510b34e2237f2215fc82086d1203cd621cdb8b5bd2f809db2297f",
-         intel: "ca1ac6fb5c51af0dfd63d89490bb557fe648eeb7f40e9af2f186d108210977b6"
+  version "6.5.1"
+  sha256 arm:   "c45445ba7ceb531eba17851d0dabffad5d6af310367c3e8edbb80cd519c94788",
+         intel: "30aad964229b3742de946eac0f034ba74654cbab4eb83f9c522da8db01876109"
 
-  url "https://github.com/meetfranz/franz/releases/download/v#{version}/franz-#{version}#{arch}.dmg",
-      verified: "github.com/meetfranz/franz/"
+  url "https://github.com/meetfranz/franz-6/releases/download/v#{version}/Franz-#{arch}.dmg",
+      verified: "github.com/meetfranz/franz-6/"
   name "Franz"
   desc "Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more"
   homepage "https://meetfranz.com/"
 
   auto_updates true
+  depends_on macos: :monterey
 
   app "Franz.app"
 

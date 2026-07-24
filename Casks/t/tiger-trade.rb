@@ -1,6 +1,6 @@
 cask "tiger-trade" do
-  version "9.15.3"
-  sha256 "9a0a89b22f29d33c9e29f0620ef1570d2443f7fda613411f88c1c4aa402b8b18"
+  version "9.23.3"
+  sha256 "326969ccf108eaefafe477ea447ac93f450cece803f2e01d669ccff7f7bb7b88"
 
   url "https://download.tigerfintech.com/desktop/cdn/f/TigerTrade_#{version}.dmg",
       verified: "download.tigerfintech.com/"
@@ -16,6 +16,8 @@ cask "tiger-trade" do
       json["downloadUrl"]&.[](regex, 1)
     end
   end
+
+  depends_on :macos
 
   app "Tiger Trade.app"
 

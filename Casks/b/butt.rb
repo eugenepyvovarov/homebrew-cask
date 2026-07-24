@@ -1,6 +1,6 @@
 cask "butt" do
-  version "1.46.0"
-  sha256 "be72a93eb58cc3bc4de4d14b450220f8604ad3f1e0ac81dcec234672c93b7fe9"
+  version "1.47.0"
+  sha256 "09523c292c84a9aa6394173440c64ea70c451c9f9d4bd813e15d870895583f7b"
 
   url "https://danielnoethen.de/butt/release/#{version}/butt-#{version}.dmg"
   name "Broadcast Using This Tool"
@@ -12,7 +12,7 @@ cask "butt" do
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "butt.app"
 

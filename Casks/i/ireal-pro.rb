@@ -22,10 +22,10 @@ cask "ireal-pro" do
     end
   end
   on_monterey :or_newer do
-    version "2025.11,20251101"
-    sha256 "d3ebe7df3a2cf63ea81b2bd243bdd41aca6832669df61cfa76bc323c760156f1"
+    version "2026.6.3,20260631"
+    sha256 "08143479bbc73c30a2da9c8df263115d43b480289eb7969c38e8dbbade0df38f"
 
-    url "https://ireal-pro.s3.amazonaws.com/iRealPro#{version.csv.second}.zip",
+    url "https://ireal-pro.s3.amazonaws.com/iReal%20Pro-#{version.csv.first}-#{version.csv.second}.dmg",
         verified: "ireal-pro.s3.amazonaws.com/"
 
     livecheck do
@@ -39,6 +39,7 @@ cask "ireal-pro" do
   homepage "https://irealpro.com/"
 
   auto_updates true
+  depends_on :macos
 
   app "iReal Pro.app"
 

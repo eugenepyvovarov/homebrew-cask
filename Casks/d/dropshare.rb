@@ -1,6 +1,6 @@
 cask "dropshare" do
-  version "6.9.1,6156"
-  sha256 "f89740c6f52739d6baaddd305f65f23d287fbca030f2cc991835fe260c53909a"
+  version "6.14,6257"
+  sha256 "629302d962e890fdd32887dbf7915e734d6d6703774ad60423d93030935ee66f"
 
   url "https://d2wvuuix8c9e48.cloudfront.net/Dropshare#{version.major}-#{version.csv.second}.app.zip",
       verified: "d2wvuuix8c9e48.cloudfront.net/"
@@ -17,7 +17,7 @@ cask "dropshare" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Dropshare #{version.major}.app"
   binary "#{appdir}/Dropshare #{version.major}.app/Contents/Resources/ds.sh", target: "ds"

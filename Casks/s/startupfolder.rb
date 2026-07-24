@@ -1,6 +1,6 @@
 cask "startupfolder" do
-  version "1.1.5"
-  sha256 "fce3ca7a77541093b26433fca036d5ea04de7f5d7c42ac54c639b30aa1c13aae"
+  version "1.2.1"
+  sha256 "e76683b8e4332a5c928f4ea69436bd6e0f1b101a7073267faf7bfb7e6575c96f"
 
   url "https://files.lowtechguys.com/releases/StartupFolder-#{version}.dmg"
   name "Startup Folder"
@@ -13,7 +13,7 @@ cask "startupfolder" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "StartupFolder.app"
 

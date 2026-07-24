@@ -1,6 +1,6 @@
 cask "sensei" do
-  version "2.0,125"
-  sha256 "4d395c8c997489d49e8f763026a45a8c765023d3826fc3afe27ad20425656583"
+  version "2.1.1,138"
+  sha256 "f8540c66cb7cad0596892a4d60fc4ff9eab4fcd87769bd0df6514c6f93fa1b6e"
 
   url "https://cdn.cindori.com/apps/sensei/updates/#{version.csv.first}-#{version.csv.second}/Sensei.dmg"
   name "Sensei"
@@ -13,7 +13,7 @@ cask "sensei" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Sensei.app"
 

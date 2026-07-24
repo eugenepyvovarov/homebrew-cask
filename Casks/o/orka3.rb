@@ -1,15 +1,15 @@
 cask "orka3" do
   arch arm: "arm64", intel: "amd64"
 
-  version "3.5.1"
-  sha256 arm:   "42dc7d9fc1512ee880a83046c3ea1ccb79d020e7b80d3ef24a407a1f81d8ca6d",
-         intel: "5000f69d943b0220d1997a9cc2abbd65e98a1090781c43cb50f8ea3fe2d9fbc5"
+  version "3.6.3"
+  sha256 arm:   "e990bfccb6290a808b3060d87315f0e4752fca1a12c44e1c7a1e785a7a4d48e9",
+         intel: "69fb9e7fabf922e6ccd1076386c4d5ccaf89602d67ea16cdb403a1433ebbe9ab"
 
   url "https://cli-builds-public.s3.amazonaws.com/official/#{version}/orka3/macos/#{arch}/orka3.pkg",
       verified: "cli-builds-public.s3.amazonaws.com/official/"
   name "Orka3 CLI"
   desc "Orchestration with Kubernetes on Apple"
-  homepage "https://orkadocs.macstadium.com/docs"
+  homepage "https://support.macstadium.com/hc/en-us/articles/42514244203419-Orka3-CLI-Overview-Configuration"
 
   livecheck do
     url "https://cli-builds-public.s3.amazonaws.com/official/latest.json"
@@ -17,6 +17,8 @@ cask "orka3" do
       json["version"]
     end
   end
+
+  depends_on :macos
 
   pkg "orka3.pkg"
 

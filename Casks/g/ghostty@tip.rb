@@ -1,26 +1,31 @@
 cask "ghostty@tip" do
-  version "13914,9ec6e9ea9a8a590fd906a0d216133d949581f54b"
-  sha256 "40ae327d04c1dce202e6625e69dae6b94e6556956e1d242b1dd457915168b9ec"
+  version "16661,15484b607eb5a518dedf1548247c923b8abaae7c"
+  sha256 "c02ed45937c55f15d4a60cffd3321ac9cb5a86aca5635e0010cff89d17afd90e"
 
   url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"
   desc "Terminal emulator that uses platform-native UI and GPU acceleration"
   homepage "https://ghostty.org/"
 
+  # Upstream typically creates several releases per day and there isn't always
+  # a release for every version increase.
   livecheck do
     url "https://tip.files.ghostty.org/appcast.xml"
     regex(%r{/(\h+)/Ghostty\.dmg}i)
-    strategy :sparkle do |item, regex|
-      match = item.url&.match(regex)
-      next if match.blank?
+    strategy :sparkle do |items, regex|
+      items.map do |item|
+        match = item.url&.match(regex)
+        next if match.blank?
 
-      "#{item.version},#{match[1]}"
+        "#{item.version},#{match[1]}"
+      end
     end
+    throttle days: 1
   end
 
   auto_updates true
   conflicts_with cask: "ghostty"
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Ghostty.app"
   manpage "#{appdir}/Ghostty.app/Contents/Resources/man/man1/ghostty.1"
@@ -30,7 +35,8 @@ cask "ghostty@tip" do
   zsh_completion "#{appdir}/Ghostty.app/Contents/Resources/zsh/site-functions/_ghostty"
 
   zap trash: [
-    "~/.config/ghostty/",
+    "~/.cache/ghostty",
+    "~/.config/ghostty",
     "~/Library/Application Support/com.mitchellh.ghostty",
     "~/Library/Caches/com.mitchellh.ghostty",
     "~/Library/HTTPStorages/com.mitchellh.ghostty",

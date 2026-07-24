@@ -1,6 +1,6 @@
 cask "status" do
-  version "2.36.1,ad089d"
-  sha256 "7d87e5bb5e90a14342eb913dfb180fcac0ff625294087130c96c8bc7a036a4ec"
+  version "2.38.2,3ef171"
+  sha256 "af412ec0060a6075b485359f9299a72001a55c17dbd5da80e4bfdb60eaa3e64b"
 
   url "https://github.com/status-im/status-desktop/releases/download/#{version.csv.first}/StatusIm-Desktop-#{version.csv.first}-#{version.csv.second}-aarch64.dmg",
       verified: "github.com/status-im/status-desktop/releases/download/"
@@ -22,7 +22,7 @@ cask "status" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Status.app"
 

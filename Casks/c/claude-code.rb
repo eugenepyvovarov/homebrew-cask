@@ -2,33 +2,33 @@ cask "claude-code" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "2.1.12"
-  sha256 arm:          "40be59519a84bd35eb1111aa46f72aa6b3443866d3f6336252a198fdcaefbbe5",
-         x86_64:       "0eee4b46c91749480bf856f88e49b15a3e944faa9d346679c5f0c0d7fa6f2f54",
-         x86_64_linux: "3fe979215489dc1b31463fadf95ed2d2d5473a9969447bb7a46431f4578847d4",
-         arm64_linux:  "e214b1d3b5afd4cd2de9177359001d41a3eb98cb1e3665fe97edc592f5aa132f"
+  version "2.1.206"
+  sha256 arm:          "3197aba4442dbd5b3df42b6f35e6d7bd03b5e48ce18b7a3c5c6f5f8c28e03b7f",
+         x86_64:       "b1e1636917a12c7d4e1fa54cd13f7f76ba3779fb988180610b6ca483258c2f46",
+         arm64_linux:  "cb8ccaf4ae6beb558747227a362010c6b32b4f4a5868c3a7e96aa9972fc6ef58",
+         x86_64_linux: "d131494be407ff56a62f4e99a96ba60102002d01e3b6b1494db16bef4b7f060f"
 
-  url "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/#{version}/#{os}-#{arch}/claude",
-      verified: "storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/"
+  url "https://downloads.claude.ai/claude-code-releases/#{version}/#{os}-#{arch}/claude",
+      verified: "downloads.claude.ai/claude-code-releases/"
   name "Claude Code"
   desc "Terminal-based AI coding assistant"
-  homepage "https://www.anthropic.com/claude-code"
+  homepage "https://claude.com/product/claude-code"
 
   livecheck do
-    url "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/latest"
+    url "https://downloads.claude.ai/claude-code-releases/stable"
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   binary "claude"
 
   zap trash: [
-    "~/.cache/claude",
-    "~/.claude",
-    "~/.claude.json*",
-    "~/.config/claude",
-    "~/.local/bin/claude",
-    "~/.local/share/claude",
-    "~/.local/state/claude",
-    "~/Library/Caches/claude-cli-nodejs",
-  ]
+        "~/.cache/claude",
+        "~/.claude.json*",
+        "~/.config/claude",
+        "~/.local/bin/claude",
+        "~/.local/share/claude",
+        "~/.local/state/claude",
+        "~/Library/Caches/claude-cli-nodejs",
+      ],
+      rmdir: "~/.claude"
 end

@@ -1,6 +1,6 @@
 cask "little-snitch" do
-  version "6.3.3"
-  sha256 "9180c2ee2f69259d920255258930783aa7c9cc1ffbbb128920df2f51a9955265"
+  version "6.4.1"
+  sha256 "46074f19a492dbb36dbbbfc267942beff662b2f2f938c5e517d7e090ba0d7264"
 
   url "https://www.obdev.at/downloads/littlesnitch/LittleSnitch-#{version}.dmg"
   name "Little Snitch"
@@ -26,7 +26,7 @@ cask "little-snitch" do
     "little-snitch@5",
     "little-snitch@nightly",
   ]
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Little Snitch.app"
 

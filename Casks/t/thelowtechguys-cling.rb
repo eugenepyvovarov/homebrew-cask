@@ -1,6 +1,6 @@
 cask "thelowtechguys-cling" do
-  version "1.2.2"
-  sha256 "d1769677acdac2f86f958be5fbccddf733cdd3ee1995f341a550636d81727b6b"
+  version "2.6.8"
+  sha256 "ffcb8a88b499ee5af798e7c37f0365c518baa26b47494dde8f6f3025e2e8634e"
 
   url "https://files.lowtechguys.com/releases/Cling-#{version}.dmg"
   name "The low-tech guys Cling"
@@ -13,7 +13,7 @@ cask "thelowtechguys-cling" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Cling.app"
 

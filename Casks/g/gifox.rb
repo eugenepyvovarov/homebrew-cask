@@ -1,6 +1,6 @@
 cask "gifox" do
-  version "2.8.0+2,020800.02"
-  sha256 "1d1d65dda04038d6e0d1a4d4fc5cf1fa1f9ba47aea051feeb3fe423a17ab58a2"
+  version "2.10.0+0,021000.00"
+  sha256 "569da6cd7d344a9e7f2f4ddebbcbcd83a3dc41d86330197d34fa7ade19529346"
 
   url "https://d1fqctmfkpkkcg.cloudfront.net/gifox/#{version.csv.second}.dmg",
       verified: "d1fqctmfkpkkcg.cloudfront.net/gifox/"
@@ -23,6 +23,7 @@ cask "gifox" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Gifox.app"
 

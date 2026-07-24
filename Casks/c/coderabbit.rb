@@ -1,9 +1,9 @@
 cask "coderabbit" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.3.5"
-  sha256 arm:   "c343cb19a2afb0e6251cc5895b8f1f2547a411749675c1026a66d68eef0b7481",
-         intel: "f808107a9b6869cdc28380374ac9ae8b6001a9e748b9b62e07b951a7f077599f"
+  version "0.7.0"
+  sha256 arm:   "5539910fd64745351b441d3309a767e16b49a61916cc59783d09b748e2a4833e",
+         intel: "aa0a47ff01aa849d61eed27464f4ee23601f6add50c01450c1689a5802970c76"
 
   url "https://cli.coderabbit.ai/releases/#{version}/coderabbit-darwin-#{arch}.zip"
   name "CodeRabbit"
@@ -14,6 +14,8 @@ cask "coderabbit" do
     url "https://cli.coderabbit.ai/releases/latest/VERSION"
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
+
+  depends_on :macos
 
   binary "coderabbit"
 

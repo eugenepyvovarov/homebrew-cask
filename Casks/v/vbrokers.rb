@@ -1,6 +1,6 @@
 cask "vbrokers" do
-  version "2.7.812,1110127,1768890116"
-  sha256 "b977e7c86ca2384ee80befd72fa3e088624045a26193a75a042da20232dbda41"
+  version "2.8.609,1110127,1783504360"
+  sha256 "4d1cb9024904a2df03f963f1a15442485d259ebaf351c2e0eabecf692ecda0e8"
 
   url "https://r.hstong.com/public/app/Mac/HSTONG_Mac_#{version.csv.second}_#{version.csv.first}_#{version.csv.third}.dmg",
       verified: "r.hstong.com/"
@@ -16,6 +16,8 @@ cask "vbrokers" do
           .map { |match| "#{match[1]},#{match[0]},#{match[2]}" }
     end
   end
+
+  depends_on :macos
 
   # Rename to match displayed name
   app "HSTong.app", target: "VBrokers.app"

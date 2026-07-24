@@ -1,6 +1,6 @@
 cask "syntax-highlight" do
-  version "2.1.27"
-  sha256 "c902ef7d1422f43b97ae1352220d7feaafd6aceac29460a51c32bb3d8e15daeb"
+  version "2.1.30"
+  sha256 "d4b135c9dd8253c1f9f5bb86236c4aa1e996c72c2203ab83fea8fb3a7579156f"
 
   url "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/#{version}/Syntax.Highlight.zip"
   name "Syntax Highlight"
@@ -18,10 +18,8 @@ cask "syntax-highlight" do
     end
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
-
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Syntax Highlight.app"
   binary "#{appdir}/Syntax Highlight.app/Contents/Resources/syntax_highlight_cli"

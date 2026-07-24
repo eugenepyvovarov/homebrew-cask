@@ -2,13 +2,14 @@ cask "vlc@nightly" do
   arch arm: "arm64", intel: "x86_64"
   livecheck_arch = on_arch_conditional arm: "arm64", intel: "intel64"
 
+  sha256 arm:   "aeb08a5affcdfc795b95ed2b38430252a956aec8c00595da2c4bf09ce97bbecd",
+         intel: "9a530f4ced862046decc233054ed5a3b3301ed3a4566cd1e12294e49222b0c57"
+
   on_arm do
-    version "4.0.0,20260120-0413,ec9adb00"
-    sha256 "6be50c8f399457577c20578ac164a0cd30d4d3c89b36cd0e8799c91a92dd1383"
+    version "4.0.0,20260724-0413,dd96e659"
   end
   on_intel do
-    version "4.0.0,20260120-0416,ec9adb00"
-    sha256 "a5570fa3f0f5250dce7f271e9d55a7509521f331e86d7114b644d09caa31a003"
+    version "4.0.0,20260724-0411,dd96e659"
   end
 
   url "https://artifacts.videolan.org/vlc/nightly-macos-#{arch}/#{version.csv.second}/vlc-#{version.csv.first}-dev-#{livecheck_arch}-#{version.csv.third}.dmg"
@@ -42,6 +43,7 @@ cask "vlc@nightly" do
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   conflicts_with cask: "vlc"
+  depends_on :macos
 
   app "VLC.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

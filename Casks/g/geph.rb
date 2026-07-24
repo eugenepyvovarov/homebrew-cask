@@ -1,6 +1,6 @@
 cask "geph" do
-  version "5.4.1"
-  sha256 "8d6707446e38407e6e9e12d3b3f0e43069ca7fe39b3cc7d0c9489d1b2aaf65db"
+  version "5.7.1"
+  sha256 "2acc6945b6780333abbd47f97ae84310d8f66e16d5cc94d039356c260340baf3"
 
   url "https://dl.geph.io/geph-releases/macos-stable/#{version}/geph-macos.dmg"
   name "Geph"
@@ -12,10 +12,16 @@ cask "geph" do
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/geph[._-]macos\.dmg}i)
   end
 
+  depends_on :macos
+
   app "Geph.app"
 
   zap trash: [
     "~/Library/Application Support/gephgui#{version.major}",
     "~/Library/Preferences/io.geph.geph-electron.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

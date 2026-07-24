@@ -1,35 +1,23 @@
 cask "basecamp" do
-  arch arm: "_arm64"
+  version "5.1.4"
+  sha256 "9fd30377ca4f02beaa2af073441836905728ff7a007e597e6c0f497bb7f50d33"
 
-  sha256 arm:   "434e37465b4959f468f797fd9eaf3b493e8556763bfc7fb3a2c0ce15eed7b5cb",
-         intel: "2dff1f9a9abb16f1e17e40c83d8fca4381dbdabd8891ac32c04b7cd6717c37a6"
-
-  on_arm do
-    version "3,2.5.2"
-  end
-  on_intel do
-    version "3,2.5.1"
-  end
-
-  url "https://basecamp.com/desktop/mac#{arch}/basecamp#{version.major}-#{version.csv.second}.zip",
-      verified: "basecamp.com/desktop/"
+  url "https://basecamp.com/desktop/Basecamp-#{version}-mac.zip"
   name "Basecamp"
   desc "All-In-One Toolkit for Working Remotely"
-  homepage "https://3.basecamp-help.com/"
+  homepage "https://basecamp.com/"
 
+  # This file is served with a `Content-Encoding: aws-chunked` header when
+  # compression is requested but that causes curl to error because it doesn't
+  # understand what decompression to apply.
   livecheck do
-    url "https://basecamp.com/desktop/mac#{arch}/updates.json"
-    regex(/basecamp(\d*)[_-]v?(\d+(?:\.\d+)+)/i)
-    strategy :json do |json, regex|
-      match = json["url"]&.match(regex)
-      next if match.blank?
-
-      (match.length > 2) ? "#{match[1]},#{match[2]}" : match[1]
-    end
+    url "https://basecamp.com/desktop/latest-mac.yml",
+        compressed: false
+    strategy :electron_builder
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Basecamp.app"
 

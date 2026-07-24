@@ -1,5 +1,5 @@
 cask "mycloud" do
-  version "25.50.1083,20251209103938"
+  version "26.25.1317,20260616154010"
   sha256 :no_check
 
   url "https://filehostdesktopmac.mycloud.ch/myCloudDesktop.dmg"
@@ -11,6 +11,8 @@ cask "mycloud" do
     url :url
     strategy :extract_plist
   end
+
+  depends_on :macos
 
   installer manual: "myCloud Desktop installer.app"
 

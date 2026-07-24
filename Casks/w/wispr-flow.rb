@@ -1,14 +1,9 @@
 cask "wispr-flow" do
   arch arm: "arm64", intel: "x64"
 
-  on_arm do
-    version "1.4.181"
-    sha256 "62829fb202840685ca8decf4b0cb396a37b3faf16302b606662c280879c6e987"
-  end
-  on_intel do
-    version "1.4.154"
-    sha256 "80e328769fab5cfcfc85ba423b031ddbf7a5086eee6781ccbb390f88a3b7b778"
-  end
+  version "1.6.224"
+  sha256 arm:   "8c047d3c266800ffd37fda0fc60f9fc9b8c79de981351ac9d016eb1db8e7c749",
+         intel: "f5ebb00d7113f938ca6593646a1dac03c01d77d8b85d6b716466edc0f10b7481"
 
   url "https://dl.wisprflow.com/wispr-flow/darwin/#{arch}/dmgs/Flow-v#{version}.dmg",
       verified: "dl.wisprflow.com/wispr-flow/"
@@ -24,7 +19,7 @@ cask "wispr-flow" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Wispr Flow.app"
 

@@ -1,22 +1,35 @@
 cask "android-studio" do
   arch arm: "mac_arm", intel: "mac"
 
-  version "2025.2.3.9"
-  sha256 arm:   "b6285cdee418492658a4f5ee68beb52896e81ad27e7d10b3486b9b6e02b33e88",
-         intel: "fb204243b011309526cc041a479177010e22ef6f77a28e1c08f98aee95dc37d1"
+  version "2026.1.2.11,quail2-patch1,AI-261.25134.95.2612.15914620"
+  sha256 arm:   "1dc8a2f3b76dd678611c1332223331312707c647d21564f3bad5bffc4ea1c276",
+         intel: "658f8a0c446a08d928ae9423b0791f63c07dff24da8af8bd21546a0971079ab6"
 
-  url "https://redirector.gvt1.com/edgedl/android/studio/install/#{version}/android-studio-#{version}-#{arch}.dmg",
-      verified: "redirector.gvt1.com/edgedl/android/studio/"
+  url "https://edgedl.me.gvt1.com/android/studio/install/#{version.csv.first}/android-studio#{"-#{version.csv.second}" if version.csv.second}-#{arch}.dmg",
+      verified: "edgedl.me.gvt1.com/android/studio/install/"
   name "Android Studio"
   desc "Tools for building Android applications"
   homepage "https://developer.android.com/studio/"
 
   livecheck do
-    url :homepage
-    regex(/android[._-]studio[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
+    url "https://jb.gg/android-studio-releases-list.json"
+    strategy :json do |json|
+      json.dig("content", "item")&.filter_map do |release|
+        next unless %w[Patch Release].include?(release["channel"])
+
+        version = release["version"]
+        build = release["build"]
+        download = release["download"]&.find { |item| item["link"]&.end_with?("-#{arch}.dmg") }
+        match = download&.dig("link")&.match(%r{/android-studio-([^/]+)-#{arch}\.dmg\z}i)
+        next if version.blank? || build.blank? || match.blank?
+
+        "#{version},#{match[1]},#{build}"
+      end
+    end
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Android Studio.app"
   binary "#{appdir}/Android Studio.app/Contents/MacOS/studio"

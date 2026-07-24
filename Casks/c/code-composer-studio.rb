@@ -1,6 +1,6 @@
 cask "code-composer-studio" do
-  version "20.4.0.00013"
-  sha256 "78e26e8271c58ed60c16361a9a6397080cd34c936f9c6ce6f427b018fb4c204c"
+  version "20.5.0.00028"
+  sha256 "f082396494feb43df572726b17e8259e20f14edfe5fafcfad3ebc0342404388d"
 
   url "https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-J1VdearkvK/#{version.major_minor_patch}/CCS_#{version}_mac_x86.dmg"
   name "Code Composer Studio (CCS)"
@@ -11,6 +11,8 @@ cask "code-composer-studio" do
     url "https://www.ti.com/tool/download/CCSTUDIO"
     regex(/href=.*?CCS[._-]?v?(\d+(?:\.\d+)+)[._-]mac[._-]x86\.dmg/i)
   end
+
+  depends_on :macos
 
   installer script: {
     executable: "ccs_setup_#{version}.app/Contents/MacOS/installbuilder.sh",

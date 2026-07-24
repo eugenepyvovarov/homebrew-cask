@@ -1,43 +1,31 @@
 cask "whatsapp@beta" do
-  version "2.26.3.18"
-  sha256 "6f6a01dd7148fd38086214f349da28250e4ada1d366a6ab1ef5f5dac3a55cdea"
+  version "26.29.20"
+  sha256 "f9628bb98ae66796e74684dcbf0b80280f6a520f47fe31de1d18078752c9d36e"
 
-  url "https://web.whatsapp.com/desktop/mac_native/release/?version=#{version}&extension=zip&configuration=Beta&branch=master"
+  url "https://web.whatsapp.com/desktop/mac_native/release/?version=2.#{version}&extension=zip&configuration=Beta&branch=master"
   name "WhatsApp Beta"
   desc "Native desktop client for WhatsApp"
   homepage "https://www.whatsapp.com/"
 
   livecheck do
     url "https://web.whatsapp.com/desktop/mac_native/updates/?configuration=Beta&branch=master"
-    regex(/version=v?(\d+(?:\.\d+)+)/i)
-    strategy :sparkle do |item, regex|
-      item.url.scan(regex).map(&:first)
-    end
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true
-  conflicts_with cask: [
-    "whatsapp",
-    "whatsapp@legacy",
-  ]
-  depends_on macos: ">= :monterey"
+  conflicts_with cask: "whatsapp"
+  depends_on macos: :monterey
 
   app "WhatsApp.app"
 
+  uninstall quit: "net.whatsapp.WhatsApp"
+
   zap trash: [
-    "~/Library/Application Scripts/net.whatsapp.WhatsApp",
-    "~/Library/Application Scripts/net.whatsapp.WhatsApp.Intents",
-    "~/Library/Application Scripts/net.whatsapp.WhatsApp.IntentsUI",
-    "~/Library/Application Scripts/net.whatsapp.WhatsApp.ServiceExtension",
+    "~/Library/Application Scripts/net.whatsapp.WhatsApp*",
     "~/Library/Caches/net.whatsapp.WhatsApp",
-    "~/Library/Containers/net.whatsapp.WhatsApp",
-    "~/Library/Containers/net.whatsapp.WhatsApp.Intents",
-    "~/Library/Containers/net.whatsapp.WhatsApp.ServiceExtension",
+    "~/Library/Containers/net.whatsapp.WhatsApp*",
     "~/Library/Group Containers/group.com.facebook.family",
-    "~/Library/Group Containers/group.net.whatsapp.family",
-    "~/Library/Group Containers/group.net.whatsapp.WhatsApp.private",
-    "~/Library/Group Containers/group.net.whatsapp.WhatsApp.shared",
-    "~/Library/Group Containers/group.net.whatsapp.WhatsAppSMB.shared",
+    "~/Library/Group Containers/group.net.whatsapp*",
     "~/Library/Saved Application State/net.whatsapp.WhatsApp.savedState",
   ]
 end

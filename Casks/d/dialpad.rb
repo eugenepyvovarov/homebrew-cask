@@ -1,12 +1,10 @@
 cask "dialpad" do
   arch arm: "arm64", intel: "x64"
 
-  version "2512.1.0"
-  sha256 arm:   "cc69248fa244f3b260bb2c1defcbf9e375e9ffea97e2dd08acde8342ef1a1633",
-         intel: "0e501b0bb7dda1e85d98c419415eb517a687575dd8bb0aa19ace9123fedb9c53"
+  version "2606.1.2"
+  sha256 :no_check
 
-  url "https://storage.googleapis.com/dialpad_native/osx/#{arch}/Dialpad.#{version}.zip",
-      verified: "storage.googleapis.com/dialpad_native/osx/#{arch}"
+  url "https://download.dialpad.com/osx/#{arch}/dialpad.pkg"
   name "Dialpad"
   desc "Cloud communication platform"
   homepage "https://dialpad.com/download"
@@ -18,9 +16,11 @@ cask "dialpad" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
-  app "Dialpad.app"
+  pkg "dialpad.pkg"
+
+  uninstall pkgutil: "com.dialpad.Dialpad.pkg"
 
   zap trash: [
     "~/Library/Application Support/Dialpad",

@@ -1,8 +1,8 @@
 cask "spatterlight" do
-  version "1.4.6"
-  sha256 "daa59dc4f8765f922efec6ca278f47e6d03da30a6313392ee888cc2de51907c2"
+  version "1.4.9"
+  sha256 "73ec13f400485567b3333dedee49caa46ed2a8c883c7c5a3c50e2cb233eaeabf"
 
-  url "https://github.com/angstsmurf/spatterlight/releases/download/v#{version}/Spatterlight.app.zip",
+  url "https://github.com/angstsmurf/spatterlight/releases/download/v#{version}/Spatterlight.zip",
       verified: "github.com/angstsmurf/spatterlight/"
   name "Spatterlight"
   desc "Play most kinds of interactive fiction game files"
@@ -12,6 +12,8 @@ cask "spatterlight" do
     url :url
     strategy :github_latest
   end
+
+  depends_on :macos
 
   app "Spatterlight.app"
 

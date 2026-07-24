@@ -1,6 +1,6 @@
 cask "silo" do
-  version "2026.0.0"
-  sha256 "211efdde8959ba6546dfe89a48c200ba8a89f1d5d225771eeb57c3f18c0d1e06"
+  version "2026.1.2"
+  sha256 "32334fd5b6425a9615e4232ba8d603ee283573490a2d9873cf2b1dda44d778d7"
 
   url "https://nevercenter.com/silo/download/filearchive/Install_Silo_#{version.dots_to_underscores}_mac.dmg"
   name "Silo"
@@ -14,6 +14,8 @@ cask "silo" do
       page.scan(regex).map { |match| match[0].tr("_", ".") }
     end
   end
+
+  depends_on :macos
 
   app "Silo.app"
 

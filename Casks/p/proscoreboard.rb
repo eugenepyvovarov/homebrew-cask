@@ -1,6 +1,6 @@
 cask "proscoreboard" do
-  version "7.0,117440531"
-  sha256 "6d529a6dde34b1211f78640674eb186c4e119547648450bda3964af8cb9f8063"
+  version "7.3,117637122"
+  sha256 "a8bcbaa4f994c9fd6eb47d4d13040519f7ca45a2e634939cd294739a5a9a9dcf"
 
   url "https://renewedvision.com/downloads/ProScoreboard_#{version.csv.first}_#{version.csv.second}.zip"
   name "ProScoreboard"
@@ -8,12 +8,12 @@ cask "proscoreboard" do
   homepage "https://renewedvision.com/proscoreboard/"
 
   livecheck do
-   url "https://www.renewedvision.com/update/scoreboard.php"
-   strategy :sparkle
+    url "https://www.renewedvision.com/update/scoreboard.php"
+    strategy :sparkle
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "ProScoreboard.app"
 

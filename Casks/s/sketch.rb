@@ -17,8 +17,8 @@ cask "sketch" do
     end
   end
   on_sonoma :or_newer do
-    version "2025.3.3,221254"
-    sha256 "24093bf6b9b66a7d0efb7013426b8eff036d0476be51966ed23d0f561769d666"
+    version "2026.2.1,231087"
+    sha256 "97a0b99a69b562747c9b6c2bd6acc15815ff9297144204816344bece13cd4544"
 
     # Older versions may have a more recent `pubDate` than newer versions, so
     # we have to check all of the items in the appcast.
@@ -36,7 +36,7 @@ cask "sketch" do
   homepage "https://www.sketch.com/"
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Sketch.app"
 

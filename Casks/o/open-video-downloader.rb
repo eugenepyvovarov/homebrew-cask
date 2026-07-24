@@ -1,9 +1,9 @@
 cask "open-video-downloader" do
   arch arm: "aarch64", intel: "x64"
 
-  version "3.1.0"
-  sha256 arm:   "673ba2016441e89ff4692118bf813481e11d0c8da59bf663ad89aed84531ad14",
-         intel: "a99a9ea34b970a3bedc49d9e48c63d6dba5ecb677abd697ed20942dce868b356"
+  version "3.2.1"
+  sha256 arm:   "865e22e21c432bb779f547dd42a70815324745299059e7188b6d82f64eca4b15",
+         intel: "1b202fe7123aa8408265c1ba795b734019feacbf179de081f9ca154b02ec37d1"
 
   url "https://github.com/jely2002/youtube-dl-gui/releases/download/app-v#{version}/Open.Video.Downloader_#{version}_#{arch}.dmg"
   name "Open Video Downloader"
@@ -16,6 +16,7 @@ cask "open-video-downloader" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Open Video Downloader.app"
 

@@ -1,11 +1,11 @@
 cask "android-platform-tools" do
   os macos: "darwin", linux: "linux"
 
-  version "36.0.2"
-  sha256 arm:          "106a5d31fad8c1c0c5a180d06f5779767d129d7d5edbe629005c11a85eec5b4b",
-         x86_64:       "106a5d31fad8c1c0c5a180d06f5779767d129d7d5edbe629005c11a85eec5b4b",
-         x86_64_linux: "3afdea91441815ab41254193df0343d92c1b1c0d0237165c3a345c8af8891c31",
-         arm64_linux:  "3afdea91441815ab41254193df0343d92c1b1c0d0237165c3a345c8af8891c31"
+  version "37.0.1"
+  sha256 arm:          "7d009f4fb1a70ecaa52937ef4d68f5180c9578e9502fb985f000b50e01b4c9e2",
+         x86_64:       "7d009f4fb1a70ecaa52937ef4d68f5180c9578e9502fb985f000b50e01b4c9e2",
+         x86_64_linux: "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+         arm64_linux:  "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1"
 
   url "https://dl.google.com/android/repository/platform-tools_r#{version}-#{os}.zip",
       verified: "google.com/android/repository/"

@@ -1,8 +1,8 @@
 cask "openrct2" do
   # NOTE: "2" is not a version number, but an intrinsic part of the product name
 
-  version "0.4.30"
-  sha256 "7f5b675e3b8d2f019f6d8630127b2aa8f07dca8c92b00892a7d38fa7f2a938d1"
+  version "0.5.3"
+  sha256 "dc597f5cc6115a7e5eff61c09a77a5edeb4686a69f72230dda4257c5c4f6f395"
 
   url "https://github.com/OpenRCT2/OpenRCT2/releases/download/v#{version}/OpenRCT2-v#{version}-macos-universal.zip",
       verified: "github.com/OpenRCT2/OpenRCT2/"
@@ -11,6 +11,8 @@ cask "openrct2" do
   homepage "https://openrct2.io/"
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   app "OpenRCT2.app"
 

@@ -1,9 +1,9 @@
 cask "athas" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.3.2"
-  sha256 arm:   "a1db7cf1355534f2f282eb7a69872d2de026f1821f228bcdeaa7a75f2dac3bb2",
-         intel: "9c49d2c3e88a4363da1cff3a4ed566ee02f14a7629c8a55ac256b873f030a285"
+  version "0.9.0"
+  sha256 arm:   "6b8fdbc8a89da35491dcf3ec5fe49dcfee7d4ceb67a377470f75b28f742392f5",
+         intel: "0549189aba4e6b18fb623bf75f6817c76d18731c32006929ebcad2c5f0473429"
 
   url "https://github.com/athasdev/athas/releases/download/v#{version}/Athas_#{version}_#{arch}.dmg",
       verified: "github.com/athasdev/athas/"
@@ -15,6 +15,8 @@ cask "athas" do
     url :url
     strategy :github_latest
   end
+
+  depends_on :macos
 
   app "Athas.app"
 

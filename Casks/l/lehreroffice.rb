@@ -1,5 +1,5 @@
 cask "lehreroffice" do
-  version "2025.5.2"
+  version "2026.2"
   sha256 :no_check
 
   url "https://www.cmi-bildung.ch/lo/dateien/easy/lo_desktop_macos.dmg"
@@ -11,6 +11,8 @@ cask "lehreroffice" do
     url "https://www.cmi-bildung.ch/lo/dateien/easy/lo_version.txt"
     regex(/(\d+(?:\.\d+)+)/i)
   end
+
+  depends_on :macos
 
   app "LehrerOffice.app"
 

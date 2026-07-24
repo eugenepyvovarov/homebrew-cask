@@ -1,6 +1,6 @@
 cask "inso" do
-  version "12.3.0"
-  sha256 "dcdbf12af872c056323cfc6ebac1e49ff834d4282692e6fce163cf5e672d71bd"
+  version "13.1.0"
+  sha256 "f22c2579e07e4841c73f2f95fe24988f6d87b58e208505d7126efda4bb107d37"
 
   url "https://github.com/Kong/insomnia/releases/download/core%40#{version}/inso-macos-#{version}.zip",
       verified: "github.com/Kong/insomnia/"
@@ -15,6 +15,7 @@ cask "inso" do
   end
 
   conflicts_with cask: "inso@beta"
+  depends_on :macos
 
   binary "inso"
 

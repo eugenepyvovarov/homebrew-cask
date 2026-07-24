@@ -1,6 +1,6 @@
 cask "soulver-cli" do
-  version "1.0.3"
-  sha256 "79e61156d59b44af5b9926c92e56f71e2d4b75ec574a81c8ba3319ca4f22341f"
+  version "2.0.1"
+  sha256 "59b7e0a94726ca8059a452d7ce3e919f33b9acda774e8985b9cd9f52d7ecbaf5"
 
   url "https://github.com/soulverteam/Soulver-CLI/releases/download/#{version}/soulver.zip"
   name "Soulver CLI"
@@ -8,7 +8,7 @@ cask "soulver-cli" do
   homepage "https://github.com/soulverteam/Soulver-CLI"
 
   conflicts_with cask: "soulver"
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   binary "soulver"
 

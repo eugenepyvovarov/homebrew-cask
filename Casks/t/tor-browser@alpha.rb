@@ -1,6 +1,6 @@
 cask "tor-browser@alpha" do
-  version "16.0a1"
-  sha256 "5875057dad8cfae453255b5e6c39ab6d142e377fb8f952e802f48322b51dc222"
+  version "16.0a9"
+  sha256 "74223a627a556d04faabb79032c3f86e0cb765d389a4a6b3bf11501d503dd744"
 
   url "https://dist.torproject.org/torbrowser/#{version}/tor-browser-macos-#{version}.dmg"
   name "Tor Browser"
@@ -16,6 +16,7 @@ cask "tor-browser@alpha" do
 
   auto_updates true
   conflicts_with cask: "tor-browser"
+  depends_on :macos
 
   app "Tor Browser Alpha.app"
 

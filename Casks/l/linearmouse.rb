@@ -1,6 +1,6 @@
 cask "linearmouse" do
-  version "0.10.2"
-  sha256 "ed331d1597bdf93c7122c7120c08454e7ed3d254eb447dc4122f83a3355ef414"
+  version "0.11.3"
+  sha256 "8db843f475ceb2d0ac786c21bae308b19ae8baab35e5ce7feafe98493df2c0da"
 
   url "https://dl.linearmouse.org/v#{version}/LinearMouse.dmg"
   name "LinearMouse"
@@ -16,6 +16,7 @@ cask "linearmouse" do
 
   auto_updates true
   conflicts_with cask: "linearmouse@beta"
+  depends_on :macos
 
   app "LinearMouse.app"
 

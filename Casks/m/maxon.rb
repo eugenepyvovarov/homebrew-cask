@@ -1,6 +1,6 @@
 cask "maxon" do
-  version "2026.1.0"
-  sha256 "f528a4d4cd0d2c0de51eaa56f2c5c865443c2c67e1b93a64f69c1d81801dd35b"
+  version "2026.5.0"
+  sha256 "1afa70c7f3362b56fa9c1df0cd1289a6e652ed05b1d89a25c5dcf4dd592c06ba"
 
   url "https://mx-app-blob-prod.maxon.net/mx-package-production/installer/macos/maxon/maxonapp/releases/#{version}/Maxon_App_#{version}_Mac.zip"
   name "Maxon App"
@@ -15,6 +15,8 @@ cask "maxon" do
       end
     end
   end
+
+  depends_on :macos
 
   installer script: {
     executable: "#{staged_path}/Maxon_App_#{version}_Mac.app/Contents/MacOS/installbuilder.sh",

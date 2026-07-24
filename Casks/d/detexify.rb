@@ -9,6 +9,9 @@ cask "detexify" do
   homepage "https://detexify.kirelabs.org/classify.html"
 
   deprecate! date: "2025-03-21", because: :discontinued
+  disable! date: "2026-03-28", because: :discontinued
+
+  depends_on :macos
 
   app "Detexify.app"
 

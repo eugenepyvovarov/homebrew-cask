@@ -1,6 +1,6 @@
 cask "pocket-casts" do
-  version "2.0.16"
-  sha256 "65ecb6d6cec19a3a54b7ab368e9c9c7d222ed37368ee4e779f102be727d46460"
+  version "2.4.1"
+  sha256 "43c5065aeb3a7e26357afb707c409c7b1b664b5f161185658ebcf2737a5a2e53"
 
   url "https://cdn.a8c-ci.services/pocket-casts-desktop/pocket-casts-desktop-darwin-universal-v#{version}.dmg",
       verified: "cdn.a8c-ci.services/pocket-casts-desktop/"
@@ -15,7 +15,7 @@ cask "pocket-casts" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Pocket Casts.app"
 

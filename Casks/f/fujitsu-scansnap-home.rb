@@ -1,6 +1,6 @@
 cask "fujitsu-scansnap-home" do
-  version "3.4.0"
-  sha256 "7a2519e26600b524b1c5242e73f618d0c52c730a9fc51ef60159f0c40f3cc23f"
+  version "3.7.0"
+  sha256 "346a10e3095fd68fc32abbfcb5dfe8fe8a41e04ab1044c3ac149f2154f87a400"
 
   url "https://origin.pfultd.com/downloads/ss/sshinst/m-#{version.no_dots}/MacSSHOfflineInstaller_#{version.dots_to_underscores}.dmg",
       verified: "origin.pfultd.com/"
@@ -17,6 +17,7 @@ cask "fujitsu-scansnap-home" do
   end
 
   auto_updates true
+  depends_on :macos
   container nested: "Download/MacSSHomeInstaller_#{version.dots_to_underscores}.dmg"
 
   pkg "ScanSnap Home.pkg"
@@ -42,8 +43,4 @@ cask "fujitsu-scansnap-home" do
         "~/Library/Saved Application State/com.fujitsu.pfu.ScanSnapHome.savedState",
         "~/Library/Saved Application State/jp.co.pfu.SSHomeWizard.savedState",
       ]
-
-  caveats do
-    requires_rosetta
-  end
 end

@@ -8,7 +8,9 @@ cask "trackerzapper" do
   desc "Menubar app to remove link tracking parameters automatically"
   homepage "https://rknight.me/apps/tracker-zapper"
 
-  depends_on macos: ">= :big_sur"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: :big_sur
 
   app "TrackerZapper.app"
 

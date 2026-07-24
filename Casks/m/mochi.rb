@@ -1,9 +1,9 @@
 cask "mochi" do
   arch arm: "-arm64"
 
-  version "1.20.7"
-  sha256 arm:   "f5b348917e2513abd4dbd5cc9e569fd483ca0fdbd8ab9de7e94226924a2cb1b1",
-         intel: "807ea585d9e8f60f11d38e2656fdda470d155988681c97c7920b34ba2df3c46d"
+  version "1.21.17"
+  sha256 arm:   "d8d003695ce489b5a3c41ca6785d4c7061101fac476aa0cc060d3cd24088d05f",
+         intel: "5cce2f41543d42dbeac83bb65b1ffcfd9fbc1f60deb5f0ae7c962b5ffd491c5c"
 
   url "https://download.mochi.cards/releases/Mochi-#{version}#{arch}.dmg"
   name "Mochi"
@@ -15,7 +15,7 @@ cask "mochi" do
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Mochi.app"
 

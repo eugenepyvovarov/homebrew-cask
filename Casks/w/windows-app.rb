@@ -1,9 +1,9 @@
 cask "windows-app" do
-  version "11.3.1"
-  sha256 "92f0711b6f59d69f9bb2e8ae929c19b0d19a69099b4dbaefe98c3af856baa824"
+  version "11.3.7"
+  sha256 "58730d430561292786599d7c9c136a766c28c03a90cd74429b2ea266e7693a90"
 
-  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Windows_App_#{version}_installer.pkg",
-      verified: "officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/"
+  url "https://res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Windows_App_#{version}_installer.pkg",
+      verified: "res.public.onecdn.static.microsoft/mro1cdnstorage/C1297A47-86C4-4C1F-97FA-950631F94777/"
   name "Windows App"
   desc "Connect to Windows"
   homepage "https://aka.ms/WindowsApp"
@@ -14,7 +14,7 @@ cask "windows-app" do
   end
 
   conflicts_with cask: "microsoft-remote-desktop"
-  depends_on macos: ">= :monterey"
+  depends_on macos: :sonoma
 
   pkg "Windows_App_#{version}_installer.pkg"
 

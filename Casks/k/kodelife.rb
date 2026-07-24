@@ -1,6 +1,6 @@
 cask "kodelife" do
-  version "1.2.5,206"
-  sha256 "fae67b8c833be6ea615916e81bdbee570957184e403260fdc438bbcc9de5ef2c"
+  version "1.2.7,209"
+  sha256 "ddf5cae73c6df0715069c73eca4e5fee8b1e81cdba828ba9a592f8b1d0cf337d"
 
   url "https://hexler.net/pub/kodelife/kodelife-#{version.csv.first}.#{version.csv.second}-macos.dmg"
   name "KodeLife"
@@ -13,6 +13,7 @@ cask "kodelife" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "KodeLife.app"
 

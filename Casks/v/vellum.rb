@@ -1,6 +1,6 @@
 cask "vellum" do
-  version "4.0.2,40200"
-  sha256 "251e248fc9dd41afb2eff9a62514a39871c4e0096b2741352d706ae783eed5be"
+  version "4.1.4,41400"
+  sha256 "3750ea467e2f368d24b60cd18241cc3f40bafa46bc564b949fd3dc49dce9f511"
 
   url "https://180g.s3.amazonaws.com/downloads/Vellum-#{version.csv.second}.zip",
       verified: "180g.s3.amazonaws.com/downloads/"
@@ -14,7 +14,7 @@ cask "vellum" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Vellum.app"
 

@@ -1,8 +1,18 @@
 cask "artisan" do
-  version "3.4.0"
-  sha256 "18acf891e582e475a908295c027870f40b78c8f1f41345b4e34dbf15be511f5b"
+  arch arm: "arm", intel: "intel"
 
-  url "https://github.com/artisan-roaster-scope/artisan/releases/download/v#{version}/artisan-mac-#{version}.dmg",
+  version "4.2.0"
+  sha256 arm:   "ef4abc2a8db4efee94d89703d150b033555f3c19164ba34665ba39854e1492a2",
+         intel: "d152a64f41145807af248336971378be974c67db4b51194acc5606a15e4d68c6"
+
+  on_arm do
+    depends_on macos: :sonoma
+  end
+  on_intel do
+    depends_on macos: :ventura
+  end
+
+  url "https://github.com/artisan-roaster-scope/artisan/releases/download/v#{version}/artisan-mac-#{arch}-#{version}.dmg",
       verified: "github.com/artisan-roaster-scope/artisan/"
   name "Artisan"
   desc "Visual scope for coffee roasters"
@@ -13,7 +23,7 @@ cask "artisan" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on :macos
 
   app "Artisan.app"
 

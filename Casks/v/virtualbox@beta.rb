@@ -2,14 +2,9 @@ cask "virtualbox@beta" do
   arch arm: "macOSArm64", intel: "OSX"
   desc_arch = on_arch_conditional arm: "arm64", intel: "x86"
 
-  on_arm do
-    version "7.2.5-172122"
-    sha256 "dbdad4a10c1a7c0d0dd659dde8fa3ce6ddd3cdf3830e53f56842ddeea3f99918"
-  end
-  on_intel do
-    version "7.2.5-171795"
-    sha256 "c44b58387ccf912fc84b85460339d7e4671e77822e160c6fe58b2ff16eaa38ad"
-  end
+  version "7.2.13-174504"
+  sha256 arm:   "e5c84ff5aeac68c82a12b6ac910015d9386a8a766fbfab7b05fb661328ff3a5b",
+         intel: "994a8709ad1b0841c755c58e2a6433029dca743797b944fbf7bd0be2ed522305"
 
   url "https://www.virtualbox.org/download/testcase/VirtualBox-#{version}-#{arch}.dmg"
   name "Oracle VirtualBox"
@@ -25,6 +20,7 @@ cask "virtualbox@beta" do
     "virtualbox",
     "virtualbox@6",
   ]
+  depends_on :macos
 
   pkg "VirtualBox.pkg",
       choices: [
@@ -40,7 +36,7 @@ cask "virtualbox@beta" do
         },
       ]
 
-  postflight do
+  postflight_steps do
     # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew,
     # it creates it itself with incorrect permissions that break other packages.
     # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026

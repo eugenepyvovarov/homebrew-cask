@@ -1,6 +1,6 @@
 cask "fabfilter-pro-c" do
-  version "3.00"
-  sha256 "f11e9a6140cfced7459107f8262a2aea43f08b256c4bf43b009efbf55838ba63"
+  version "3.02"
+  sha256 "ca3fd2ba1535c72faf9096b9a449f1584469332638944d4fff3f407197fcf77a"
 
   url "https://cdn-b.fabfilter.com/downloads/ffproc#{version.no_dots}.dmg"
   name "FabFilter Pro-C"
@@ -12,9 +12,11 @@ cask "fabfilter-pro-c" do
     regex(/FabFilter\s+Pro-C.*?v?(\d+(?:\.\d+)+)/im)
   end
 
+  depends_on :macos
+
   pkg "FabFilter Pro-C #{version} Installer.pkg"
 
-  uninstall pkgutil: "com.fabfilter.Pro-C.#{version.major}"
+  uninstall pkgutil: "com.fabfilter.Pro-C.*"
 
   # No zap stanza required
 end

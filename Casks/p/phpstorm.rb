@@ -1,9 +1,9 @@
 cask "phpstorm" do
   arch arm: "-aarch64"
 
-  version "2025.3.1.1,253.29346.257"
-  sha256 arm:   "2358f5f0d2b5d1575ae05d953889b79af8ea52f84531cece62ad4da72446f9bc",
-         intel: "2f86eb6d554981182ffc0db2bb7a031b27165facf92220dfffb65dfd6d95dad9"
+  version "2026.2.0.1,262.8665.325"
+  sha256 arm:   "7c8eb4c49f78a27997033241cb7f865079c91fefee9104c2b94da3decd59239a",
+         intel: "86b3d1d3b14c455596b0b33d02e17a65a49ecf574e7e480e883af718000fcfa7"
 
   url "https://download.jetbrains.com/webide/PhpStorm-#{version.csv.first}#{arch}.dmg"
   name "JetBrains PhpStorm"
@@ -24,6 +24,7 @@ cask "phpstorm" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "PhpStorm.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

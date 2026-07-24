@@ -1,18 +1,21 @@
 cask "crypto-native-app-ng" do
-  version "26.1.20433"
-  sha256 "00664a9d0084a3e23a17e730c2737d5bea1bda0345fe4a488add83a039e34588"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://download.tescosw.cz/crypto/files/cryptong/Crypto-Native-App-NG-v#{version}-x64-MUI.dmg"
+  version "26.1.20558"
+  sha256  arm:   "4d7e79ccafe8db6a29d18fcb67ac1ad405933a0f54ccdd0d2acea83d7d1b06d2",
+          intel: "8938cbf3e082e0005fe7ccdf644f07973390cc311c882763de7003c3ca6c4c91"
+
+  url "https://download.tescosw.cz/crypto/files/cryptong/Crypto-Native-App-NG-v#{version}-#{arch}-MUI.dmg"
   name "Crypto Native App NG"
   desc "Encrypts and signs data on your computer and communicates with browser extension"
   homepage "https://download.tescosw.cz/crypto/en/"
 
   livecheck do
     url "https://download.tescosw.cz/crypto/files/cryptong/"
-    regex(/href=.*?Crypto-Native-App-NG-v?(\d+(?:\.\d+)+)-x64-MUI\.dmg/i)
+    regex(/href=.*?Crypto-Native-App-NG[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}[._-]MUI\.dmg/i)
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :monterey
 
   pkg "Installer Crypto Native App NG.pkg"
 

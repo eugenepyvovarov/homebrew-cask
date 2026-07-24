@@ -10,13 +10,15 @@ cask "fpc-laz" do
 
   livecheck do
     url "https://sourceforge.net/projects/lazarus/rss?path=/Lazarus%20macOS%20x86-64"
-    regex(%r{url=.*?/Lazarus(?:%20|[._-])v?(\d+(?:\.\d+)+)/fpc[._-]v?(\d+(?:\.\d+)+)[^"' >]+?\.(?:dmg|pkg)}i)
+    regex(%r{url=.*?/Lazarus(?:%20|[._-])v?(\d+(?:\.\d+)+)/fpc[._-]v?(\d+(?:\.\d+)+)[._-][^"' >]+?\.(?:dmg|pkg)}i)
     strategy :sourceforge do |page, regex|
       page.scan(regex).map { |match| "#{match[1]},#{match[0]}" }
     end
   end
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on :macos
 
   pkg "fpc-#{version.csv.first}-intelarm64-macosx.mpkg/Contents/Packages/fpc-#{version.csv.first}-intelarm64-macosx.pkg"
 

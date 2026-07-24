@@ -1,6 +1,6 @@
 cask "seafile-client" do
-  version "9.0.16"
-  sha256 "131668cdb2b7e23936f3ca075c61eba92a39de7076fc09b62ecc0039d382a870"
+  version "9.0.19"
+  sha256 "72b705bd3ec7142bca6fce7f069b4fe256066473f9368a9236a7b4e4e0189bd9"
 
   url "https://sos-ch-dk-2.exo.io/seafile-downloads/seafile-client-#{version}.dmg",
       verified: "sos-ch-dk-2.exo.io/seafile-downloads/"
@@ -13,7 +13,7 @@ cask "seafile-client" do
     regex(%r{href=.*?/seafile[._-]client[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Seafile Client.app"
 

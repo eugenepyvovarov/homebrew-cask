@@ -1,25 +1,24 @@
 cask "semeru-jdk-open@11" do
   arch arm: "aarch64", intel: "x64"
 
-  version "11.0.29+7,openj9-0.56.0"
-  sha256 arm:   "32c54e09102dec013f825dd0c6869213aa194db2bea2bb962fd5689ff86687bd",
-         intel: "1f291cd0c815ec75309f92fef2524a2ad651cef34c0971914992e1e2eb1bed43"
+  version "11.0.31.0"
+  sha256 arm:   "b828335d3732bae21a7de2b81aaf9a44a68dd60a88b3493c72351d6d158021aa",
+         intel: "366052f6c89751c9a51c3e9d4557b1b1e90bad2f71b618307b83d18a223f7883"
 
-  url "https://github.com/ibmruntimes/semeru#{version.major}-binaries/releases/download/jdk-#{version.csv.first}_#{version.csv.second}/ibm-semeru-open-jdk_#{arch}_mac_#{version.csv.first.tr("+", "_")}_#{version.csv.second}.pkg",
+  url "https://github.com/ibmruntimes/semeru#{version.major}-binaries/releases/download/jdk-#{version}/ibm-semeru-open-jdk_#{arch}_mac_#{version}.pkg",
       verified: "github.com/ibmruntimes/semeru#{version.major}-binaries/"
   name "IBM Semeru Runtime (JDK 11) Open Edition"
   desc "Production-ready JDK with the OpenJDK class libraries and the Eclipse OpenJ9 JVM"
-  homepage "https://developer.ibm.com/languages/java/semeru-runtimes"
+  homepage "https://developer.ibm.com/languages/semeru-runtimes/"
 
   livecheck do
     url :url
-    regex(/^jdk[._-](\d+(?:[.+]\d+)*)[._-](.+?)$/i)
-    strategy :github_latest do |json, regex|
-      json["tag_name"]&.scan(regex)&.map { |match| "#{match[0]},#{match[1]}" }
-    end
+    strategy :github_latest
   end
 
-  pkg "ibm-semeru-open-jdk_#{arch}_mac_#{version.csv.first.tr("+", "_")}_#{version.csv.second}.pkg"
+  depends_on :macos
+
+  pkg "ibm-semeru-open-jdk_#{arch}_mac_#{version}.pkg"
 
   uninstall pkgutil: "net.ibm-semeru-open.#{version.major}.jdk"
 

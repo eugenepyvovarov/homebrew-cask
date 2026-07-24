@@ -1,5 +1,5 @@
 cask "dbschema" do
-  version "10.0.3"
+  version "10.4.1"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://dbschema.com/download/dbschema_macos_#{version.dots_to_underscores}.dmg"
@@ -14,6 +14,8 @@ cask "dbschema" do
       page.scan(regex)&.map { |match| match[0].tr("_", ".") }
     end
   end
+
+  depends_on :macos
 
   installer script: {
     executable: "#{staged_path}/DbSchema Installer.app/Contents/MacOS/JavaApplicationStub",

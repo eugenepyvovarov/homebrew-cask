@@ -1,9 +1,9 @@
 cask "helium-browser" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.8.2.1"
-  sha256 arm:   "638d858fee4a3d9d9a3bb5dacd5d42141ee58809964ac69f717a6fba4251aa83",
-         intel: "b83aec3b10a8f8503f2b7372fb272b8d20a5439826bb9d0afbd442fad77ac801"
+  version "0.14.8.1"
+  sha256 arm:   "e0c87ff12dcebb46b1a8f13b77d2e26b5df13b28527678f35170f38409751bc3",
+         intel: "5a2f61cfc793d124fcc51e5af03922855dbbd51945f5564386a39ed4a71e3768"
 
   url "https://github.com/imputnet/helium-macos/releases/download/#{version}/helium_#{version}_#{arch}-macos.dmg",
       verified: "github.com/imputnet/helium-macos/"
@@ -17,7 +17,7 @@ cask "helium-browser" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Helium.app"
 

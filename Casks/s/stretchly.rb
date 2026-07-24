@@ -1,9 +1,9 @@
 cask "stretchly" do
   arch arm: "-arm64"
 
-  version "1.20.0"
-  sha256 arm:   "277b8c5649aad01182f224abcda21b154775531ca4aacd71d6cff359d435584d",
-         intel: "799f14585d0220abdd500e57cd9775a48505f894cbd2eca83f57c9cf0a45f620"
+  version "1.22.0"
+  sha256 arm:   "2bc2107001af9f1bcad2b5dcef3a197428aad8b085d2ef9dc685df17800dd291",
+         intel: "387cca7a0c1e422c5c5c5325864a73e6cb6e0fb6517fdbaa826921c59766d681"
 
   url "https://github.com/hovancik/stretchly/releases/download/v#{version}/stretchly-#{version}#{arch}.dmg",
       verified: "github.com/hovancik/stretchly/"
@@ -13,7 +13,7 @@ cask "stretchly" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Stretchly.app"
 

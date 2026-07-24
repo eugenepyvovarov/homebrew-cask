@@ -1,6 +1,6 @@
 cask "swiftdialog" do
-  version "2.5.6,4805"
-  sha256 "69bd7f6412a1b2393906fc059369e65c5ae58af5cc8d289467effd11d8862b2a"
+  version "3.1.0,4994"
+  sha256 "462921537425146b00b936448e518578b58d5177c039a609532cfea349c3e166"
 
   url "https://github.com/swiftDialog/swiftDialog/releases/download/v#{version.csv.first}/dialog-#{version.csv.first}-#{version.csv.second}.pkg",
       verified: "github.com/swiftDialog/swiftDialog/"
@@ -21,7 +21,7 @@ cask "swiftdialog" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :sequoia
 
   pkg "dialog-#{version.csv.first}-#{version.csv.second}.pkg"
 

@@ -1,10 +1,10 @@
 cask "anka-virtualization" do
-  version "3.8.4.210"
-  sha256 "35b4686afdb40cad8e51346e7c8a6f192cbff1ebcae58b012f02a5a61edcce4e"
+  version "3.9.2.217"
+  sha256 "8008b3492d1ce33c7b877057013921e7b8844e2069f58f1c40b13502604b9f76"
 
   url "https://downloads.veertu.com/anka/Anka-#{version}.pkg"
   name "Anka Virtualization"
-  desc "CLI tool for managing and creating virtual machines"
+  desc "CLI tool for managing and creating macOS virtual machines"
   homepage "https://veertu.com/"
 
   livecheck do
@@ -13,7 +13,7 @@ cask "anka-virtualization" do
     strategy :header_match
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   pkg "Anka-#{version}.pkg"
 

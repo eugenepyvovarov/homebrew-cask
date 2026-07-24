@@ -1,28 +1,24 @@
 cask "whatsapp" do
-  version "2.26.3.18"
-  sha256 "51ead7862cc142985ef80b26d96bb8281f2e97d542178f041d0017c209e766d5"
+  version "26.29.20"
+  sha256 "5a11ef9749081c3299d1990b5f1377abb575c55329c7adb669016cc1b81fb82e"
 
-  url "https://web.whatsapp.com/desktop/mac_native/release/?version=#{version}&extension=zip&configuration=Release&branch=master&is_buck=true"
+  url "https://web.whatsapp.com/desktop/mac_native/release/?version=2.#{version}&extension=zip&configuration=Release&branch=master&is_buck=true"
   name "WhatsApp"
   desc "Native desktop client for WhatsApp"
   homepage "https://www.whatsapp.com/"
 
   livecheck do
     url "https://web.whatsapp.com/desktop/mac_native/updates/?branch=master&configuration=Release"
-    regex(/version=v?(\d+(?:\.\d+)+)/i)
-    strategy :sparkle do |item, regex|
-      item.url.scan(regex).map(&:first)
-    end
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true
-  conflicts_with cask: [
-    "whatsapp@beta",
-    "whatsapp@legacy",
-  ]
-  depends_on macos: ">= :monterey"
+  conflicts_with cask: "whatsapp@beta"
+  depends_on macos: :monterey
 
   app "WhatsApp.app"
+
+  uninstall quit: "net.whatsapp.WhatsApp"
 
   zap trash: [
     "~/Library/Application Scripts/net.whatsapp.WhatsApp*",

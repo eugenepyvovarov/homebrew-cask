@@ -1,6 +1,16 @@
 cask "permute" do
-  version "3.14.5,2891"
-  sha256 "c2b1ccbd6edcdd2380d2def3b50d226c159a1ac6249704a7fd60aa392798ac2d"
+  on_arm do
+    version "4.0.5,4137"
+    sha256 "c2f2ed63d372a1dbc6dbe3041b18c6fd88a4a92a6452187cf9b81a0156fa214f"
+
+    depends_on macos: :tahoe
+  end
+  on_intel do
+    version "3.14.8,4018"
+    sha256 "eacd8883163f43d9b48ae42e0900096a0f7b323488aaf9276ce49dad017f6649"
+
+    depends_on macos: :big_sur
+  end
 
   url "https://software.charliemonroe.net/trial/permute/v#{version.major}/Permute_#{version.major}_#{version.csv.second}.dmg"
   name "Permute"
@@ -13,12 +23,17 @@ cask "permute" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "Permute #{version.major}.app"
 
   zap trash: [
+    "~/Library/Application Scripts/*.com.charliemonroe.eney",
+    "~/Library/Application Scripts/*com.charliemonroe.Permute*",
+    "~/Library/Caches/com.apple.helpd/Generated/com.charliemonroe.Permute-#{version.major}*",
     "~/Library/Containers/com.charliemonroe.Permute-#{version.major}",
+    "~/Library/Containers/com.charliemonroe.Permute.MetadataProcessor",
+    "~/Library/Group Containers/*.com.charliemonroe.Permute*",
     "~/Library/Preferences/com.charliemonroe.Permute-#{version.major}.plist",
   ]
 end

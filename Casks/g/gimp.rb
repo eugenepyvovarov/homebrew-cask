@@ -11,9 +11,9 @@ cask "gimp" do
     end
   end
   on_big_sur :or_newer do
-    version "3.0.6"
-    sha256 arm:   "6f4e7f8ed7ebfa80dcb6e0c05f9b1d6bd3d5a991e99abc2f3391cf37bfd97d70",
-           intel: "0267ae09d88e1d4b121810fbdcb91f333944201b0b02e2afdbbfabd1a046a551"
+    version "3.2.4"
+    sha256 arm:   "294c016dca7795999129a38b462f80fac3c13cb963e6de9d04eeb5d6e519392b",
+           intel: "85214a388687718d30169d88b22794d6b0a89849bcc7aa456f4afb83c1326be8"
 
     livecheck do
       url "https://www.gimp.org/gimp_versions.json"
@@ -37,6 +37,7 @@ cask "gimp" do
   homepage "https://www.gimp.org/"
 
   conflicts_with cask: "gimp@dev"
+  depends_on :macos
 
   app "GIMP.app"
   shimscript = "#{staged_path}/gimp.wrapper.sh"

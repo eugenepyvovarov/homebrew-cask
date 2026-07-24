@@ -1,8 +1,8 @@
 cask "bartender" do
-  version "6.2.1"
-  sha256 "6fa4f9253f0f01266a91116badcf39b42009f08cb2e288aa17d669b19e3a5e6a"
+  version "6.5.2"
+  sha256 "1f5f81c29315332ae2c19efa857454e6254159caf5f4066f556a60491db364a0"
 
-  url "https://macbartender.com/B2/updates/#{version.dots_to_hyphens}/Bartender%20#{version.major}.zip"
+  url "https://downloads.macbartender.com/B2/updates/#{version.dots_to_hyphens}/Bartender%20#{version.major}.zip"
   name "Bartender"
   desc "Menu bar icon organiser"
   homepage "https://www.macbartender.com/"
@@ -16,7 +16,7 @@ cask "bartender" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Bartender #{version.major}.app"
 

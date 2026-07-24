@@ -1,6 +1,6 @@
 cask "textexpander" do
-  version "8.4.1,841.5"
-  sha256 "c783f4d68800094d646e120c04446447354b96c953ad8202edbf745bc0128742"
+  version "8.4.5,845.4"
+  sha256 "75815e541629f25cf1aa35ccf257f9c593d8def1d20335ecb1b3b3e1e9da6ef5"
 
   url "https://cdn.textexpander.com/mac/#{version.csv.second}/TextExpander_#{version.csv.first}.dmg"
   name "TextExpander"
@@ -13,7 +13,7 @@ cask "textexpander" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "TextExpander.app"
 

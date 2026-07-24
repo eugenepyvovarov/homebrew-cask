@@ -1,15 +1,14 @@
 cask "aqua-voice" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.11.5"
-  sha256 arm:   "4a12b3a141cae17baaeae7240363cb3dcaa1e43f24268fbc2402549179367958",
-         intel: "528f63c196259316cbd1d0b63bbac2ebe4d3366e036f82cd1e97062fbc278dee"
+  version "0.17.2"
+  sha256 arm:   "1cd75f0e6c58cf5ea4a4fc35689aaa003d4fa26726cc24abbb7fef2d39aca648",
+         intel: "a7bd44419154861a6950af31e027530d51674956d0fe79cf19e3ebcb3d6a5d63"
 
-  url "https://d1a1dx1sgvjqrz.cloudfront.net/aqua-voice-updates/darwin/#{arch}/Aqua+Voice-#{version}-#{arch}.dmg",
-      verified: "d1a1dx1sgvjqrz.cloudfront.net/"
+  url "https://updates.aquavoice.com/stable/darwin/#{arch}/Aqua%20Voice-darwin-#{arch}-#{version}.zip"
   name "Aqua Voice"
   desc "Speech-to-text system"
-  homepage "https://withaqua.com/"
+  homepage "https://aquavoice.com/"
 
   livecheck do
     url "https://aqua-desktop-builds.s3.amazonaws.com/aqua-voice-updates/darwin/#{arch}/RELEASES.json"
@@ -19,6 +18,7 @@ cask "aqua-voice" do
   end
 
   auto_updates true
+  depends_on macos: :big_sur
 
   app "Aqua Voice.app"
 

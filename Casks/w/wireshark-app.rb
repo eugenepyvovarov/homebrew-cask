@@ -3,9 +3,9 @@ cask "wireshark-app" do
   livecheck_arch = on_arch_conditional arm: "arm", intel: "x86-"
 
   on_big_sur :or_older do
-    version "4.4.13"
-    sha256 arm:   "5b1ffb26ab84ac766299e12af8470e4036bffbd5b7a297bd46398d8daf782e7d",
-           intel: "4bcf6def67a6f42e57c578aa7e366bed12fca686082d7d39412454542c393d76"
+    version "4.4.17"
+    sha256 arm:   "c869615ebbe8f1db1ebf62d503df7011b7c347f4c26997dc28cb4b68db0a4b49",
+           intel: "344ec1a1c85f6a46c3446392544dc179a25f94f4fdf7dbcad1159e3e5dc60fba"
 
     url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}%20#{arch}%2064.dmg"
 
@@ -18,8 +18,8 @@ cask "wireshark-app" do
     end
   end
   on_monterey :or_newer do
-    version "4.6.3"
-    sha256 "788fef0f62fc58d2523270256694efc30e79f3584d4895eb066ca333daa88fe9"
+    version "4.6.7"
+    sha256 "f2dc93c67f6863ccc0ba54ff82e8d9ce4a8139e6d4838212eca8b1a119020786"
 
     url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}.dmg"
 
@@ -40,7 +40,7 @@ cask "wireshark-app" do
 
   auto_updates true
   conflicts_with cask: "wireshark-chmodbpf"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Wireshark.app"
   pkg "Add Wireshark to the system path.pkg"

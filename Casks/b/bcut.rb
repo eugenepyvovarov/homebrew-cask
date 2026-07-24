@@ -3,12 +3,12 @@ cask "bcut" do
   pkg_key = on_arch_conditional arm: "arm_pkg_url", intel: "package_download_url"
 
   on_arm do
-    version "3.11.20,22559865,8966793a611917d9be9252988e21c741"
-    sha256 "97813aaa94da4882cf0606943ae69f4d24a98d28f95e76bc56dd142359f6b7b8"
+    version "3.11.24,23369602,a97c4192d11a838429fb9600044e67c8"
+    sha256 "c2ffdf539aed7dd235a8dee7ad3547f32a2803380d8e64367f7b11792ca1ad9c"
   end
   on_intel do
-    version "3.11.20,22559885,d2d441024a699dac3928243c23ef1d16"
-    sha256 "b304abb63e302b5a8ff41b98ab50996c07d179c1548076c5652775d388886dfe"
+    version "3.11.24,23369604,2b551373e850489c924c4cbcf64aec97"
+    sha256 "457d27e80e1862d317423659597614ceacdc63b4542554ceabab6bdef97fe3ba"
   end
 
   url "https://boss.hdslb.com/bcut_pc_pkg/static/#{version.csv.third}/BCUT-#{version.csv.first}-#{version.csv.second}-#{arch}.dmg",
@@ -30,6 +30,7 @@ cask "bcut" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "BCUT.app"
 

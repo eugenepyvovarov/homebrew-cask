@@ -1,6 +1,6 @@
 cask "testfully" do
-  version "1.182.0,487"
-  sha256 "eaf004b352a91af6c45b4ee86084a6366ad6ecc4fb6cb561edc5b004035bca57"
+  version "1.192.0,547"
+  sha256 "fcf7a81abd5377c531799291bb686cd708eabde2418a0f4e4669c8f4a5595015"
 
   url "https://releases.testfully.io/desktop/build-#{version.csv.second}/Testfully.app.zip"
   name "Testfully"
@@ -21,6 +21,8 @@ cask "testfully" do
       "#{version},#{build}"
     end
   end
+
+  depends_on :macos
 
   app "Testfully.app"
 

@@ -1,5 +1,5 @@
 cask "virtualhereserver" do
-  version "4.8.6"
+  version "4.8.7"
   sha256 :no_check
 
   url "https://www.virtualhere.com/sites/default/files/usbserver/VirtualHereServerUniversal.dmg"
@@ -11,6 +11,8 @@ cask "virtualhereserver" do
     url :homepage
     regex(/Version\s*(\d+(?:\.\d*)*)/i)
   end
+
+  depends_on :macos
 
   app "VirtualHereServerUniversal.app"
 

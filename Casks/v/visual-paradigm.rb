@@ -1,9 +1,9 @@
 cask "visual-paradigm" do
   arch arm: "AArch64", intel: "WithJRE"
 
-  version "18.0,20260116"
-  sha256 arm:   "912760da34009127e03326a74fa84af8927535a10681dab40b9a0e0de07e8730",
-         intel: "6c0b372c5f6aca62ee71a600d6f3a93f2ccb0a86a25b4ac936d1c33e23de000e"
+  version "18.0,20260521"
+  sha256 arm:   "725c3c81d254d32c7a9f920d23d14a7694be30c52c99d28d09c457f2a24ddd24",
+         intel: "3ec4fc294dc188acacb7c5d787078b873e695e39291a2911e51c927e008bceab"
 
   url "https://www.visual-paradigm.com/downloads/vp#{version.csv.first}/#{version.csv.second}/Visual_Paradigm_#{version.csv.first.dots_to_underscores}_#{version.csv.second}_OSX_#{arch}.dmg"
   name "Visual Paradigm"
@@ -20,6 +20,8 @@ cask "visual-paradigm" do
       "#{match[1]},#{match[2]}"
     end
   end
+
+  depends_on :macos
 
   app "Visual Paradigm.app"
 

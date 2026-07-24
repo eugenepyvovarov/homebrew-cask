@@ -31,9 +31,9 @@ cask "mysql-shell" do
     end
   end
   on_ventura :or_newer do
-    version "9.6.0,15"
-    sha256 arm:   "76c5e8e146d38956486fb455e4911aeb3769e7f9401b547dc77f8744361ca42f",
-           intel: "b7910dae238247fc509597a87c2a28a3413babfc8c2eecdf723efe087e04b5db"
+    version "9.7.1,15"
+    sha256 arm:   "171865500b08d03560fb93ba4db1ebfe941ac4ddad7d2f5c6138c50e9910dea7",
+           intel: "f5fc112009aba14fba00428a13b1855b9e0ade9c02694ff150e598ebad26f761"
 
     url "https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-#{version.csv.first}-macos#{version.csv.second}-#{arch}.dmg",
         user_agent: :curl
@@ -51,6 +51,8 @@ cask "mysql-shell" do
   name "MySQL Shell"
   desc "Interactive JavaScript, Python or SQL interface"
   homepage "https://dev.mysql.com/downloads/shell/"
+
+  depends_on :macos
 
   pkg "mysql-shell-#{version.csv.first}-macos#{version.csv.second}-#{arch}.pkg"
 

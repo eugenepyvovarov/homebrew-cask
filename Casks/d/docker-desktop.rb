@@ -1,9 +1,9 @@
 cask "docker-desktop" do
   arch arm: "arm64", intel: "amd64"
 
-  version "4.57.0,215387"
-  sha256 arm:   "a3a442be34326c9b7ecceb8735ef55518d1eb8ac487cfc68108c038e535eacc1",
-         intel: "547c35e554074a3db84fad0d5bc638b6033428b517b35ad659dcf0e12c371076"
+  version "4.83.0,234302"
+  sha256 arm:   "6d0798ee8b93bbb742e2eac5e6bab9aa95021498f73b95b9e4e9c6c6b6a71bf5",
+         intel: "6d7649a92f37889277527a8a68a8120ccae6166c647f938b99c2e6abb7f00e83"
 
   on_intel do
     binary "#{appdir}/Docker.app/Contents/Resources/bin/com.docker.hyperkit",
@@ -24,7 +24,7 @@ cask "docker-desktop" do
 
   auto_updates true
   conflicts_with cask: "rancher"
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Docker.app"
   binary "#{appdir}/Docker.app/Contents/Resources/bin/docker",
@@ -35,8 +35,6 @@ cask "docker-desktop" do
          target: "/usr/local/bin/docker-credential-ecr-login"
   binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-credential-osxkeychain",
          target: "/usr/local/bin/docker-credential-osxkeychain"
-  binary "#{appdir}/Docker.app/Contents/Resources/bin/hub-tool",
-         target: "/usr/local/bin/hub-tool"
   binary "#{appdir}/Docker.app/Contents/Resources/bin/kubectl",
          target: "/usr/local/bin/kubectl.docker"
   binary "#{appdir}/Docker.app/Contents/Resources/cli-plugins/docker-compose",
@@ -72,7 +70,10 @@ cask "docker-desktop" do
               "com.docker.socket",
               "com.docker.vmnetd",
             ],
-            quit:      "com.docker.docker",
+            quit:      [
+              "com.docker.docker",
+              "com.electron.dockerdesktop",
+            ],
             delete:    [
               "/Library/PrivilegedHelperTools/com.docker.socket",
               "/Library/PrivilegedHelperTools/com.docker.vmnetd",

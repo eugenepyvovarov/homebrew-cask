@@ -1,5 +1,5 @@
 cask "naver-whale" do
-  version "4.35.351.16"
+  version "4.38.386.14"
   sha256 :no_check
 
   url "https://installer-whale.pstatic.net/downloads/installers/NaverWhale.dmg",
@@ -16,7 +16,7 @@ cask "naver-whale" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Whale.app"
 

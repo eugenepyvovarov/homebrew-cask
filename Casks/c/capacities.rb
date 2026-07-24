@@ -1,22 +1,22 @@
 cask "capacities" do
   arch arm: "-arm64"
 
-  version "1.57.24"
-  sha256 arm:   "923714e8269c812843adcc20371d101fd680df40c4f7086ce4d3aecb8b7afff5",
-         intel: "0e0716ec6ad167c1821fa19729313a1fc40f09b0afd76338b91ce4e3084ce698"
+  version "1.67.13"
+  sha256 arm:   "4f20b318b52146b8c4bb4e6fe4a4eb7e0ca61429597c13ef13267d0f955bb68e",
+         intel: "f37a7691964eeb28d910f4163811d36fcb01b8ab8c1eb9d7f9634f71518400af"
 
-  url "https://capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/Capacities-#{version}#{arch}.dmg",
-      verified: "capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/"
+  url "https://2vks4.upcloudobjects.com/capacities-desktop-app/Capacities-#{version}#{arch}.dmg",
+      verified: "2vks4.upcloudobjects.com/capacities-desktop-app/"
   name "Capacities"
   desc "App to write and organise your ideas"
   homepage "https://capacities.io/"
 
   livecheck do
-    url "https://capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/latest-mac.yml"
+    url "https://2vks4.upcloudobjects.com/capacities-desktop-app/latest-mac.yml"
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :monterey
 
   app "Capacities.app"
 

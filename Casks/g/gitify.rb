@@ -1,6 +1,6 @@
 cask "gitify" do
-  version "6.15.0"
-  sha256 "1a15c9e8da4bc079cf22541f411012f2c45bbdae5866239f5ceba29c50bd86c3"
+  version "7.0.1"
+  sha256 "f7623606264eb0a25d85a0ec52595d99124d36767eb494db59bd353ca041735c"
 
   url "https://github.com/gitify-app/gitify/releases/download/v#{version}/Gitify-#{version}-universal-mac.zip"
   name "Gitify"
@@ -13,14 +13,14 @@ cask "gitify" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Gitify.app"
 
   uninstall quit: [
     "com.electron.gitify",
     "com.electron.gitify.helper",
-  ], on_upgrade: :quit
+  ]
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.gitify.sfl*",

@@ -1,9 +1,9 @@
 cask "http-toolkit" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.24.2"
-  sha256 arm:   "4d030ff3f07fe16ef17cdc289a24a182b978a4c68c2dd6c40aedf0d5266a9123",
-         intel: "1c72f5977c473f5315b7db5f3bac97d97b03ef72d9a1fce9a3941b4a51f6bc1b"
+  version "1.26.1"
+  sha256 arm:   "f7c2f5360ce12e6de1df3d9dbc0888634fc9e4a3db5a7d2f80548155a82863b4",
+         intel: "ed212232177419a76cabb5b690d22401712121da2d02e3d4ecb04cb52c67d893"
 
   url "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v#{version}/HttpToolkit-#{version}-#{arch}.dmg",
       verified: "github.com/httptoolkit/httptoolkit-desktop/"
@@ -16,7 +16,7 @@ cask "http-toolkit" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "HTTP Toolkit.app"
 

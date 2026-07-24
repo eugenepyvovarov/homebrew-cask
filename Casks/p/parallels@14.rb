@@ -20,6 +20,7 @@ cask "parallels@14" do
     "parallels@19",
     "parallels@20",
   ]
+  depends_on :macos
   # This .dmg cannot be extracted normally
   # Original discussion: https://github.com/Homebrew/homebrew-cask/pull/67202
   container type: :naked
@@ -46,8 +47,8 @@ cask "parallels@14" do
                    sudo: true
   end
 
-  uninstall_preflight do
-    set_ownership "#{appdir}/Parallels Desktop.app"
+  uninstall_preflight_steps do
+    set_ownership "Parallels Desktop.app", base: :appdir
   end
 
   uninstall delete: [

@@ -1,6 +1,6 @@
 cask "epic-games" do
-  version "19.1.5"
-  sha256 "cbf703988c647cefeec539727e0f14dfe8ee03a9ea58f80eaae411faf61e34fd"
+  version "20.1.4"
+  sha256 "5c4f204ed623b01890f26cc99d4af657c3fbd6be1d04be7fed176ddbc94b1259"
 
   url "https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/Installers/Mac/EpicInstaller-#{version}.dmg",
       verified: "epicgames-download1.akamaized.net/"
@@ -14,7 +14,7 @@ cask "epic-games" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Epic Games Launcher.app"
 

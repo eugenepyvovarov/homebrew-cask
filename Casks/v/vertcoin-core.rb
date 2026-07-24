@@ -18,11 +18,13 @@ cask "vertcoin-core" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
+  depends_on :macos
+
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app "Vertcoin-Qt.app", target: "Vertcoin Core.app"
 
-  preflight do
-    set_permissions "#{staged_path}/Vertcoin-Qt.app", "0755"
+  preflight_steps do
+    set_permissions "Vertcoin-Qt.app", "0755"
   end
 
   zap trash: "~/Library/Preferences/org.vertcoin.Vertcoin-Qt.plist"

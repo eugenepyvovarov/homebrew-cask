@@ -9,10 +9,13 @@ cask "osxfuse" do
   homepage "https://osxfuse.github.io/"
 
   deprecate! date: "2025-03-28", because: :discontinued, replacement_cask: "macfuse"
+  disable! date: "2026-03-28", because: :discontinued, replacement_cask: "macfuse"
+
+  depends_on :macos
 
   pkg "Extras/FUSE for macOS #{version}.pkg"
 
-  postflight do
+  postflight_steps do
     set_ownership ["/usr/local/include", "/usr/local/lib"]
   end
 

@@ -1,6 +1,6 @@
 cask "nessie-app" do
-  version "1.3.7"
-  sha256 "c4314e2bb9d9097fba1afd59a210cb9989dc5006c00ba73ba7270ed009dbcd35"
+  version "1.4.1571"
+  sha256 "0a15adc65c3071a8041f8caa80c468d4e2d16b4ac62735431b2c3d077c2de479"
 
   url "https://nessie-notes-app-auto-updates.s3.us-west-2.amazonaws.com/Nessie_#{version}.zip",
       verified: "nessie-notes-app-auto-updates.s3.us-west-2.amazonaws.com/"
@@ -14,7 +14,7 @@ cask "nessie-app" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Nessie.app"
 

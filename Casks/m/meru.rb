@@ -1,9 +1,9 @@
 cask "meru" do
   arch arm: "-arm64"
 
-  version "3.26.0"
-  sha256 arm:   "84be6ed98e1216852c810bd99290eee71d6a8df37c454cceb7ab5381d29c4c88",
-         intel: "3db7a9280804f5034abec95ddcc1f7e14b51b710255edfbf008df177799b69d0"
+  version "3.56.3"
+  sha256 arm:   "cfb7731206d44635b60199007ba0a9bcc361c537c33c57b64908a960696f8e7e",
+         intel: "69fad651b0870d2d12138ac66f95641e13c8c32b2b19b347a3acbf8c14ccba93"
 
   url "https://github.com/zoidsh/meru/releases/download/v#{version}/Meru-#{version}#{arch}.dmg",
       verified: "github.com/zoidsh/meru/"
@@ -11,7 +11,7 @@ cask "meru" do
   desc "Gmail desktop app"
   homepage "https://meru.so/"
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Meru.app"
 

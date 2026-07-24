@@ -1,6 +1,6 @@
 cask "launchos" do
-  version "1.3.0,130"
-  sha256 "39c05f1b807c519c7f179308f1789dea76b651c8ba19ed444500c945fcf47418"
+  version "2.2.0,405"
+  sha256 "9b7582816b3c3b0e15073ad669008229b404ec1f0478f4ebdf782a8c5dc66291"
 
   url "https://static.remixdesign.app/launchos/LaunchOS-#{version.csv.first}-#{version.csv.second}.dmg",
       verified: "static.remixdesign.app/launchos/"
@@ -14,7 +14,7 @@ cask "launchos" do
   end
 
   auto_updates true
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "LaunchOS.app"
 

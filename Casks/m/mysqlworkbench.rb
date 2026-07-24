@@ -40,9 +40,9 @@ cask "mysqlworkbench" do
     end
   end
   on_ventura :or_newer do
-    version "8.0.45"
-    sha256 arm:   "8bbf8bdcce3e890c979373a0dbff3617985ec032b1cf50cb16282a0797b20799",
-           intel: "0928d720134642fd51aad4370611bc427859b308851196cf6cb72df25eb4dc06"
+    version "8.0.47"
+    sha256 arm:   "90b177034b3e2c64b822f44920cb11996ec1323f4c49e2fa0224748103fb4844",
+           intel: "9fb82446b8c89a5326f9c4b2ab59ab6ac76b389713f1f13553743f34952639a8"
 
     url "https://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-#{version}-macos-#{arch}.dmg"
 
@@ -56,6 +56,8 @@ cask "mysqlworkbench" do
   name "MySQL Workbench"
   desc "Visual tool to design, develop and administer MySQL servers"
   homepage "https://www.mysql.com/products/workbench/"
+
+  depends_on :macos
 
   app "MySQLWorkbench.app"
 

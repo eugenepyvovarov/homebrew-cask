@@ -1,23 +1,36 @@
 cask "kimi" do
-  version "2.1.1"
-  sha256 "ee6286ac3d438b55c4dd62d211de20d2ca357f88350d6440a575f2ea22c53116"
+  version "3.1.4"
+  sha256 "a52cc5221e2a5a0ef05a5825304372a0aa02ebb50137b53c8e3c92bd9e44f54a"
 
-  url "https://kimi-img.moonshot.cn/app/download/macos/kimi_#{version}.dmg",
+  url "https://kimi-img.moonshot.cn/app/download/mac/kimi_#{version}.dmg",
       verified: "kimi-img.moonshot.cn/"
   name "kimi"
   desc "AI chat assistant from Moonshot"
   homepage "https://www.moonshot.ai/"
 
-  disable! date: "2025-12-25", because: :no_longer_available
+  livecheck do
+    url "https://appsupport.moonshot.cn/api/app/pkg/latest/macos/download"
+    strategy :header_match
+  end
 
-  depends_on macos: ">= :big_sur"
+  depends_on arch: :arm64
+  depends_on macos: :monterey
 
-  app "Kimi.app"
+  app "Kimi Installer.app/Contents/Helpers/Kimi.app"
 
   zap trash: [
+    "~/.kimi-webbridge",
+    "~/.kimi-work",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.moonshot.kimichat.sfl*",
     "~/Library/Application Support/kimi",
+    "~/Library/Application Support/kimi",
+    "~/Library/Application Support/kimi-desktop",
+    "~/Library/Caches/KimiAppCache",
     "~/Library/Caches/KimiAppCache",
     "~/Library/HTTPStorages/com.moonshot.kimichat",
+    "~/Library/HTTPStorages/com.moonshot.kimichat",
+    "~/Library/Logs/kimi-desktop",
+    "~/Library/Logs/kimi-desktop",
     "~/Library/Preferences/com.moonshot.kimichat.plist",
   ]
 end

@@ -1,6 +1,6 @@
 cask "diskcatalogmaker" do
-  version "9.1.9"
-  sha256 "fd4fbb28a2438a0e2069d32c9f2ce558131bb7a788c60646391b683f1ea2e7bb"
+  version "9.2.6"
+  sha256 "b397e3bb5b4d8fe38a07180972cc3466f56c4a2533491c2f16be1806eb80d467"
 
   url "https://diskcatalogmaker.com/download/zip/DiskCatalogMaker#{version.no_dots}.zip"
   name "DiskCatalogMaker"
@@ -13,6 +13,7 @@ cask "diskcatalogmaker" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "DiskCatalogMaker.app"
 

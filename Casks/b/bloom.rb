@@ -1,6 +1,6 @@
 cask "bloom" do
-  version "1.5.23"
-  sha256 "ae827ce36b6ad9251f47ef490950b596042b145720ff6ba46df5f5be9e937f6f"
+  version "1.5.36"
+  sha256 "2d6de78a8d854c6a4efcd18ffac52fc5966ebbad7c007bc8fd9efea81e47c4cd"
 
   url "https://bloomapp.club/downloads/bloom/Bloom-v#{version}.dmg",
       referer: "https://bloomapp.club"
@@ -14,7 +14,7 @@ cask "bloom" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Bloom.app"
 

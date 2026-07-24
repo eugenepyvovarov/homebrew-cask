@@ -1,8 +1,8 @@
 cask "snagit" do
-  version "2026.0.0"
-  sha256 "ecb9477ea8311adf534e3127be5dae5efa03b49d9e8b2c72c07eba86afd65328"
+  version "2026.3.1"
+  sha256 "7d9f261246b4885cb89b489a989d15ddb0302be11ba3518290b893f52fb0ca92"
 
-  url "https://download.techsmith.com/snagitmac/releases/#{version.major[-2..]}#{version.minor_patch.no_dots}/snagit.dmg"
+  url "https://download.techsmith.com/snagitmac/releases/#{version}/snagit.dmg"
   name "Snagit"
   desc "Screen capture software"
   homepage "https://www.techsmith.com/screen-capture.html"
@@ -18,13 +18,19 @@ cask "snagit" do
     end
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Snagit.app"
 
+  uninstall quit: "com.TechSmith.Snagit"
+
   zap trash: [
+    "~/Library/Application Scripts/7TQL462TU8.com.techsmith.snagit",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.techsmith.snagit.sfl*",
+    "~/Library/Application Support/Snagit",
     "~/Library/Caches/com.TechSmith.Snagit*",
     "~/Library/Group Containers/*.com.techsmith.snagit",
+    "~/Library/HTTPStorages/com.TechSmith.Snagit*",
     "~/Library/Preferences/com.TechSmith.Snagit*.plist",
     "~/Library/Preferences/com.techsmith.snagit.capturehelper*.plist",
     "~/Library/Saved Application State/com.TechSmith.Snagit*.savedState",

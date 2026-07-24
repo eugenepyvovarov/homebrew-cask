@@ -1,6 +1,6 @@
 cask "writemapper" do
-  version "4.5.0"
-  sha256 "4f3bc5b2c55f8ea60c097abec12d1a62289ac429f7d36814d8d5a3a006617561"
+  version "4.5.2"
+  sha256 "3db1b3ff6dbb9c02a3ce9154b039b0835a2ebabd48ca7f8a67cdcb7f733419a3"
 
   url "https://writemapper.sfo3.cdn.digitaloceanspaces.com/writemapper-#{version.major}/mac/WriteMapper-#{version}-universal.dmg",
       verified: "writemapper.sfo3.cdn.digitaloceanspaces.com/"
@@ -13,7 +13,7 @@ cask "writemapper" do
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "WriteMapper.app"
 

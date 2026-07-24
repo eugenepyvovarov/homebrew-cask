@@ -1,6 +1,6 @@
 cask "musescore" do
-  version "4.6.5.253511702,4.6.5"
-  sha256 "89624d9e6618bd7fd224b226e63e83722b9124bc2c466206b01762375c69d4ad"
+  version "4.7.4.260706075,4.7.4"
+  sha256 "e3596e27da0806a3384cab67d52f8478ad21ed2bd6fc96d7cb874d840b016fac"
 
   url "https://github.com/musescore/MuseScore/releases/download/v#{version.csv.second}/MuseScore-Studio-#{version.csv.first}.dmg",
       verified: "github.com/musescore/MuseScore/"
@@ -22,6 +22,7 @@ cask "musescore" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "MuseScore #{version.major}.app"
   # shim script (https://github.com/caskroom/homebrew-cask/issues/18809)

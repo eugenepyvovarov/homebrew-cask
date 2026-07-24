@@ -1,6 +1,6 @@
 cask "spamsieve" do
-  version "3.2.2"
-  sha256 "df4acb744ed0b2327411d06211df4819748f90c9f36aa2733d73d9a725fd85b5"
+  version "3.3.1"
+  sha256 "a3f6a5d1b0ca309d39210a4717554e96d7ccd55fa37b667f90ced2a8b9517b2c"
 
   url "https://c-command.com/downloads/SpamSieve-#{version}.dmg"
   name "SpamSieve"
@@ -21,6 +21,7 @@ cask "spamsieve" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "SpamSieve.app"
 

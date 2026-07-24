@@ -1,9 +1,9 @@
 cask "prepros" do
   arch arm: "-Mac"
 
-  version "7.35.0"
-  sha256 arm:   "6094396087f73c966bc1aff0e7895e612138687cc3af7351c85a57b5bbcb45ad",
-         intel: "84acc5a15f9d0cff90ab24b593fff0746e439cc7bd70e9053ee259b74653c289"
+  version "7.39.0"
+  sha256 arm:   "86fa98db4a4ae73d6fc9c5988f3fdbd2430e788245da2ea8b1511ceb8ef58217",
+         intel: "07ab09a642e3ccef51feef7db36ffeb00052de4be1647b0eebbd7ca5c3fec99c"
 
   url "https://downloads.prepros.io/v#{version.major}/#{version}/Prepros#{arch}-#{version}.zip"
   name "Prepros"
@@ -16,6 +16,8 @@ cask "prepros" do
       json.dig("data", "version")
     end
   end
+
+  depends_on :macos
 
   app "Prepros.app"
 

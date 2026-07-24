@@ -1,6 +1,6 @@
 cask "blankie" do
-  version "1.0.13"
-  sha256 "1fa5a506b145790b67a3c8f3a661fd4eb7eeec8a61a5326a81546e0a3a8aac56"
+  version "2.0.2"
+  sha256 "0a964ed8f8bd45c73c2a559097ec8f8401c3f8e4251a0e80af28b539d1588f79"
 
   url "https://github.com/codybrom/blankie/releases/download/v#{version}/Blankie.zip",
       verified: "github.com/codybrom/blankie/"
@@ -10,7 +10,7 @@ cask "blankie" do
 
   no_autobump! because: :bumped_by_upstream
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :tahoe
 
   app "Blankie.app"
 

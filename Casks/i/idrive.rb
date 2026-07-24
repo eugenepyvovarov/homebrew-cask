@@ -1,6 +1,6 @@
 cask "idrive" do
-  version "4.0.0.61,011426"
-  sha256 "49ff716dedaabca1e06fc05b40cf3fb39850296c5708055d3f22fe3e6c983fca"
+  version "4.0.0.84,072326"
+  sha256 "be4893a58f7708218289214966f2eee427c861603cf25e47e753a564c4829719"
 
   url "https://static.idriveonlinebackup.com/downloads/#{version.csv.second}/IDrive.dmg",
       verified: "static.idriveonlinebackup.com/downloads/"
@@ -22,6 +22,8 @@ cask "idrive" do
       "#{version_match[1]},#{id_match[1]}"
     end
   end
+
+  depends_on :macos
 
   pkg "IDrive.pkg"
 

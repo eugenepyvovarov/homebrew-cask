@@ -2,9 +2,9 @@ cask "brave-browser" do
   arch arm: "arm64", intel: "x64"
   folder = on_arch_conditional arm: "stable-arm64", intel: "stable"
 
-  version "1.86.139.0"
-  sha256 arm:   "483790ddec50859496f4731e2b88bd098e03d978cb62c6283f9933f75c0b61de",
-         intel: "26bd8063a071b18323793cc78bc4ebfb1476fe2e7381c190af2a0b74e14899c9"
+  version "1.92.143.0"
+  sha256 arm:   "817bac1ba37b7ef6d37695b597d5c936ad416905ba201a16aa40a7de62c70674",
+         intel: "1e5ae235bbdffdecdc652bb50060fa8df1c3511d4f6ca9169989ef31d0f2b5e1"
 
   url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/#{folder}/#{version.major_minor_patch.sub(".", "")}/Brave-Browser-#{arch}.dmg",
       verified: "updates-cdn.bravesoftware.com/sparkle/Brave-Browser/"
@@ -18,7 +18,7 @@ cask "brave-browser" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Brave Browser.app"
 

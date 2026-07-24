@@ -1,5 +1,5 @@
 cask "fxfactory" do
-  version "9.0.1,8465"
+  version "9.0.5,8649"
   sha256 :no_check # required as upstream package is often updated in place
 
   url "https://files.fxfactory.com/fxfactory/FxFactory-#{version.csv.first}-#{version.csv.second}.zip"
@@ -18,7 +18,7 @@ cask "fxfactory" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   pkg "Install FxFactory #{version.csv.first}.pkg"
 

@@ -1,6 +1,6 @@
 cask "pika" do
-  version "1.2.0"
-  sha256 "be153e652f27d96cbf81efb97831abacbf425d8ef1e88eaee34149d32a3a298b"
+  version "1.8.0"
+  sha256 "dab57a153ac06b2fe3c5c6b28e435bd3e1d1fd55e4635628a7128817e26f44ee"
 
   url "https://github.com/superhighfives/pika/releases/download/#{version}/Pika-#{version}.dmg",
       verified: "github.com/superhighfives/pika/"
@@ -14,9 +14,11 @@ cask "pika" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Pika.app"
+
+  uninstall quit: "com.superhighfives.Pika"
 
   zap trash: [
     "~/Library/Application Scripts/com.superhighfives.Pika-LaunchAtLoginHelper",

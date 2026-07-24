@@ -1,8 +1,8 @@
 cask "glkvm" do
-  version "1.3.0,1765244166600,release1"
-  sha256 "0af45164cda49a10aea78556fd7b5c5655ec84b4d51e72eb177b6169600c877c"
+  version "1.5.0,1782704518562,release1"
+  sha256 "5223d52f61a88e154e9233cf6e87f75baa5e5d3e8325e924f56b0b544771853d"
 
-  url "https://static.gl-inet.com/edge-app/kvm-mac/#{version.csv.first}#{"-#{version.csv.third}" if version.csv.third}/#{version.csv.second}/gl-kvm-#{version.csv.first}.dmg"
+  url "https://static.gl-inet.com/edge-app-staging/kvm-mac/#{version.csv.first}#{"-#{version.csv.third}" if version.csv.third}/#{version.csv.second}/gl-kvm-#{version.csv.first}#{"-#{version.csv.third}" if version.csv.third}.dmg"
   name "GLKVM"
   desc "App for controlling GL.iNet KVM devices"
   homepage "https://www.gl-inet.com/app-rm/"
@@ -17,14 +17,12 @@ cask "glkvm" do
     end
   end
 
+  depends_on macos: :big_sur
+
   app "GLKVM.app"
 
   zap trash: [
     "~/Library/Application Support/gl-kvm",
     "~/Library/Logs/gl-kvm",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

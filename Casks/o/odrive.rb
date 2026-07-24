@@ -1,6 +1,6 @@
 cask "odrive" do
-  version "7605"
-  sha256 "e253208bf6d45128b46af44aa80fbd0c81a15cdd0e5128e7ba1e44883e8b1922"
+  version "7694"
+  sha256 "dafb4ae9cd4153a19a1bb17eb53d18521d3aa61ba40cb78e338ba2f0dc2fc84c"
 
   url "https://d3huse1s6vwzq6.cloudfront.net/odrivesync.#{version}.pkg",
       verified: "d3huse1s6vwzq6.cloudfront.net/"
@@ -12,6 +12,8 @@ cask "odrive" do
     url "https://www.odrive.com/downloaddesktop?platform=mac"
     strategy :header_match
   end
+
+  depends_on :macos
 
   pkg "odrivesync.#{version}.pkg"
 

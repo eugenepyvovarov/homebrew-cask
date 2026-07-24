@@ -1,6 +1,6 @@
 cask "grandtotal" do
-  version "9.2.6.11"
-  sha256 "502406d65af0da7ee9c1186e984425830051ee7d0327e06f0f783a60067eb02a"
+  version "9.4.1.52"
+  sha256 "d11e493f8ebcbc617f3f6c2ddac920328eb53c310f82bc65b2738f47d089db79"
 
   url "https://www.mediaatelier.com/GrandTotal#{version.major}/GrandTotal_#{version}.dmg"
   name "GrandTotal"
@@ -16,10 +16,12 @@ cask "grandtotal" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "GrandTotal.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.mediaatelier.grandtotal3.sfl*",
     "~/Library/Application Support/com.mediaatelier.GrandTotal*",
     "~/Library/Caches/com.mediaatelier.GrandTotal*",
     "~/Library/HTTPStorages/com.mediaatelier.GrandTotal*",

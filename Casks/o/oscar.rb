@@ -1,27 +1,26 @@
 cask "oscar" do
-  version "1.7.0"
-  sha256 "ef5504c1739524912b883c4d8c34459f18ea22cb08c363ff70ef90c2a659a084"
+  arch arm: "ARM", intel: "Intel"
 
-  url "https://www.sleepfiles.com/OSCAR/#{version}/OSCAR-#{version}-Qt5.dmg"
+  version "2.0.1"
+  sha256 arm:   "78cd674ba7755ddcf505dd870c6e1d366c6e658a57482d91593eb191e611c769",
+         intel: "b44aedb2855583457985fd9fc4467983254a24ce51bfb43134e72be64e12194e"
+
+  url "https://www.sleepfiles.com/OSCAR/#{version}/OSCAR#{version.major_minor.no_dots}-#{version}-#{arch}.dmg"
   name "OSCAR"
   desc "CPAP Analysis Reporter"
   homepage "https://www.sleepfiles.com/OSCAR/"
 
   livecheck do
     url :homepage
-    regex(%r{href=.*?/OSCAR[._-]v?(\d+(?:\.\d+)+)(?:[._-]Qt5)?\.dmg}i)
+    regex(%r{href=.*?/OSCAR.*?v?(\d+(?:\.\d+)+)(?:[._-]#{arch})?\.dmg}i)
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+  depends_on macos: :ventura
 
-  app "OSCAR.app"
+  app "OSCAR#{version.major_minor.no_dots}.app"
 
   zap trash: [
     "~/Library/Preferences/org.oscar-team.OSCAR.plist",
     "~/Library/Saved Application State/org.oscar-team.OSCAR.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

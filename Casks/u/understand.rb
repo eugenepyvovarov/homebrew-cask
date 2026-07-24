@@ -1,6 +1,6 @@
 cask "understand" do
-  version "7.2.1242"
-  sha256 "06989eb67e1e9dc3c9622e6edfd6436abc65f8174852e5783f6aed197964b380"
+  version "8.0.1257"
+  sha256 "f307cb60c23dcc879d14060f8029e9c3cc44fa3959647783e88f0b4deb7781fd"
 
   url "https://latest.scitools.com/Understand/Understand-#{version}-macOS-Universal.dmg"
   name "SciTools Understand"
@@ -12,7 +12,7 @@ cask "understand" do
     regex(/Understand[._-]v?(\d+(?:\.\d+)+)[._-]macOS[._-]Universal\.dmg/i)
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Understand.app"
   binary "#{appdir}/Understand.app/Contents/MacOS/userver"

@@ -1,7 +1,7 @@
 cask "perimeter81" do
   # NOTE: "81" is not a version number, but an intrinsic part of the product name
-  version "12.3.0.7524"
-  sha256 "5a2589fab60bfe2dc00c62cd2b162482a578b7908f55b266612d61b691097a7d"
+  version "12.10.0.11628"
+  sha256 "201fc43517d3fa4cf56952a8a4586db85ab6a275a509f5c2c131d3bf9a925bc4"
 
   url "https://static.perimeter81.com/agents/mac/Harmony_SASE_#{version}.pkg"
   name "Perimeter 81"
@@ -13,7 +13,7 @@ cask "perimeter81" do
     regex(/href=.*?Harmony[._-]SASE[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   # The pkg has detection for the `skip_autostart` flag to prevent launching after install
   rename "Harmony_SASE_#{version}.pkg", "Harmony_SASE_#{version}_skip_autostart.pkg"

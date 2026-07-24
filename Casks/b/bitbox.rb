@@ -1,6 +1,6 @@
 cask "bitbox" do
-  version "4.49.0"
-  sha256 "2d1ed9213df70eb31cf1924682b8efad68853529c6451c22b06f39a33d8aa46b"
+  version "4.51.3"
+  sha256 "cbc6c336a20a91d01fe530a966a130e6c1452ac01269134917d0d1d207044f30"
 
   url "https://github.com/BitBoxSwiss/bitbox-wallet-app/releases/download/v#{version}/BitBox-#{version}-macOS.dmg",
       verified: "github.com/BitBoxSwiss/bitbox-wallet-app/releases/download/"
@@ -13,7 +13,7 @@ cask "bitbox" do
     regex(/href=.*?BitBox[._-]v?(\d+(?:\.\d+)+)(?:[._-]macOS)?\.dmg/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "BitBox.app"
 

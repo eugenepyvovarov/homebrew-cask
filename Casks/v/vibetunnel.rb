@@ -1,6 +1,6 @@
 cask "vibetunnel" do
-  version "1.0.0-beta.15"
-  sha256 "4676ad1d03fbc19fb13f5904ace365c1ccffa4718cc01a1b896b5014ee323a3e"
+  version "1.0.0-beta.18"
+  sha256 "3e42340e28c908bdc7e8ba20ee4e7f6ab3c32885832bf947e6e0935f9017b8cc"
 
   url "https://github.com/amantus-ai/vibetunnel/releases/download/v#{version}/VibeTunnel-#{version}.dmg",
       verified: "github.com/amantus-ai/vibetunnel/"
@@ -13,7 +13,7 @@ cask "vibetunnel" do
     regex(/^v?(\d+(?:\.\d+)*(?:-beta\.\d+)?)$/i)
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "VibeTunnel.app"

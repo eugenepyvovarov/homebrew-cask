@@ -1,38 +1,44 @@
 cask "mkvtoolnix-app" do
-  version "97.0"
-  sha256 "4cea68e2830e4262c5902056077f9d4d3c8c54a0e25e7d284907f926d47ff6ea"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://mkvtoolnix.download/macos/MKVToolNix-#{version}.dmg"
+  version "100.0-1"
+  sha256 arm:   "155ded045a35bd1079ba466c2e1011bdcb1a85b74c984ed5627841cd313850a0",
+         intel: "aea7ab9c7146943fd9535b2ea60c074deeea3181a9c6736e58e1437456906c0a"
+
+  url "https://mkvtoolnix.download/macos/releases/#{version.split("-").first}/MKVToolNix-#{version}-#{arch}.dmg"
   name "MKVToolNix"
-  desc "Set of tools to create, alter and inspect Matroska files (MKV)"
+  desc "GUI including a set of tools to create, alter and inspect Matroska files (MKV)"
   homepage "https://mkvtoolnix.download/"
 
   livecheck do
-    url "https://mkvtoolnix.download/macos/"
-    regex(%r{href=.*?/MKVToolNix-(\d+(?:\.\d+)+)\.dmg}i)
+    url "https://mkvtoolnix.download/macos/releases/"
+    regex(/href=.*?MKVToolNix[._-]v?(\d+(?:[.-]\d+)+)[._-]#{arch}\.dmg/i)
+    strategy :page_match do |page, regex|
+      main_version = page.scan(%r{href=.*?releases/v?(\d+(?:\.\d+)+)/}i)
+                         .max_by { |match| Version.new(match[0]) }
+                         &.first
+      next if main_version.blank?
+
+      version_directory = Homebrew::Livecheck::Strategy.page_content("https://mkvtoolnix.download/macos/releases/#{main_version}/")
+      version_directory[:content]&.scan(regex)&.map { |match| match[0] }
+    end
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+  depends_on macos: :ventura
 
-  depends_on macos: ">= :ventura"
-
-  app "MKVToolNix-#{version}.app"
-  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvextract"
-  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvinfo"
-  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvmerge"
-  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvpropedit"
-  manpage "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/man/man1/mkvextract.1"
-  manpage "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/man/man1/mkvinfo.1"
-  manpage "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/man/man1/mkvmerge.1"
-  manpage "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/man/man1/mkvpropedit.1"
-  manpage "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/man/man1/mkvtoolnix-gui.1"
+  app "MKVToolNix.app"
+  binary "#{appdir}/MKVToolNix.app/Contents/MacOS/mkvextract"
+  binary "#{appdir}/MKVToolNix.app/Contents/MacOS/mkvinfo"
+  binary "#{appdir}/MKVToolNix.app/Contents/MacOS/mkvmerge"
+  binary "#{appdir}/MKVToolNix.app/Contents/MacOS/mkvpropedit"
+  manpage "#{appdir}/MKVToolNix.app/Contents/MacOS/man/man1/mkvextract.1"
+  manpage "#{appdir}/MKVToolNix.app/Contents/MacOS/man/man1/mkvinfo.1"
+  manpage "#{appdir}/MKVToolNix.app/Contents/MacOS/man/man1/mkvmerge.1"
+  manpage "#{appdir}/MKVToolNix.app/Contents/MacOS/man/man1/mkvpropedit.1"
+  manpage "#{appdir}/MKVToolNix.app/Contents/MacOS/man/man1/mkvtoolnix-gui.1"
 
   zap trash: [
     "~/Library/Preferences/bunkus.org/mkvtoolnix-gui",
     "~/Library/Saved Application State/download.mkvtoolnix.MKVToolNix.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

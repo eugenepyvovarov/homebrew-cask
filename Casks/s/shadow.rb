@@ -1,9 +1,9 @@
 cask "shadow" do
   arch arm: "arm64", intel: "x64"
 
-  version "9.9.10355"
-  sha256 arm:   "0c8c7642f87ef1cb25567c4f8de1e4191faa56a2d2288f9c5e58c2cff48197d5",
-         intel: "87aba549c8d402494aa54a90ebfc9571d5657976ef66e472c7c1b8d4a6696713"
+  version "9.9.10431"
+  sha256 arm:   "5d2beb779f244f58e69e5281ae9108cea2454849dd3d255af7a7c4f88b41a3a1",
+         intel: "10a7192224bc7aefdb74413f53b404f844e70bd9ceab22a4fc11b24fd8684f27"
 
   url "https://update.shadow.tech/launcher/prod/mac/#{arch}/ShadowPC-#{version}.dmg"
   name "Shadow"
@@ -14,6 +14,8 @@ cask "shadow" do
     url "https://update.shadow.tech/launcher/prod/mac/#{arch}/latest-mac.yml"
     strategy :electron_builder
   end
+
+  depends_on :macos
 
   app "Shadow PC.app"
 

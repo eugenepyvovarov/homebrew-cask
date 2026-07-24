@@ -12,18 +12,20 @@ cask "litecoin" do
     regex(/href=.*?litecoin[._-]v?(\d+(?:\.\d+)+)[^"' >]*?\.dmg/i)
   end
 
+  depends_on :macos
+
   app "Litecoin-Qt.app"
 
-  preflight do
-    set_permissions "#{staged_path}/Litecoin-Qt.app", "0755"
+  preflight_steps do
+    set_permissions "Litecoin-Qt.app", "0755"
   end
 
-  postflight do
-    set_permissions "#{appdir}/Litecoin-Qt.app", "0555"
+  postflight_steps do
+    set_permissions "Litecoin-Qt.app", "0555", base: :appdir
   end
 
-  uninstall_preflight do
-    set_permissions "#{appdir}/Litecoin-Qt.app", "0755"
+  uninstall_preflight_steps do
+    set_permissions "Litecoin-Qt.app", "0755", base: :appdir
   end
 
   zap trash: [

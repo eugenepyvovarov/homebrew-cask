@@ -1,11 +1,8 @@
 cask "amiberry" do
-  arch arm: "apple-silicon", intel: "x86_64"
+  version "8.2.2"
+  sha256 "46c893316a58ddb3d7c526c155b63d85fee5621c92465ec4ccb91e7270b34656"
 
-  version "7.1.1"
-  sha256 arm:   "6df092a58bc78f06409b0de6d3aaa3bddd9577b0df8554443e8a2117369c2e67",
-         intel: "6e12ae55a2d791aa009a384c707142b5d3a5da2e6df9289a69fa5aafa927ce0d"
-
-  url "https://github.com/BlitterStudio/amiberry/releases/download/v#{version}/Amiberry-v#{version}-macOS-#{arch}.zip",
+  url "https://github.com/BlitterStudio/amiberry/releases/download/v#{version}/Amiberry-#{version}-macOS-universal.dmg",
       verified: "github.com/BlitterStudio/amiberry/"
   name "Amiberry"
   desc "Amiga emulator"
@@ -15,6 +12,8 @@ cask "amiberry" do
     url :url
     strategy :github_latest
   end
+
+  depends_on macos: :sequoia
 
   app "Amiberry.app"
 

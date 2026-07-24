@@ -1,6 +1,6 @@
 cask "retcon" do
-  version "1.5.2"
-  sha256 "76ec3429ce777f9673f8392d934ff95b8b123b0ac9c8fa12b7a54e282b194c64"
+  version "1.6.2"
+  sha256 "bc662d787bbe1101428fcf4241a82c20579ef7ed778f24480609090e89842050"
 
   url "https://downloads.lemon.garden/retcon/retcon-#{version}.dmg",
       verified: "downloads.lemon.garden/retcon/"
@@ -9,14 +9,14 @@ cask "retcon" do
   homepage "https://retcon.app/"
 
   livecheck do
-    url "https://lemon.garden/retcon/appcast.xml"
+    url "https://downloads.lemon.garden/retcon/appcast.xml"
     strategy :sparkle do |items|
       items.find { |item| item.channel == "release" }&.short_version
     end
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Retcon.app"
 

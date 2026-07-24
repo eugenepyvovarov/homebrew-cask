@@ -1,6 +1,6 @@
 cask "liquibase-community" do
-  version "5.0.1"
-  sha256 "3ae11ccdcd4c080e421e5fd043bdbd624d56fcfc9b294d5d9d898cb8b074e449"
+  version "5.0.3"
+  sha256 "865aab391be9cbe3fee22461392d5d29aa76652596598b14700a3f5f05c9e2b7"
 
   url "https://package.liquibase.com/downloads/oss/homebrew/liquibase-#{version}.tar.gz"
   name "Liquibase Community"

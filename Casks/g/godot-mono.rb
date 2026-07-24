@@ -1,6 +1,6 @@
 cask "godot-mono" do
-  version "4.5.1"
-  sha256 "f00ee565e9d3682584117ef8865f5ff6d8f571fbf2733075ee06b9e0953261b8"
+  version "4.7.1"
+  sha256 "92cac516baa8ddc7756eeaa38a6d007778a968bfbf188db7c5d6e6ec21c5d52c"
 
   url "https://github.com/godotengine/godot/releases/download/#{version}-stable/Godot_v#{version}-stable_mono_macos.universal.zip",
       verified: "github.com/godotengine/godot/"
@@ -14,7 +14,7 @@ cask "godot-mono" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on cask: "dotnet-sdk"
 
   app "Godot_mono.app"

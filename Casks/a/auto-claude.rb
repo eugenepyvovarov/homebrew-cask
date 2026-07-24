@@ -1,16 +1,16 @@
 cask "auto-claude" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.7.4"
-  sha256 arm:   "4a5c403b4700557608aafc30c32586acc5f6473bbb7d588c1c6933344a5e2aea",
-         intel: "31c8674ba9601d8a2633935381afda0fe965f13a78ad0b9b5bf075397a8794fe"
+  version "2.7.6"
+  sha256 arm:   "c8469a7b83344aad7cb830a16fd01a91b8369ffebcb785196d136fa50045505e",
+         intel: "c35f967d4ca74c6811cba25c25d2fb9866f8f6b99dc6e8e6769c9405c14ebe99"
 
   url "https://github.com/AndyMik90/Auto-Claude/releases/download/v#{version}/Auto-Claude-#{version}-darwin-#{arch}.dmg"
   name "Auto Claude"
   desc "Autonomous multi-session AI coding"
   homepage "https://github.com/AndyMik90/Auto-Claude/"
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Auto-Claude.app"
 

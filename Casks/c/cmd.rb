@@ -1,6 +1,6 @@
 cask "cmd" do
-  version "0.2.1"
-  sha256 "9445b6b643da3e03f4674cfa631e8313813b71e082fd769954a221c444109b6d"
+  version "0.2.3"
+  sha256 "4353828e77a46e39c44041aebfb65474e41eb18c7237ac16e9fc21841959877a"
 
   url "https://github.com/getcmd-dev/cmd/releases/download/v#{version}/cmd.dmg",
       verified: "github.com/getcmd-dev/cmd/"
@@ -16,7 +16,7 @@ cask "cmd" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "cmd.app"
 
