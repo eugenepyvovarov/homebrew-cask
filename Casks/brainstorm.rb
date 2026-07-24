@@ -1,8 +1,8 @@
 cask "brainstorm" do
-  version "1.0.25"
-  sha256 "8bb0b78214e787f0da5d39ec879a7568211bc094e5fb08ec93e9be9c0d45eab3"
+  version "1.0.28"
+  sha256 "f401c8233a746c6dd65d31a858fda508fe510836e957892cf22688f05f24ad8e"
 
-  url "https://github.com/eugenepyvovarov/brainstorm/releases/download/v1.0.25/Brainstorm-1.0.25.dmg",
+  url "https://github.com/eugenepyvovarov/brainstorm/releases/download/v1.0.28/Brainstorm-1.0.28.dmg",
       verified: "github.com/eugenepyvovarov/"
   name "Brainstorm"
   desc "Native macOS mind-map editor with a JSON-first CLI"
